@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 94vh;
+    background-color: #129c42;
+}
+
+.confirmation-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+}
+
+.logo img {
+    width: 220px;
+    margin-bottom: 20px;
+}
+
+.confirmation-message {
+    margin-top: 20px;
+    color: #28a745;
+    font-weight: bold;
+}
+
+.confirmation-message p {
+    margin: 5px 0;
+   
+}
+
+
+/* Estilizando o botão azul */
+button {
+    background-color: #007BFF; 
+    color: white; 
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 40px;
+  }
+  
+  
+  button:hover {
+    background-color: #0056b3; 
+  }
+  
+  

@@ -1,0 +1,196 @@
+body {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  color: black;
+  padding-top: 30px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.header i {
+  font-size: 32px;
+  margin-right: 10px;
+}
+
+.header h2 {
+  font-size: 22px;
+}
+
+.localizacao {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  margin-top: 10px;
+}
+
+.localizacao i {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.localizacao span {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.localizacao p {
+  margin: 0;
+  margin-left: 5px;
+  font-size: 12px;
+  color: grey;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.search-container input {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 16px;
+}
+
+.animais {
+  width: 100%;
+  height: auto;
+  background-color: rgb(255, 255, 255);
+  justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.animal {
+  width: 350px;
+  height: 450px;
+  background-color: rgb(206, 206, 206);
+  margin-left: 50px;
+  border-radius: 11px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.animal span {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.cachorros {
+  background-image: url("/img/cachorro.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.gatos {
+  background-image: url("/img/gato.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.roedores {
+  background-image: url("/img/roedores.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.passaros {
+  background-image: url("/img/passaro.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.repteis {
+  background-image: url("/img/repteis.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.peixes {
+  background-image: url("/img/peixe.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.exoticos {
+  background-image: url("/img/exotico.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.anfibios {
+  background-image: url("/img/sapo.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.btn {
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 80%;
+  margin: 15px auto;
+  display: block;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #ececec;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 720px) {
+  .header i {
+    font-size: 37px;
+    margin-left: 17px;
+  }
+
+  .header h2 {
+    font-size: 20px;
+  }
+
+  .localizacao i {
+    font-size: 14px;
+  }
+
+  .localizacao span {
+    font-size: 14px;
+  }
+
+  .localizacao p {
+    font-size: 10px;
+  }
+
+  .search-container input {
+    font-size: 14px;
+  }
+
+  .animal {
+    width: 39%;
+    height: 145px;
+    margin: 15px 15px; 
+  }
+}

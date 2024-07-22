@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Conta - PetAmigo</title>
+    <link rel="stylesheet" href="/criarConta/usuario/usuario.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="fundo">
+            <div class="crieConta">
+                <h2>Crie sua conta</h2>
+                <h1><span style="color: #f4a261;">Pet</span>Amigo</h1>
+            </div>
+
+            <form id="formUsuario" class="cadastro" >
+                <div class="dados">
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                    <input type="text" id="username" name="username" required placeholder="Nome de Usuário">
+                </div>
+
+                <div class="dados">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                    <input type="email" id="email" name="email" required placeholder="Email">
+                </div>
+
+                <div class="dados">
+                    <i class="fas fa-lock" aria-hidden="true"></i>
+                    <input type="password" id="password" name="password" required placeholder="Senha">
+                    <span class="toggle-password" onclick="togglePasswordVisibility('password')"></span>
+                </div>
+
+                <div class="dados">
+                    <i class="fas fa-lock" aria-hidden="true"></i>
+                    <input type="password" id="confirm-password" name="confirm-password" required placeholder="Confirmar Senha">
+                    <span class="toggle-password" onclick="togglePasswordVisibility('confirm-password')"></span>
+                </div>
+
+                <div class="dados">
+                    <i class="fas fa-phone" aria-hidden="true"></i>
+                    <input type="text" id="telefone" name="telefone" placeholder="Número de Telefone">
+                </div>
+
+                <div class="dados">
+                    <i class="fas fa-city" aria-hidden="true"></i>
+                    <input type="text" id="city" name="city" placeholder="Cidade">
+                </div>
+
+                <a href="/criarConta/filtro/filtro.html" class="btn">Criar Conta</a>
+                <a href="/criarConta/registrar/registro.html" class="btnVoltar">Voltar</a>
+                
+                <a href="termos" class="termos">Termos de política e privacidade</a>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
