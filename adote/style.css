@@ -80,63 +80,71 @@ body {
   text-align: center;
   overflow: hidden;
   position: relative;
+  margin-bottom: 75px;
 }
 
 .animal span {
   position: absolute;
-  bottom: 10px;
-  left: 50%;
+  bottom: 5%;
   transform: translateX(-50%);
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   padding: 5px 10px;
   border-radius: 10px;
+  text-align: center;
+  font-size: 18px;
 }
 
 .cachorros {
-  background-image: url("/img/cachorro.png");
+  background-image: url("/adote/img/cachorro.png");
   background-size: cover;
   background-position: center;
 }
 
 .gatos {
-  background-image: url("/img/gato.png");
+  background-image: url("/adote/img/gato.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.coelhos {
+  background-image: url("/adote/img/coelho1.png");
   background-size: cover;
   background-position: center;
 }
 
 .roedores {
-  background-image: url("/img/roedores.png");
+  background-image: url("/adote/img/roedores.png");
   background-size: cover;
   background-position: center;
 }
 
 .passaros {
-  background-image: url("/img/passaro.png");
+  background-image: url("/adote/img/passaro.png");
   background-size: cover;
   background-position: center;
 }
 
 .repteis {
-  background-image: url("/img/repteis.png");
+  background-image: url("/adote/img/repteis.png");
   background-size: cover;
   background-position: center;
 }
 
 .peixes {
-  background-image: url("/img/peixe.png");
+  background-image: url("/adote/img/peixe.png");
   background-size: cover;
   background-position: center;
 }
 
 .exoticos {
-  background-image: url("/img/exotico.png");
+  background-image: url("/adote/img/exoticos.png");
   background-size: cover;
   background-position: center;
 }
 
 .anfibios {
-  background-image: url("/img/sapo.png");
+  background-image: url("/adote/img/sapo.png");
   background-size: cover;
   background-position: center;
 }
@@ -189,8 +197,8 @@ body {
   }
 
   .animal {
-    width: 39%;
-    height: 145px;
+    width: 43%;
+    height: 260px;
     margin: 15px 15px; 
   }
 }
