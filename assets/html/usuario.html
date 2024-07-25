@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,52 +9,59 @@
     <link rel="stylesheet" href="/assets/css/usuario.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
+
 <body>
     <div class="container">
-        <div class="fundo">
-            <div class="crieConta">
-                <h2>Crie sua conta</h2>
-                <h1><span style="color: #f4a261;">Pet</span>Amigo</h1>
-            </div>
+        <header class="crieConta">
+            <h2>Crie sua conta</h2>
+            <h1><span style="color: #f4a261;">Pet</span>Amigo</h1>
+        </header>
 
-            <form id="formUsuario" class="cadastro" >
+        <main> <!-- Formulario Usuario -->
+            <form>
                 <div class="dados">
-                    <i class="bi bi-person-fill"></i>
+                    <label for="usuario_nome"><i class="bi bi-person-fill"></i></label>
                     <input type="text" id="usuario_nome" name="usuario_nome" required placeholder="Nome de Usuário">
                 </div>
 
                 <div class="dados">
-                    <i class="bi bi-envelope-fill"></i>
+                    <label for="usuario_email"><i class="bi bi-envelope-fill"></i></label>
                     <input type="email" id="usuario_email" name="usuario_email" required placeholder="Email">
                 </div>
 
                 <div class="dados">
-                   <i class="bi bi-lock-fill"></i>
-                    <input type="text" id="usuario_senha" name="usuario_senha" required placeholder="Senha">
+                    <label for="usuario_senha"><i class="bi bi-lock-fill"></i></label>
+                    <input type="password" id="usuario_senha" name="usuario_senha" required placeholder="Senha">
                 </div>
 
                 <div class="dados">
-                   <i class="bi bi-lock-fill"></i>
-                    <input type="text" id="usuario_confirmar_senha" name="usuario_confirmar_senha" required placeholder="Confirmar Senha">
+                    <label for="usuario_confirmar_senha"><i class="bi bi-lock-fill"></i></label>
+                    <input type="password" id="usuario_confirmar_senha" name="usuario_confirmar_senha" required
+                        placeholder="Confirmar Senha">
                 </div>
 
                 <div class="dados">
-                    <i class="bi bi-telephone-fill"></i>
-                    <input type="text" id="usuario_telefone" name="usuario_telefone" placeholder="Número de Telefone">
+                    <label for="usuario_telefone"><i class="bi bi-telephone-fill"></i></label>
+                    <input type="tel" id="usuario_telefone" name="usuario_telefone" placeholder="Número de Telefone">
                 </div>
 
                 <div class="dados">
-                    <i class="bi bi-buildings-fill"></i>
+                    <label for="usuario_cidade"><i class="bi bi-buildings-fill"></i></label>
                     <input type="text" id="usuario_cidade" name="usuario_cidade" placeholder="Cidade">
                 </div>
 
-                <a href="/assets/html/filtro.html" class="btn">Criar Conta</a>
-                <a href="/assets/html/registro.html" class="btnVoltar">Voltar</a>
-                
-                <a href="termos" class="termos">Termos de política e privacidade</a>
-            </form>
-        </div>
-    </div>
 
+                <div>
+                    <a href="/assets/html/filtro.html" class="btn">Criar Conta</a>
+                </div>
+                <nav>
+                    <ul>
+                        <li> <a href="/assets/html/registro.html" class="btnVoltar">Voltar</a></li>
+                    </ul>
+                </nav>
+            </form>
+        </main>
+    </div>
 </body>
+
 </html>
