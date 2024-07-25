@@ -204,47 +204,47 @@ body {
 
 .cachorros {
   background-color: #f5c6c6;
-  background-image: url("/adote/img/cachorro.png");
+  background-image: url("/assets/img/cachorro.png");
 }
 
 .gatos {
   background-color: #e8f4f8;
-  background-image: url("/adote/img/gato.png");
+  background-image: url("/assets/img/gato.png");
 }
 
 .coelhos {
   background-color: #f5f5f5;
-  background-image: url("/adote/img/coelho1.png");
+  background-image: url("/assets/img/coelho1.png");
 }
 
 .roedores {
   background-color: #e0e0e0;
-  background-image: url("/adote/img/roedores.png");
+  background-image: url("/assets/img/roedores.png");
 }
 
 .passaros {
   background-color: #d1e7f0;
-  background-image: url("/adote/img/passaro.png");
+  background-image: url("/assets/img/passaro.png");
 }
 
 .repteis {
   background-color: #d8e2dc;
-  background-image: url("/adote/img/repteis.png");
+  background-image: url("/assets/img/repteis.png");
 }
 
 .peixes {
   background-color: #b2dfdb;
-  background-image: url("/adote/img/peixe.png");
+  background-image: url("/assets/img/peixe.png");
 }
 
 .exoticos {
   background-color: #e8d5c4;
-  background-image: url("/adote/img/exoticos.png");
+  background-image: url("/assets/img/exoticos.png");
 }
 
 .anfibios {
   background-color: #d4e157;
-  background-image: url("/adote/img/sapo.png");
+  background-image: url("/assets/img/sapo.png");
 }
 
 

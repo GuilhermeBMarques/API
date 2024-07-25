@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variedade de Cachorro</title>
+    <link rel="stylesheet" href="/assets/css/variedadeDog.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <h2>Faça a lista do seu cachorro</h2>
+    <div class="lista">
+        <form id="cachorro-form">
+            <label for="link">Link da Imagem</label>
+            <input type="text" id="link" placeholder="Endereço da Imagem..." onkeyup="search()" required>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" placeholder="Nome do Cachorro..." required>
+            <label for="raca">Raça:</label>
+            <input type="text" id="raca" placeholder="Raça do Cachorro..." required>
+            <label for="genero">Gênero:</label>
+            <input type="text" id="genero" placeholder="Gênero do Cachorro..." required>
+            <label for="idade">Idade:</label>
+            <input type="text" id="idade" placeholder="Idade do Cachorro..." required>
+            <label for="localizacao">Localização:</label>
+            <input type="text" id="localizacao" placeholder="Cidade do Cachorro..." required>
+            <button type="submit">Adicionar Cachorro</button>
+        </form>
+    </div>
+    <h1>Lista de Cachorro</h1>
+    <div class="container">
+        <ul id="cachorro-list" class="cachorro-list"></ul>
+    </div>
+    <script src="/variedadeDog/script.js"></script>
+
+    <div class="navbar">
+        <a href="/assets/html/home.html" class="nav-item"><i class="bi bi-house"></i></a>
+        <a href="" class="nav-item"><i class="bi bi-bag-heart-fill"></i></a>
+        <a href="" class="nav-item"><i class="bi bi-arrow-through-heart-fill"></i></a>
+        <a href="/variedadeDog/index.html" class="nav-item"><i class="bi bi-images"></i></a>
+    </div>
+</body>
+</html>
