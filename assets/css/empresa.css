@@ -71,47 +71,45 @@ nav ul li {
   padding: 3px;
 }
 
-.btn {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background-color: #f4a261;
-  border: none;
-  color: white;
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 10px;
-  cursor: pointer;
-  width: 80%;
-  margin: 15px auto;
-  transition: all 0.3s;
-  border: 2px solid #f4a261;
-  display: block;
-}
-
-.btn:hover {
-  background-color: #e68a3d;
-  transform: translateY(-2px);
-}
-
+.btn ,
 .btnVoltar {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background-color: #ffffff;
   border: none;
-  color: #f4a261;
   padding: 10px 20px;
   text-decoration: none;
-  border-radius: 5px;
   cursor: pointer;
-  width: 60%;
-  margin: 15px auto;
   display: block;
+  margin: 15px auto;
   transition: all 0.3s;
   border: 2px solid #f4a261;  
 }
 
+
+.btn {
+  background-color: #f4a261;
+  color: white;
+  border-radius: 10px;
+  width: 80%;
+}
+  
+  
+.btnVoltar {
+  background-color: #ffffff;
+  color: #f4a261;
+  border-radius: 5px;
+  width: 60%;
+}
+
+.btn:hover {
+  background-color: #e68a3d;
+  transform: scale(1.05);
+}
+
+
 .btnVoltar:hover {
   background-color: #f4a261;
   color: white;
-  transform: translateY(-2px);
+  transform: scale(1.05);
 }
 
 .termos {

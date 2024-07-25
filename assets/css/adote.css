@@ -235,119 +235,51 @@ body {
 
 
 
-.btn {
-  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
-  background-color: #ffffff;
+.btn ,
+.btnVoltar {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border: none;
-  color: rgb(0, 0, 0);
-  padding: 10px;
+  padding: 10px 20px;
   text-decoration: none;
-  border-radius: 10px;
   cursor: pointer;
-  width: 70%;
-  margin: 15px auto;
   display: block;
+  margin: 15px auto;
   transition: all 0.3s;
-  text-align: center;
-  font-size: 18px;
-  margin-bottom: 30px;
-}
-
-.btn:hover {
-  background-color: #d7935a;
-  transform: translateY(-2px);
-}
-
-@media (max-width: 720px) {
-  .header i {
-    font-size: 37px;
-    margin-left: 17px;
-  }
-
-  .header h2 {
-    font-size: 20px;
-  }
-
-  .localizacao i {
-    font-size: 14px;
-  }
-
-  .localizacao span {
-    font-size: 14px;
-  }
-
-  .localizacao p {
-    font-size: 10px;
-  }
-
-  .animal {
-    width: 39%;
-    height: 260px;
-    margin: 15px 15px; 
-  }
-}
-
-@media (max-width: 300px) {
-  .animal {
-    width: 90%;
-  }
+  border: 2px solid #f4a261;  
 }
 
 
 .btn {
-  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
-  background-color: #ffffff;
-  border: none;
-  color: rgb(0, 0, 0);
-  padding: 10px;
-  text-decoration: none;
+  background-color: #f4a261;
+  color: white;
   border-radius: 10px;
-  cursor: pointer;
-  width: 70%;
-  margin: 15px auto;
-  display: block;
-  transition: all 0.3s;
-  text-align: center;
-  font-size: 18px;
-  margin-bottom: 30px;
+  width: 80%;
+}
+  
+  
+.btnVoltar {
+  background-color: #ffffff;
+  color: #f4a261;
+  border-radius: 5px;
+  width: 60%;
 }
 
 .btn:hover {
-  background-color: #d7935a;
-  transform: translateY(-2px);
+  background-color: #e68a3d;
+  transform: scale(1.05);
+}
+
+
+.btnVoltar:hover {
+  background-color: #f4a261;
+  color: white;
+  transform: scale(1.05);
 }
 
 @media (max-width: 720px) {
-  .header i {
-    font-size: 37px;
-    margin-left: 17px;
-  }
-
-  .header h2 {
-    font-size: 20px;
-  }
-
-  .localizacao i {
-    font-size: 14px;
-  }
-
-  .localizacao span {
-    font-size: 14px;
-  }
-
-  .localizacao p {
-    font-size: 10px;
-  }
-
   .animal {
     width: 39%;
     height: 260px;
     margin: 15px 15px; 
-  }
-}
-
-@media (max-width: 300px) {
-  .animal {
-    width: 90%;
   }
 }
