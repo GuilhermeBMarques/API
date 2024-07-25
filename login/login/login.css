@@ -1,0 +1,373 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #5884f4;
+}
+
+.container {
+    overflow: hidden;
+    width: 600px; 
+    max-width: 600px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    background-color: #749BFF;
+    border-radius: 20px; 
+}
+
+
+#formulario {
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px 20px 0 0; 
+    height: 400px;
+}
+
+#baixo {
+    margin-top: 70px;
+}
+
+img {
+    width: 24px;
+    height: 24px;
+}
+
+.top-section {
+    background-color: #749BFF;
+    padding: 40px;
+    text-align: center;
+    color: white;
+}
+
+.top-section h1 {
+    margin-bottom: 5px;
+}
+
+.top-section h2 {
+    margin: 0;
+    font-size:30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.top-section .pet {
+    color: orange;
+}
+
+.icon-space {
+    position: absolute;
+    top: 160px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 20px;
+}
+
+.icon {
+    width: 120px;
+    height: 120px;
+}
+
+.dados {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.dados input {
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.dados i {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #749BFF;
+}
+
+.dados input::placeholder {
+    color: #999;
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+#titulo {
+    font-size: 50px;
+}
+
+form {
+    margin-top: 18%;
+}
+
+.forgot-password {
+    display: block;
+    color: #810b7b;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn {
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
+    background-color: #f4a261;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 80%;
+    margin: 15px auto;
+    display: block;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #e68a3d;
+    transform: translateY(-2px);
+}
+
+.signup-link {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+}
+
+.signup-link a {
+    color: #810b7b;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+
+/* Media Queries telas menores */
+@media (max-width: 720px) {
+    body, html {
+        height: 100%;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #749BFF;
+        text-align: center;
+    }
+
+    .container {
+        width: 450px; 
+        max-width: 700px; 
+    
+    }
+
+    .top-section {
+        padding: 68px 68px ; 
+        text-align: center;
+        color: white;
+    }
+
+
+    .top-section h2 {
+        margin: 0;
+        font-size: 24px; 
+    }
+
+    .icon-space {
+        margin-top: 20px;  
+    }
+
+    .icon {
+        width: 90px; 
+        height: 90px;
+    }
+
+    #formulario {
+        background-color: white;
+        padding: 12px 12px; 
+        border-radius: 30px 30px 0 0;
+        height: auto;
+        height: 100%;
+    }
+
+    .dados {
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    .dados input {
+        width: 80%;
+        padding: 10px 30px ;
+    }
+
+    .dados i {
+        position: absolute;
+        top: 50%;
+        left: 45px;
+        transform: translateY(-50%);
+        color: #749BFF;
+    }
+
+    .dados input::placeholder {
+        color: #999;
+    }
+
+    .toggle-password {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+
+    #titulo {
+        font-size: 32px; 
+    }
+
+    form {
+        margin-top: 40px; 
+    }
+
+    .forgot-password {
+        display: block;
+        margin-bottom: 20px;
+        color: #810b7b;
+        text-decoration: none;
+        text-align: center;
+    } 
+
+    .btn {
+        box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
+        background-color: #f4a261;
+        border: none;
+        color: white;
+        padding: 10px;
+        text-decoration: none;
+        border-radius: 10px;
+        cursor: pointer;
+        width: 80%;
+        margin: 15px auto;
+        display: block;
+        transition: all 0.3s;
+        text-align: center;
+    }
+    
+    .btn:hover {
+        background-color: #e68a3d;
+        transform: translateY(-2px);
+    }
+
+    .signup-link {      
+        font-size: 14px; 
+        color: #666;
+        text-align: center;
+    }
+
+    .signup-link a {
+        color: #8c117d;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+}
+
+/* Media Queries celulares */
+@media (max-width: 320px) {
+
+    .container {
+        max-width: 295px; 
+    }
+
+    .top-section {
+        padding: 50px; 
+        text-align: center;
+        color: white;
+    }
+
+    .top-section h2 {
+        margin: 0;
+        font-size: 20px; 
+    }
+
+    .icon-space {
+        margin-top: -14px;  
+    }
+
+    .icon {
+        width: 90px; 
+        height: 90px;
+    }
+
+    #formulario {
+        background-color: white;
+        padding: 40px ; 
+    }
+
+    .dados {
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    .dados input {
+        width: 100%;
+        padding: 10px 30px ;
+    }
+
+    .dados i {
+        position: absolute;
+        top: 50%;
+        left: 6px;
+        transform: translateY(-50%);
+        color: #749BFF;
+    }
+
+    .dados input::placeholder {
+        color: #999;
+    }
+
+    #titulo {
+        font-size: 32px; 
+    }
+
+    form {
+        margin-top: 60px; 
+    }
+
+    .forgot-password {
+        display: block;
+        color: #810b7b;
+        text-decoration: none;
+        text-align: center;
+    } 
+
+ 
+    .signup-link {      
+        font-size: 14px; 
+        color: #666;
+        text-align: center;
+    }
+
+    .signup-link a {
+        color: #8c117d;
+        text-decoration: none;
+        font-weight: bold;
+    }
+}
