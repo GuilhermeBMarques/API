@@ -1,4 +1,4 @@
-const dados = require('./js/dados.json'); // Caminho relativo
+const dados = require('./js/dados.json');
 const express = require('express');
 const fs = require('fs');
 const cors = require('cors');
@@ -54,5 +54,5 @@ server.delete('/cachorro/:id', (req, res) => {
 });
 
 function salvarDados(dados) {
-    fs.writeFileSync('./js/dados.json', JSON.stringify(dados, null, 2)); // Caminho relativo
+    fs.writeFileSync('./js/dados.json', JSON.stringify(dados, null, 2));
 }
