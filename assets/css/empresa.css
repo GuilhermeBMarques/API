@@ -3,10 +3,6 @@ body {
     justify-content: center;
     align-items: center;
     background: linear-gradient(to bottom, #8e99f3, #ffffff);
-    box-sizing: border-box;
-    font-family: "Inter", sans-serif;
-    margin: 0;
-    padding: 0;
   }
   
   .container {
