@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Empresa</title>
     <link rel="stylesheet" href="/assets/css/reset.css">
     <link rel="stylesheet" href="/assets/css/empresa.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
-<body>
-    <div class="container"> 
-        <div class="fundo">
-            <div class="crieConta">
-                <h2>Crie sua conta</h2>
-                <h1><span style="color: #f4a261;">Pet</span>Amigo</h1>
-            </div>
 
-            <form id="formEmpresa" class="cadastro">
+<body>
+    <div class="container">
+        <header class="crieConta">
+            <h2>Crie sua conta</h2>
+            <h1><span style="color: #f4a261;">Pet</span>Amigo</h1>
+        </header>
+
+        <main> <!-- Formulario Usuario -->
+            <form>
                 <div class="dados">
                     <i class="bi bi-building-fill"></i>
                     <input type="text" id="empresa_nome" name="empresa_nome" required placeholder="Nome da Empresa">
@@ -28,23 +30,26 @@
                 </div>
 
                 <div class="dados">
-                   <i class="bi bi-lock-fill"></i>
+                    <i class="bi bi-lock-fill"></i>
                     <input type="password" id="empresa_senha" name="empresa_senha" required placeholder="Senha">
                 </div>
-                
+
                 <div class="dados">
-                   <i class="bi bi-lock-fill"></i>
-                    <input type="password" id="empresa_confirmar_senha" name="empresa_confirmar_senha" required placeholder="Confirmar Senha">
+                    <i class="bi bi-lock-fill"></i>
+                    <input type="password" id="empresa_confirmar_senha" name="empresa_confirmar_senha" required
+                        placeholder="Confirmar Senha">
                 </div>
 
                 <div class="dados">
                     <i class="bi bi-telephone-fill"></i>
-                    <input type="text" id="empresa_telefone" name="empresa_telefone" required placeholder="Número de Telefone">
+                    <input type="text" id="empresa_telefone" name="empresa_telefone" required
+                        placeholder="Número de Telefone">
                 </div>
 
                 <div class="dados">
                     <i class="bi bi-buildings-fill"></i>
-                    <input type="text" id="empresa_endereco" name="empresa_endereco" required placeholder="Endereço da Empresa">
+                    <input type="text" id="empresa_endereco" name="empresa_endereco" required
+                        placeholder="Endereço da Empresa">
                 </div>
 
                 <div class="dados">
@@ -52,13 +57,22 @@
                     <input type="url" id="empresa_website" name="empresa_website" placeholder="Website da Empresa">
                 </div>
 
-                <a href="" class="btn">Criar Conta</a>
-                <a href="/assets/html/registro.html" class="btnVoltar">Voltar</a>
+                <div>
+                    <a href="/assets/html/filtro.html" class="btn">Criar Conta</a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="/assets/html/registro.html" class="btnVoltar">Voltar</a></li>
+                    </ul>
+                </nav>
 
-                <a href="/assets/htmltermos" class="termos">Termos de política e privacidade</a>
+                <footer> <!-- Final da Página  -->
+                    <a href="/assets/html/termos.html" class="termos">Termos de política e privacidade</a>
+                </footer>
             </form>
-        </div>
+        </main>
     </div>
 
 </body>
+
 </html>
