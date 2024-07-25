@@ -16,8 +16,8 @@ body {
 
 .header i {
   font-size: 32px;
-  
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .header h2 {
@@ -67,11 +67,119 @@ body {
   overflow: hidden;
   position: relative;
   margin-bottom: 75px;
+  transition: transform 0.3s;
+}
+
+.animal:hover {
+  transform: scale(1.05);
 }
 
 .animal span {
   position: absolute;
   bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.cachorros,
+.gatos,
+.coelhos,
+.roedores,
+.passaros,
+.repteis,
+.peixes,
+.exoticos,
+.anfibios {
+  background-size: cover;
+  background-position: center;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  color: black;
+  padding-top: 30px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.header i {
+  font-size: 32px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.header h2 {
+  font-size: 22px;
+}
+
+.localizacao {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  margin-top: 10px;
+}
+
+.localizacao i {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.localizacao span {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.localizacao p {
+  margin: 0;
+  margin-left: 5px;
+  font-size: 12px;
+  color: grey;
+}
+
+.animais {
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.animal {
+  width: 350px;
+  height: 450px;
+  background-color: rgb(206, 206, 206);
+  margin-left: 50px;
+  border-radius: 11px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 75px;
+  transition: transform 0.3s;
+}
+
+.animal:hover {
+  transform: scale(1.05);
+}
+
+.animal span {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
   transform: translateX(-50%);
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
@@ -95,40 +203,110 @@ body {
 }
 
 .cachorros {
+  background-color: #f5c6c6;
   background-image: url("/adote/img/cachorro.png");
 }
 
 .gatos {
+  background-color: #e8f4f8;
   background-image: url("/adote/img/gato.png");
 }
 
 .coelhos {
+  background-color: #f5f5f5;
   background-image: url("/adote/img/coelho1.png");
 }
 
 .roedores {
+  background-color: #e0e0e0;
   background-image: url("/adote/img/roedores.png");
 }
 
 .passaros {
+  background-color: #d1e7f0;
   background-image: url("/adote/img/passaro.png");
 }
 
 .repteis {
+  background-color: #d8e2dc;
   background-image: url("/adote/img/repteis.png");
 }
 
 .peixes {
+  background-color: #b2dfdb;
   background-image: url("/adote/img/peixe.png");
 }
 
 .exoticos {
+  background-color: #e8d5c4;
   background-image: url("/adote/img/exoticos.png");
 }
 
 .anfibios {
+  background-color: #d4e157;
   background-image: url("/adote/img/sapo.png");
 }
+
+
+
+.btn {
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 70%;
+  margin: 15px auto;
+  display: block;
+  transition: all 0.3s;
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.btn:hover {
+  background-color: #d7935a;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 720px) {
+  .header i {
+    font-size: 37px;
+    margin-left: 17px;
+  }
+
+  .header h2 {
+    font-size: 20px;
+  }
+
+  .localizacao i {
+    font-size: 14px;
+  }
+
+  .localizacao span {
+    font-size: 14px;
+  }
+
+  .localizacao p {
+    font-size: 10px;
+  }
+
+  .animal {
+    width: 39%;
+    height: 260px;
+    margin: 15px 15px; 
+  }
+}
+
+@media (max-width: 300px) {
+  .animal {
+    width: 90%;
+  }
+}
+
 
 .btn {
   box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
