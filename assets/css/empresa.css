@@ -1,5 +1,4 @@
 body {
-  background-color: #8e99f3;
   display: flex;
   text-align: center;
   justify-content: center;
@@ -63,12 +62,6 @@ form {
   background: none;
   padding: 10px;
   font-size: 0.9rem;
-}
-
-
-nav ul li {
-  list-style: none;
-  padding: 3px;
 }
 
 .btn ,

@@ -1,0 +1,93 @@
+body {
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+section {
+  background-color: #fff;
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+p {
+  margin-bottom: 25px;
+  color: #666;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.btn,
+.btnVoltar {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: none;
+  padding: 10px 20px;
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+  margin: 15px auto;
+  transition: all 0.3s;
+  border: 2px solid #f6d365;
+  background-color: #ffffff;
+  color: #f6d365;
+  border-radius: 5px;
+}
+
+.btn {
+  width: 80%;
+}
+
+.btnVoltar {
+  width: 60%;
+}
+
+.btn:hover,
+.btnVoltar:hover {
+  background-color: #f6d365;
+  color: white;
+  transform: scale(1.05);
+}
