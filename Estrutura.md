@@ -1,5 +1,5 @@
 # API 
-**Nomes:** Guilherme, Bruno Henrique, Ryan e Arthur.
+**Nomes:** Guilherme, Bruno Henrique e Arthur.
 
 **Turma:** TDS23-T1
 
