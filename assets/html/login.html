@@ -1,64 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="/assets/css/reset.css">
     <link rel="stylesheet" href="/assets/css/login.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
+
 <body>
-    <header>
-        
-        <div class="container">
-            <a href="/assets/html/loginErro.html">Login Dando errado</a>
-            <div class="top-section">
-                <h2>Olá, Seja Bem Vindo!</h2>
-                <h1 id="titulo"><span class="pet">Pet</span>Amigo</h1>
-            </div>
+    <div class="container">
+        <header class="crieConta">
+            <h2>Crie sua conta</h2>
+            <h1><span style="color: #fff;">Pet</span>Amigo</h1>
+        </header>
 
-            <div class="icon-space">
-                <img src="/assets/img/pawprint.png" alt="Ícone de pata" class="icon">
-            </div>
-            
-            <div id="formulario">
-                <form action="/login" method="post">
-                    
-                    <div class="dados">
-                        <i class="img-icon">
-                            <img class="" src="/login/login/img/do-utilizador.png" alt="">
-                        </i>
-                        <input type="text" id="username" name="username" required placeholder="Nome de Usuário">
-                    </div>
-                   
-                    <div class="dados">
-                        <i class="img-icon">
-                            <img class="" src="/login/login/img/trancar.png" alt="">
-                        </i>
-                        <input type="password" id="password" name="password" required placeholder="Senha">
-                        <span class="toggle-password" onclick="togglePasswordVisibility()">
-                        </span>
-                    </div>
+        <main> <!-- Formulario Usuario -->
+            <form>
+                <div class="dados">
+                    <label for="usuario_nome"><i class="bi bi-person-fill"></i></label>
+                    <input type="text" id="usuario_nome" name="usuario_nome" required placeholder="Nome de Usuário">
+                </div>
 
-                    <div id="baixo">
-                        <a href="/assets/html/recuperarSenha.html" class="forgot-password">
-                            Esqueceu a Senha
-                        </a>
-                            
-                            <a href="/assets/html/loginCerto.html" class="btn">Entrar</a>
-                        <div class="signup-link">
+                <div class="dados">
+                    <label for="usuario_senha"><i class="bi bi-lock-fill"></i></label>
+                    <input type="password" id="usuario_senha" name="usuario_senha" required placeholder="Senha">
+                </div>
 
-                            <span>ou</span>
-                            <br>
-                            <a href="/assets/html/registro.html">Não possui uma conta? Criar</a>
-                        </div>
-                    </div>    
 
-                </form>
-            </div>
+                <div>
+                    <a href="/assets/html/home.html" class="btn">Criar Conta</a>
+                </div>
+                <nav>
+                    <br>
+                    <ul>
+                        <li>
+                            <a href="/assets/html/recuperarSenha.html" class="link">Esqueceu a senha</a>
+                        </li>
+                        <br>
+                        <p>Ou</p>
+                        <br>
+                        <li>
+                            <a href="/assets/html/registro.html" class="link">Não possui uma conta? Entar</a>
+                        </li>
+                    </ul>
 
-        </div>
-    </header>
+                </nav>
+            </form>
+
+        </main>
+
+    </div>
 
     <script>
         function togglePasswordVisibility() {
@@ -66,13 +60,14 @@
             var toggleIcon = document.getElementById('toggle-icon');
             if (passwordField.type === 'password') {
                 passwordField.type = 'text';
-                toggleIcon.src = '/img/eye-open.png';
-            
+                toggleIcon.src = '/assets/img/eye-open.png';
+
             } else {
                 passwordField.type = 'password';
-                toggleIcon.src = '/img/eye-closed.png';
+                toggleIcon.src = '/assets/img/eye-closed.png';
             }
         }
     </script>
 </body>
+
 </html>

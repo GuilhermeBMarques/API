@@ -1,99 +1,5 @@
-.header {
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
-}
-
-.header i {
-  font-size: 32px;
-  margin-right: 10px;
-  cursor: pointer;
-}
-
-.header h2 {
-  font-size: 22px;
-}
-
-.localizacao {
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
-  margin-top: 10px;
-}
-
-.localizacao i {
-  font-size: 16px;
-  margin-right: 10px;
-}
-
-.localizacao span {
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.localizacao p {
-  margin: 0;
-  margin-left: 5px;
-  font-size: 12px;
-  color: grey;
-}
-
-.animais {
-  width: 100%;
-  background-color: rgb(255, 255, 255);
-  justify-content: space-around;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.animal {
-  width: 350px;
-  height: 450px;
-  background-color: rgb(206, 206, 206);
-  margin-left: 50px;
-  border-radius: 11px;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  overflow: hidden;
-  position: relative;
-  margin-bottom: 75px;
-  transition: transform 0.3s;
-}
-
-.animal:hover {
-  transform: scale(1.05);
-}
-
-.animal span {
-  position: absolute;
-  bottom: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  padding: 5px 10px;
-  border-radius: 10px;
-  text-align: center;
-  font-size: 18px;
-}
-
-.cachorros,
-.gatos,
-.coelhos,
-.roedores,
-.passaros,
-.repteis,
-.peixes,
-.exoticos,
-.anfibios {
-  background-size: cover;
-  background-position: center;
-}
-
 body {
-  background-color: white;
-  color: black;
-  padding-top: 30px;
+  text-align: center;
 }
 
 .header {
@@ -138,16 +44,15 @@ body {
 
 .animais {
   width: 100%;
-  background-color: rgb(255, 255, 255);
   justify-content: space-around;
   display: flex;
   flex-wrap: wrap;
+  background-color: rgb(255, 255, 255);
 }
 
 .animal {
   width: 350px;
   height: 450px;
-  background-color: rgb(206, 206, 206);
   margin-left: 50px;
   border-radius: 11px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
@@ -158,21 +63,21 @@ body {
   transition: transform 0.3s;
 }
 
-.animal:hover {
-  transform: scale(1.05);
-}
-
 .animal span {
   position: absolute;
   bottom: 5%;
   left: 50%;
   transform: translateX(-50%);
   background-color: rgba(0, 0, 0, 0.5);
-  color: white;
+  color: rgb(255, 255, 255);
   padding: 5px 10px;
   border-radius: 10px;
   text-align: center;
   font-size: 18px;
+}
+
+.animal:hover {
+  transform: scale(1.05);
 }
 
 .cachorros,
@@ -234,8 +139,13 @@ body {
 }
 
 
+nav ul li {
+  list-style: none;
+  padding: 3px;
+  margin-top: 35px;
+}
 
-.btn ,
+.btn,
 .btnVoltar {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border: none;
@@ -245,36 +155,27 @@ body {
   display: block;
   margin: 15px auto;
   transition: all 0.3s;
-  border: 2px solid #f4a261;  
+  border: 2px solid #f6d365;
+  background-color: #ffffff;
+  color: #f6d365;
+  border-radius: 5px;
 }
-
 
 .btn {
-  background-color: #f4a261;
-  color: white;
-  border-radius: 10px;
   width: 80%;
 }
-  
-  
+
 .btnVoltar {
-  background-color: #ffffff;
-  color: #f4a261;
-  border-radius: 5px;
   width: 60%;
 }
 
-.btn:hover {
-  background-color: #e68a3d;
-  transform: scale(1.05);
-}
-
-
+.btn:hover,
 .btnVoltar:hover {
-  background-color: #f4a261;
+  background-color: #f6d365;
   color: white;
   transform: scale(1.05);
 }
+
 
 @media (max-width: 720px) {
   .animal {

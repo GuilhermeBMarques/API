@@ -7,7 +7,6 @@ body {
 
 .container {
     overflow-y: auto;
-    background-color: #8e99f3;
     width: 100%; 
     max-width: 600px; 
     overflow: hidden;
@@ -58,33 +57,37 @@ nav ul li {
   display: block;
   margin: 15px auto;
   transition: all 0.3s;
-  border: 2px solid #f4a261;  
+  border: 2px solid #8e99f3;  
 }
 
+
+.btn,
+.btnVoltar {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: none;
+  padding: 10px 20px;
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+  margin: 15px auto;
+  transition: all 0.3s;
+  border: 2px solid #8e99f3;
+  background-color: #ffffff;
+  color: #8e99f3;
+  border-radius: 5px;
+}
 
 .btn {
-  background-color: #f4a261;
-  color: white;
-  border-radius: 10px;
   width: 80%;
 }
-  
-  
+
 .btnVoltar {
-  background-color: #ffffff;
-  color: #f4a261;
-  border-radius: 5px;
   width: 60%;
 }
 
-.btn:hover {
-  background-color: #e68a3d;
-  transform: scale(1.05);
-}
-
-
+.btn:hover,
 .btnVoltar:hover {
-  background-color: #f4a261;
+  background: linear-gradient(135deg, #8e99f3 0%, #6a5acd 100%);
   color: white;
   transform: scale(1.05);
 }
