@@ -7,7 +7,7 @@ body {
     background: linear-gradient(135deg, #34e89e 0%, #0f3443 100%);
 }
 
-.confirmation-container {
+.container {
     background-color: #ffffff;
     padding: 40px 30px;
     border-radius: 10px;
@@ -32,13 +32,13 @@ body {
     margin-bottom: 15px;
 }
 
-.confirmation-message {
+.mensagem {
     margin-top: 20px;
     font-weight: bold;
     font-size: 20px;
 }
 
-.confirmation-message p {
+.mensagem p {
     margin: 5px 0;
 }
 
