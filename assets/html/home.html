@@ -5,9 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/home.css">
 </head>
 <body>
-    <h1> Pagina principal</h1>
-    <a href="/assets/html/adote.html">Adote ai carai</a>
+    <header class="header">
+        <div class="logo">
+            <h1><span style="color: #ff6600;">Pet</span>Amigo</h1>
+        </div>        
+        <div class="perfil-container">
+            <a href="/perfil.html" aria-label="Perfil do usuário">
+                <img src="icone-perfil.png" >
+            </a>
+        </div>
+    </header>
+
+    <div class="blocos-container">
+        <a class="bloco" href="/assets/html/adote.html">
+            <div class="icone">
+                <img src="icone-adote.png" >
+            </div>
+            <span>Adote</span>
+        </a>
+    
+        <a class="bloco" href="/assets/html/buscar-pet.html">
+            <div class="icone">
+                <img src="icone-buscar-pet.png">
+            </div>
+            <span>Buscar Pet</span>
+        </a>
+    
+        <a class="bloco" href="/assets/html/variedades.html">
+            <div class="icone">
+                <img src="icone-variedades.png">
+            </div>
+            <span>Variedades</span>
+        </a>
+    
+        <a class="bloco" href="/assets/html/companheiro-ideal.html">
+            <div class="icone">
+                <img src="icone-companheiro-ideal.png" >
+            </div>
+            <span>Seu Companheiro</span>
+        </a>
+    </div>
+
+    <div class="carrossel-container">
+        <button class="carrossel-control prev" onclick="changeSlide(-1)" aria-label="Slide Anterior">&#10094;</button>
+        <div class="carrossel">
+            <div class="carrossel-inner">
+                <div class="carrossel-item">
+                    <img src="img1.jpg" alt="Descrição da Imagem 1" loading="lazy">
+                </div>
+                <div class="carrossel-item">
+                    <img src="img2.jpg" alt="Descrição da Imagem 2" loading="lazy">
+                </div>
+                <div class="carrossel-item">
+                    <img src="img3.jpg" alt="Descrição da Imagem 3" loading="lazy">
+                </div>
+            </div>
+        </div>
+        <button class="carrossel-control next" onclick="changeSlide(1)" aria-label="Próximo Slide">&#10095;</button>
+    </div>
+    
+    
+    
+    <script src="/assets/js/home.js"></script>
 </body>
 </html>

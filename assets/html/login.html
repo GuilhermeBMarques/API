@@ -14,9 +14,9 @@
     <div class="container">
         <header class="crieConta">
             <h2>Crie sua conta</h2>
-            <h1><span style="color: #3498db;">Pet</span>Amigo</h1>
+            <h1><span style="color: #ff6600 ">Pet</span>Amigo</h1>
         </header>
-
+        
         <main> <!-- Formulario Usuario -->
             <form>
                 <div class="dados">
@@ -31,7 +31,7 @@
 
 
                 <div>
-                    <a href="/assets/html/loginCerto.html" class="btn">Criar Conta</a>
+                    <a href="/assets/html/loginCerto.html" class="btn">Entar</a>
                 </div>
                 <nav>
                     <br>
@@ -52,6 +52,24 @@
 
         </main>
     </div>
+
+    <script>
+        function togglePasswordVisibility() {
+            var passwordField = document.getElementById('password');
+            var toggleIcon = document.getElementById('toggle-icon');
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                toggleIcon.src = '/assets/img/eye-open.png';
+
+            } else {
+                passwordField.type = 'password';
+                toggleIcon.src = '/assets/img/eye-closed.png';
+            }
+        }
+    </script>
+</body>
+
+</html>
 
     <script>
         function togglePasswordVisibility() {

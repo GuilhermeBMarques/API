@@ -6,7 +6,7 @@
 }
 
 body {
-    background: linear-gradient(135deg, #3498db 0%, #103d48  100%);
+   background:#3498db ;
     color: #333;
 }
 
@@ -18,8 +18,10 @@ body {
   
   .crieConta h1 {
     font-size: 50px;
+    color: white;
   }
   
   .crieConta h2 {
     font-size: 30px;
+    color: white;
   }
