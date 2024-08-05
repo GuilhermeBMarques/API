@@ -60,9 +60,9 @@ form {
   display: block;
   margin: 15px auto;
   transition: all 0.3s;
-  border: 2px solid #3498db;
+  border: 2px solid #7f2bed;
   background-color: #ffffff;
-  color: #3498db;
+  color: #7f2bed;
   border-radius: 5px;
 }
 
@@ -76,7 +76,7 @@ form {
 
 .btn:hover,
 .btnVoltar:hover {
-  background: linear-gradient(135deg, #3498db 0%, #103d48 100%);
+  background: #7f2bed;
   color: white;
   transform: scale(1.05);
 }
@@ -88,7 +88,7 @@ nav ul li {
 
 
 .termos {
-  color: #3498db;
+  color: #7f2bed;
   font-size: 16px;
   text-align: center;
   display: block;

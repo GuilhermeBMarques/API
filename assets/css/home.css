@@ -15,7 +15,7 @@ body {
 
 h1 {
     margin: 0;
-    color: #ff6600; /* Cor do texto do título */
+    color: #db7434; 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -75,8 +75,6 @@ a {
     font-weight: bold;
 }
 
-
-/* Estilos do Cabeçalho */
 .header {
     display: flex;
     align-items: center;
@@ -99,7 +97,7 @@ a {
     width: 40px; 
     height: 40px; 
     border-radius: 50%;
-    background-color: #ff6600;
+    background-color: #db7434;
     display: flex;
     align-items: center;
     justify-content: center;
