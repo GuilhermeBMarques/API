@@ -8,30 +8,31 @@ function listCachorros() {
             cachorroList.innerHTML = '';
             data.forEach(cachorro => {
                 const li = document.createElement('li');
-                const createImg = document.createElement('img');
+                const createImg = document.createElement('img');        
+                const nameEl = document.createElement('h2');
+                const racaEl = document.createElement('h5');
+                const generoEl = document.createElement('p');
+                const idadeEl = document.createElement('p');
+                const localizacaoEl = document.createElement('h4');
+                const infoDiv = document.createElement('div');
+                infoDiv.classList.add('info');
+
                 createImg.src = cachorro.link;
                 li.appendChild(createImg);
                 
-                const infoDiv = document.createElement('div');
-                infoDiv.classList.add('info');
-                
-                const nameEl = document.createElement('h2');
+                         
                 nameEl.textContent = cachorro.nome;
                 infoDiv.appendChild(nameEl);
-                
-                const racaEl = document.createElement('p');
+                               
                 racaEl.textContent = cachorro.raca;
                 infoDiv.appendChild(racaEl);
-                
-                const generoEl = document.createElement('p');
+                               
                 generoEl.textContent = cachorro.genero;
                 infoDiv.appendChild(generoEl);
                 
-                const idadeEl = document.createElement('p');
                 idadeEl.textContent = cachorro.idade;
                 infoDiv.appendChild(idadeEl);
                 
-                const localizacaoEl = document.createElement('p');
                 localizacaoEl.classList.add('location');
                 localizacaoEl.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
   <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
