@@ -5,6 +5,10 @@ body {
     align-items: center;
   }
   
+  .hidden {
+    display: none;
+}
+  
   .container {
       overflow-y: auto;
       width: 100%; 
