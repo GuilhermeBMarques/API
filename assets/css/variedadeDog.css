@@ -31,13 +31,14 @@ body {
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
     display: flex;
+    background-color: white;
 }
 
 .cachorro-list li img {
-    border-radius: 15px; 
-    height: 174px;
-    margin-right: 20px;
     width: 174px;
+    height: 174px;
+    border-radius: 15px; 
+    margin-right: 20px;  
 }
 
 .cachorro-list li .info {
@@ -66,6 +67,35 @@ body {
     margin-right: 5px;
 }
 
+/*
+.cachorro-list li {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    width: 35%;
+    background-color: white;
+}
+
+
+
+.cachorro-list li .info {
+    display: flex;
+    flex-direction: column;
+    padding: 17px 0px;
+}
+
+.cachorro-list li .info .location {
+    align-items: center;
+    display: flex;
+    margin-top: 10px;
+}
+
+.cachorro-list li .info .location svg {
+    margin-right: 5px;
+}
+
+
+/*
 .navbar {
     align-items: center;
     background-color: black;
@@ -87,3 +117,43 @@ body {
     font-size: 27px;
     padding: 5px;
 }
+
+
+
+@media (max-width: 550px) {
+    .cachorro-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 20px;
+    }
+    
+    .cachorro-list li {
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+        display: flex;
+    }
+    
+    .cachorro-list li img {
+        border-radius: 15px; 
+        height: 174px;
+        margin-right: 20px;
+        width: 80%;
+    }
+    
+    .cachorro-list li .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .cachorro-list li .info .location {
+        align-items: center;
+        display: flex;
+        margin-top: 10px;
+    }
+    
+    .cachorro-list li .info .location svg {
+        margin-right: 5px;
+    }
+  }
