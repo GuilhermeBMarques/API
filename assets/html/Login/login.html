@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
-  <!-- Contêiner de Login -->
+    
+    <!-- Contêiner de Login -->
 <div id="loginContainer" class="loginContainer">
     <header class="crieConta">
         <h2>Entre na sua conta</h2>
@@ -17,14 +18,16 @@
     </header>
     <form id="loginForm">
         <div class="dados">
-            <label for="loginNome"><i class="bi bi-person-fill"></i></label>
-            <input type="text" id="loginNome" name="usuario_nome" required placeholder="Nome de Usuário">
+            <label for="loginEmail"><i class="bi bi-person-fill"></i></label>
+            <input type="text" id="loginEmail" name="usuario_nome" required placeholder="Email de Usuário">
         </div>
         <div class="dados">
             <label for="loginSenha"><i class="bi bi-lock-fill"></i></label>
             <input type="password" id="loginSenha" name="usuario_senha" required placeholder="Senha">
         </div>
         <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-lg">Entrar</button> 
+        <br>
+        <p>Ou</p>
         <br>
         <button type="button" id="showRegister" class="w-full bg-gray-500 text-white py-2 rounded-lg mt-4">Não possui uma conta? Cadastre-se</button>
         <div id="loginResponse" class="mt-4"></div>
@@ -51,9 +54,11 @@
             <input type="password" id="registerSenha" name="usuario_senha" required placeholder="Senha">
         </div>
         <button type="submit" class="w-full bg-green-500 text-white py-2 rounded-lg">Registrar</button>
+        <br>
+        <button id="showLogin" class="w-full bg-gray-500 text-white py-2 rounded-lg mt-4">Voltar para Login</button>
     </form>
     <div id="registerResponse" class="mt-4"></div>
-    <button id="showLogin" class="w-full bg-gray-500 text-white py-2 rounded-lg mt-4">Voltar para Login</button>
+    
 </div>
 
 <script>
@@ -71,7 +76,7 @@
     // Submissão do formulário de login
     document.getElementById('loginForm').addEventListener('submit', async function(event) {
         event.preventDefault(); // Previne o comportamento padrão do formulário
-        const username = document.getElementById('loginNome').value;
+        const username = document.getElementById('loginEmail').value;
         const password = document.getElementById('loginSenha').value;
 
         // Envia os dados do login para o servidor
@@ -112,5 +117,4 @@
     });
 </script>
 </body>
-
 </html>
