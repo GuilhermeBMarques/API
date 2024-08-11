@@ -10,7 +10,7 @@
 </head>
 <body>
     
-    <!-- Contêiner de Login -->
+    <!-- Container de Login -->
 <div id="loginContainer" class="loginContainer">
     <header class="crieConta">
         <h2>Entre na sua conta</h2>
@@ -25,7 +25,6 @@
         <label for="loginSenha"><i class="bi bi-lock-fill"></i></label>
         <input type="password" id="loginSenha" name="senha_usuario" required placeholder="Senha">
     </div>
-    <!-- Botão de envio com nome "loginForm" -->
     <button type="submit" name="loginForm" class="w-full bg-blue-500 text-white py-2 rounded-lg">Entrar</button> 
         <br>
         <p>Ou</p>
@@ -35,7 +34,7 @@
     </form>
 </div>
 
-<!-- Contêiner de Registro -->
+<!-- Container de Registro -->
 <div id="registerContainer" class="registerContainer hidden">
     <header class="crieConta">
         <h2>Crie sua conta</h2>

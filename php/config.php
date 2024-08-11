@@ -4,7 +4,6 @@
     $dbUsername = "root";
     $dbPassword = "SEGRED0s";
     $dbName = "formulario-usuario";
-
     
     $conexao = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
     
