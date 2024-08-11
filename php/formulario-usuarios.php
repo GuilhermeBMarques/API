@@ -1,5 +1,5 @@
 <?php
-include_once('config.php');
+include_once __DIR__ . '/config.php';
 
 if (isset($_POST['submit'])) {
     $nome_usuario = $_POST['nome_usuario'];
@@ -13,7 +13,6 @@ if (isset($_POST['submit'])) {
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        // Email já está em uso
         echo "Email já está em uso!";
     } else {
         // Insere o novo usuário
@@ -31,4 +30,32 @@ if (isset($_POST['submit'])) {
     }
     $stmt->close();
 } 
+
+if (isset($_POST['loginForm'])) {
+    $email_usuario = $_POST['email_usuario'];
+    $senha_usuario = $_POST['senha_usuario'];
+
+       // Verifica se o email já existe
+       $stmt = $conexao->prepare("SELECT * FROM usuarios WHERE email_usuarios=?");
+       $stmt->bind_param("s", $email_usuario);
+       $stmt->execute();
+       $result = $stmt->get_result();
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    var_dump($row);
+    if (password_verify($senha_usuario, $row['senha_usuarios'])) {
+        session_start();
+        $_SESSION['email_usuario'] = $row['email_usuarios'];
+        header("Location: /API/assets/html/Login/loginCerto.html");
+        exit();
+    } else {
+        echo "Senha incorreta!";
+    }
+} else {
+    echo "Usuário não encontrado!";
+}
+
+    $stmt->close();
+}
 ?>
