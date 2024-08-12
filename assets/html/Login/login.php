@@ -26,6 +26,7 @@
         <input type="password" id="loginSenha" name="senha_usuario" required placeholder="Senha">
     </div>
     <button type="submit" name="loginForm" class="w-full bg-blue-500 text-white py-2 rounded-lg">Entrar</button> 
+        <a href="/API/assets/html/Login/recuperarSenha.html" class="link">Esqueceu a senha?</a>
         <br>
         <p>Ou</p>
         <br>
@@ -46,12 +47,12 @@
             <input type="text" id="registerNome" name="nome_usuario" required placeholder="Nome de Usuário">
         </div>
         <div class="dados">
-            <label for="registerSenha"><i class="bi bi-lock-fill"></i></label>
-            <input type="password" id="registerSenha" name="senha_usuario" required placeholder="Senha">
-        </div>
-        <div class="dados">
             <label for="registerEmail"><i class="bi bi-envelope-fill"></i></label>
             <input type="email" id="registerEmail" name="email_usuario" required placeholder="Email">
+        </div>
+        <div class="dados">
+            <label for="registerSenha"><i class="bi bi-lock-fill"></i></label>
+            <input type="password" id="registerSenha" name="senha_usuario" required placeholder="Senha">
         </div>
         <button type="submit" name="submit" class="w-full bg-green-500 text-white py-2 rounded-lg">Registrar</button>
         <br>
