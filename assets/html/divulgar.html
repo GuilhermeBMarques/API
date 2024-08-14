@@ -6,8 +6,6 @@
     <title>Divulgue seu Animal</title>
     <link rel="stylesheet" href="/assets/css/reset.css">
     <link rel="stylesheet" href="/assets/css/divulgar.css">
-    <style>
-    </style>
 </head>
 <body>
 
@@ -42,7 +40,7 @@
     <div class="dados">
         <label for="registerSecundarias">Fotos secundárias:</label>
         <br>
-        <input type="file" id="registerSecundarias" name="arquivos_secundarios" multiple>
+        <input type="file" id="registerSecundarias" name="arquivos_secundarios[]" multiple>
         <div class="galeria" id="gallery"></div>
     </div>
 
@@ -53,7 +51,6 @@
             <option value="cachorro">Cachorro</option>
             <option value="gato">Gato</option>
             <option value="coelho">Coelho</option>
-            <!-- Adicione outras opções conforme necessário -->
         </select>
     </div>
 
@@ -103,34 +100,35 @@
     </div>
 
     <div class="dados">
-    <select id="registerEstado" name="estado_animal" required>
-        <option>Todos os Estados</option>
-                    <option >AC</option>
-                    <option >AL</option>
-                    <option >AP</option>
-                    <option >AM</option>
-                    <option >BA</option>
-                    <option >CE</option>
-                    <option >ES</option>
-                    <option >GO</option>
-                    <option >MA</option>
-                    <option >MT</option>
-                    <option >MS</option>
-                    <option >MG</option>
-                    <option >PA</option>
-                    <option >PB</option>
-                    <option >PR</option>
-                    <option >PE</option>
-                    <option >PI</option>
-                    <option >RJ</option>
-                    <option >RN</option>
-                    <option >RS</option>
-                    <option >RO</option>
-                    <option >RR</option>
-                    <option >SC</option>
-                    <option >SP</option>
-                    <option >SE</option>
-                    <option >TO</option>
+        <label for="registerEstado">Estado:</label>
+        <select id="registerEstado" name="estado_animal" required>
+            <option value="">Todos os Estados</option>
+            <option value="AC">AC</option>
+            <option value="AL">AL</option>
+            <option value="AP">AP</option>
+            <option value="AM">AM</option>
+            <option value="BA">BA</option>
+            <option value="CE">CE</option>
+            <option value="ES">ES</option>
+            <option value="GO">GO</option>
+            <option value="MA">MA</option>
+            <option value="MT">MT</option>
+            <option value="MS">MS</option>
+            <option value="MG">MG</option>
+            <option value="PA">PA</option>
+            <option value="PB">PB</option>
+            <option value="PR">PR</option>
+            <option value="PE">PE</option>
+            <option value="PI">PI</option>
+            <option value="RJ">RJ</option>
+            <option value="RN">RN</option>
+            <option value="RS">RS</option>
+            <option value="RO">RO</option>
+            <option value="RR">RR</option>
+            <option value="SC">SC</option>
+            <option value="SP">SP</option>
+            <option value="SE">SE</option>
+            <option value="TO">TO</option>
         </select>
     </div>
 
@@ -139,13 +137,13 @@
         <input type="text" id="registerCidade" name="cidade_animal" required placeholder="Cidade do animal">
     </div>
 
-    <button type="submit" name="registerAnimal" class="w-full bg-blue-500 text-white py-2 rounded-lg">Enviar</button> 
+    <button type="submit" name="submit" class="w-full bg-blue-500 text-white py-2 rounded-lg">Enviar</button> 
 </form>
 
 <script>
     document.getElementById('registerArquivo').addEventListener('change', function(event) {
         const gallery = document.getElementById('galeria');
-        gallery.innerHTML = ''; // Limpa a galeria antes de adicionar a nova imagem
+        gallery.innerHTML = ''; 
         const file = event.target.files[0];
         const reader = new FileReader();
 
@@ -160,7 +158,7 @@
 
     document.getElementById('registerSecundarias').addEventListener('change', function(event) {
         const gallery = document.getElementById('gallery');
-        gallery.innerHTML = ''; // Limpa a galeria antes de adicionar novas imagens
+        gallery.innerHTML = '';
         const files = event.target.files;
 
         for (let i = 0; i < files.length; i++) {
