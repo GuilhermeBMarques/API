@@ -1,0 +1,15 @@
+.galeria img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin: 5px;
+}
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#registerDescricao {
+    width: 80%;
+    height: 200px;
+}
