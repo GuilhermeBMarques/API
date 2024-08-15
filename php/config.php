@@ -3,7 +3,7 @@
     $dbHost = "localhost";
     $dbUsername = "root";
     $dbPassword = "rr8rZaDDCiulwrQ";
-    $dbName = "formulario-usuario";
+    $dbName = "db_dados";
     
     $conexao = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
     
