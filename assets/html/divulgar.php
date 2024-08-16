@@ -84,17 +84,6 @@
     </div>
 
     <div class="dados">
-        <label for="registerCaracteristicas">Características do animal:</label>
-        <select id="registerCaracteristicas" name="caracteristicas_animal" required>
-            <option value="">Selecione as características</option>
-            <option value="agressivo">Agressivo</option>
-            <option value="calmo">Calmo</option>
-            <option value="carente">Carente</option>
-            <option value="castrado">Castrado</option>
-        </select>
-    </div>
-
-    <div class="dados">
         <label for="registerDescricao">Descrição do animal:</label>
         <textarea id="registerDescricao" name="descricao_animal" required placeholder="Descrição do animal"></textarea>
     </div>
