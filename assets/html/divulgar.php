@@ -31,16 +31,16 @@
     </div>
 
     <div class="dados">
-        <label for="registerArquivo">Foto Principal:</label>
+        <label for="arquivo_principal">Foto Principal:</label>
         <br>
-        <input type="file" id="registerArquivo" name="arquivo_principal">
+        <input type="file" id="arquivo_principal" name="arquivo_principal">
         <div class="galeria" id="galeria"></div>
     </div>
 
     <div class="dados">
-        <label for="registerSecundarias">Fotos secundárias:</label>
+        <label for="arquivos_secundario">Fotos secundárias:</label>
         <br>
-        <input type="file" id="registerSecundarias" name="arquivos_secundarios[]" multiple>
+        <input type="file" id="arquivos_secundario" name="arquivos_secundario" multiple>
         <div class="galeria" id="gallery"></div>
     </div>
 
@@ -130,7 +130,7 @@
 </form>
 
 <script>
-    document.getElementById('registerArquivo').addEventListener('change', function(event) {
+    document.getElementById('arquivo_principal').addEventListener('change', function(event) {
         const gallery = document.getElementById('galeria');
         gallery.innerHTML = ''; 
         const file = event.target.files[0];
@@ -145,7 +145,7 @@
         reader.readAsDataURL(file);
     });
 
-    document.getElementById('registerSecundarias').addEventListener('change', function(event) {
+    document.getElementById('arquivos_secundario').addEventListener('change', function(event) {
         const gallery = document.getElementById('gallery');
         gallery.innerHTML = '';
         const files = event.target.files;
