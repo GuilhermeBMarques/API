@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Divulgue seu Animal</title>
-    <link rel="stylesheet" href="/assets/css/reset.css">
-    <link rel="stylesheet" href="/assets/css/divulgar.css">
+    <link rel="stylesheet" href="/API/assets/css/reset.css">
+    <link rel="stylesheet" href="/API/assets/css/divulgar.css">
 </head>
 <body>
 
@@ -158,7 +158,6 @@
 
     document.getElementById('registerSecundarias').addEventListener('change', function(event) {
         const gallery = document.getElementById('gallery');
-        gallery.innerHTML = '';
         const files = event.target.files;
 
         for (let i = 0; i < files.length; i++) {
@@ -174,6 +173,7 @@
             reader.readAsDataURL(file);
         }
     });
+
 </script>
 </body>
 </html>
