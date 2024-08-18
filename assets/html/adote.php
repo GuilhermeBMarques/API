@@ -60,7 +60,6 @@ $result = $conexao->query($sql);
         <div class="search-container">
             <h1>Encontre seu novo melhor amigo(a)</h1>
             <form method="GET" action="adote.php">
-                <div class="filters">
                 <select name="estado">
                         <option value="">Todos os Estados</option>
                         <option value="AC" <?php echo isset($_GET['estado']) && $_GET['estado'] == 'AC' ? 'selected' : ''; ?>>AC</option>
@@ -89,7 +88,7 @@ $result = $conexao->query($sql);
                         <option value="SP" <?php echo isset($_GET['estado']) && $_GET['estado'] == 'SP' ? 'selected' : ''; ?>>SP</option>
                         <option value="SE" <?php echo isset($_GET['estado']) && $_GET['estado'] == 'SE' ? 'selected' : ''; ?>>SE</option>
                         <option value="TO" <?php echo isset($_GET['estado']) && $_GET['estado'] == 'TO' ? 'selected' : ''; ?>>TO</option>
-                    </select>
+                        </select>
 
                     <select name="especie">
                         <option value="">Todas as espécies</option>
@@ -123,7 +122,7 @@ $result = $conexao->query($sql);
                     <button type="submit">Filtrar</button>
                   <a href="adote.php">Limpar</a>
                   </div>
-                </div>
+           
             </form>
         </div>
     </section>
