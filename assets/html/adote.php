@@ -1,3 +1,12 @@
+<?php
+session_start();
+include_once __DIR__ . '/../../php/config.php';
+
+// Consulta para buscar todos os animais cadastrados
+$sql = "SELECT * FROM animal";
+$result = $conexao->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +32,7 @@
         <div class="search-container">
             <h1>Encontre seu novo melhor amigo(a)</h1>
             <div class="filters">
-                <select id="state">
+                <select>
                     <option>Todos os Estados</option>
                     <option >AC</option>
                     <option >AL</option>
@@ -53,32 +62,28 @@
                     <option >TO</option>
                 </select>
 
-                <select id="state">
+                <select>
                     <option >Todas as espécie</option>
                     <option >Gato</option>
                     <option >Pássaro</option>
                     <option >Roedores</option>
                     <option >Cachorro</option>
                 </select> 
-
-            </div>
-            <div class="show-all">
-                <div class="filters">               
-                     
-                    <select id="state">
+    
+                    <select>
                         <option >Todos os tamanhos</option>
                         <option >Porte Grande</option>
                         <option >Porte Médio</option>
                         <option >Porte Pequeno</option>
                     </select>  
 
-                    <select id="state">
+                    <select>
                         <option >Todas os sexo</option>
                         <option >Macho</option>
                         <option >Fêmea</option>
                     </select>  
 
-                    <select id="state">
+                    <select>
                         <option >Todas as idades </option>
                         <option >Filhote</option>
                         <option >Adulto</option>
@@ -88,6 +93,27 @@
                 </div>
                 
             </div>
+            
+    </section>
+
+    <section class="animal-list">
+        <?php if ($result->num_rows > 0): ?>
+            <?php while ($animal = $result->fetch_assoc()): ?>
+                <div class="animal-card">
+                    <img src="<?php echo htmlspecialchars($animal['arquivo_principais']); ?>">
+                    <h2><?php echo htmlspecialchars($animal['nome_animais']); ?></h2>
+                    <p><strong>Espécie:</strong> <?php echo htmlspecialchars($animal['especie_animais']); ?></p>
+                    <p><strong>Sexo:</strong> <?php echo htmlspecialchars($animal['sexo_animais']); ?></p>
+                    <p><strong>Faixa Etária:</strong> <?php echo htmlspecialchars($animal['faixaEtaria_animais']); ?></p>
+                    <p><strong>Porte:</strong> <?php echo htmlspecialchars($animal['porte_animais']); ?></p>
+                    <p><strong>Localização:</strong> <?php echo htmlspecialchars($animal['cidade_animais']); ?></p>
+                    <p><strong>Estado:</strong> <?php echo htmlspecialchars($animal['estado_animais']); ?></p>
+                    
+                </div>
+            <?php endwhile; ?>
+        <?php else: ?>
+            <p>Nenhum animal encontrado.</p>
+        <?php endif; ?>
     </section>
 
     <script src="script.js"></script>

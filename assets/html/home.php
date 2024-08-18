@@ -8,7 +8,7 @@ include_once __DIR__ . '/../../php/config.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pet Shop</title>
+    <title>Pet Adote</title>
     <link rel="stylesheet" href="/API/assets/css/reset.css">
     <link rel="stylesheet" href="/API/assets/css/home.css">
 </head>
@@ -27,12 +27,11 @@ include_once __DIR__ . '/../../php/config.php';
     <section class="hero">
         <div class="hero-content">
             <h1>Bem-vindo</h1>
-            <button>Criar conta</button>
         </div>
     </section>
 
     <section class="categories">
-        <a href="/API/assets/html/adote.html" class="category">
+        <a href="/API/assets/html/adote.php" class="category">
             <span class="icon">👍</span> Quero Adotar um Pet
         </a>
 
