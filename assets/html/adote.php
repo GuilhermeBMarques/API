@@ -2,7 +2,6 @@
 session_start();
 include_once __DIR__ . '/../../php/config.php';
 
-// Consulta para buscar todos os animais cadastrados
 $sql = "SELECT * FROM animal";
 $result = $conexao->query($sql);
 ?>
@@ -78,7 +77,7 @@ $result = $conexao->query($sql);
                     </select>  
 
                     <select>
-                        <option >Todas os sexo</option>
+                        <option >Todos os sexo</option>
                         <option >Macho</option>
                         <option >Fêmea</option>
                     </select>  
@@ -89,11 +88,7 @@ $result = $conexao->query($sql);
                         <option >Adulto</option>
                         <option >Senior</option>
                     </select>  
-
-                </div>
-                
             </div>
-            
     </section>
 
     <section class="animal-list">
