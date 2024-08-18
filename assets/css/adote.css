@@ -7,13 +7,17 @@ body {
   box-sizing: border-box;
 }
 
+a {
+  font-size: 133px;
+}
+
 /* Header Styles */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #fff;
+  background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -115,4 +119,26 @@ section {
       padding: 10px;
       font-size: 14px;
   }
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 2px solid #7f2bed;
+  background-color: #ffffff;
+  color: #7f2bed;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background-color: #7f2bed;
+  color: white;
+  transform: scale(1.05);
+}
+
+
+a {
+  color: whitesmoke;
 }

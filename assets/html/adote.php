@@ -2,7 +2,36 @@
 session_start();
 include_once __DIR__ . '/../../php/config.php';
 
-$sql = "SELECT * FROM animal";
+// Inicializa a consulta SQL
+$sql = "SELECT * FROM animal WHERE 1=1";
+
+// Verifica se os filtros foram aplicados e adiciona
+if (isset($_GET['estado']) && $_GET['estado'] !== '') {
+    $estado = $conexao->real_escape_string($_GET['estado']);
+    $sql .= " AND estado_animais = '$estado'";
+}
+
+if (isset($_GET['especie']) && $_GET['especie'] !== '') {
+    $especie = $conexao->real_escape_string($_GET['especie']);
+    $sql .= " AND especie_animais = '$especie'";
+}
+
+if (isset($_GET['porte']) && $_GET['porte'] !== '') {
+    $porte = $conexao->real_escape_string($_GET['porte']);
+    $sql .= " AND porte_animais = '$porte'";
+}
+
+if (isset($_GET['sexo']) && $_GET['sexo'] !== '') {
+    $sexo = $conexao->real_escape_string($_GET['sexo']);
+    $sql .= " AND sexo_animais = '$sexo'";
+}
+
+if (isset($_GET['faixaEtaria']) && $_GET['faixaEtaria'] !== '') {
+    $faixaEtaria = $conexao->real_escape_string($_GET['faixaEtaria']);
+    $sql .= " AND faixaEtaria_animais = '$faixaEtaria'";
+}
+
+// Executa a consulta
 $result = $conexao->query($sql);
 ?>
 
@@ -30,65 +59,73 @@ $result = $conexao->query($sql);
     <section>
         <div class="search-container">
             <h1>Encontre seu novo melhor amigo(a)</h1>
-            <div class="filters">
-                <select>
-                    <option>Todos os Estados</option>
-                    <option >AC</option>
-                    <option >AL</option>
-                    <option >AP</option>
-                    <option >AM</option>
-                    <option >BA</option>
-                    <option >CE</option>
-                    <option >ES</option>
-                    <option >GO</option>
-                    <option >MA</option>
-                    <option >MT</option>
-                    <option >MS</option>
-                    <option >MG</option>
-                    <option >PA</option>
-                    <option >PB</option>
-                    <option >PR</option>
-                    <option >PE</option>
-                    <option >PI</option>
-                    <option >RJ</option>
-                    <option >RN</option>
-                    <option >RS</option>
-                    <option >RO</option>
-                    <option >RR</option>
-                    <option >SC</option>
-                    <option >SP</option>
-                    <option >SE</option>
-                    <option >TO</option>
-                </select>
+            <form method="GET" action="adote.php">
+                <div class="filters">
+                <select name="estado">
+                        <option value="">Todos os Estados</option>
+                        <option value="AC" <?php echo isset($_GET['estado']) && $_GET['estado'] == 'AC' ? 'selected' : ''; ?>>AC</option>
+                        <option value="AL" <?php echo isset($_GET['estado']) && $_GET['estado'] == 'AL' ? 'selected' : ''; ?>>AL</option>
+                        <option value="AP" <?php echo isset($_GET['estado']) && $_GET['estado'] == 'AP' ? 'selected' : ''; ?>>AP</option>
+                        <option value="AM" <?php echo isset($_GET['estado']) && $_GET['estado'] == 'AM' ? 'selected' : ''; ?>>AM</option>
+                        <option value="BA" <?php echo isset($_GET['estado']) && $_GET['estado'] == 'BA' ? 'selected' : ''; ?>>BA</option>
+                        <option value="CE" <?php echo isset($_GET['estado']) && $_GET['estado'] == 'CE' ? 'selected' : ''; ?>>CE</option>
+                        <option value="ES" <?php echo isset($_GET['estado']) && $_GET['estado'] == 'ES' ? 'selected' : ''; ?>>ES</option>
+                        <option value="GO" <?php echo isset($_GET['estado']) && $_GET['estado'] == 'GO' ? 'selected' : ''; ?>>GO</option>
+                        <option value="MA" <?php echo isset($_GET['estado']) && $_GET['estado'] == 'MA' ? 'selected' : ''; ?>>MA</option>
+                        <option value="MT" <?php echo isset($_GET['estado']) && $_GET['estado'] == 'MT' ? 'selected' : ''; ?>>MT</option>
+                        <option value="MS" <?php echo isset($_GET['estado']) && $_GET['estado'] == 'MS' ? 'selected' : ''; ?>>MS</option>
+                        <option value="MG" <?php echo isset($_GET['estado']) && $_GET['estado'] == 'MG' ? 'selected' : ''; ?>>MG</option>
+                        <option value="PA" <?php echo isset($_GET['estado']) && $_GET['estado'] == 'PA' ? 'selected' : ''; ?>>PA</option>
+                        <option value="PB" <?php echo isset($_GET['estado']) && $_GET['estado'] == 'PB' ? 'selected' : ''; ?>>PB</option>
+                        <option value="PR" <?php echo isset($_GET['estado']) && $_GET['estado'] == 'PR' ? 'selected' : ''; ?>>PR</option>
+                        <option value="PE" <?php echo isset($_GET['estado']) && $_GET['estado'] == 'PE' ? 'selected' : ''; ?>>PE</option>
+                        <option value="PI" <?php echo isset($_GET['estado']) && $_GET['estado'] == 'PI' ? 'selected' : ''; ?>>PI</option>
+                        <option value="RJ" <?php echo isset($_GET['estado']) && $_GET['estado'] == 'RJ' ? 'selected' : ''; ?>>RJ</option>
+                        <option value="RN" <?php echo isset($_GET['estado']) && $_GET['estado'] == 'RN' ? 'selected' : ''; ?>>RN</option>
+                        <option value="RS" <?php echo isset($_GET['estado']) && $_GET['estado'] == 'RS' ? 'selected' : ''; ?>>RS</option>
+                        <option value="RO" <?php echo isset($_GET['estado']) && $_GET['estado'] == 'RO' ? 'selected' : ''; ?>>RO</option>
+                        <option value="RR" <?php echo isset($_GET['estado']) && $_GET['estado'] == 'RR' ? 'selected' : ''; ?>>RR</option>
+                        <option value="SC" <?php echo isset($_GET['estado']) && $_GET['estado'] == 'SC' ? 'selected' : ''; ?>>SC</option>
+                        <option value="SP" <?php echo isset($_GET['estado']) && $_GET['estado'] == 'SP' ? 'selected' : ''; ?>>SP</option>
+                        <option value="SE" <?php echo isset($_GET['estado']) && $_GET['estado'] == 'SE' ? 'selected' : ''; ?>>SE</option>
+                        <option value="TO" <?php echo isset($_GET['estado']) && $_GET['estado'] == 'TO' ? 'selected' : ''; ?>>TO</option>
+                    </select>
 
-                <select>
-                    <option >Todas as espécie</option>
-                    <option >Gato</option>
-                    <option >Pássaro</option>
-                    <option >Roedores</option>
-                    <option >Cachorro</option>
-                </select> 
+                    <select name="especie">
+                        <option value="">Todas as espécies</option>
+                        <option value="Gato" <?php echo isset($_GET['especie']) && $_GET['especie'] == 'Gato' ? 'selected' : ''; ?>>Gato</option>
+                        <option value="Pássaro" <?php echo isset($_GET['especie']) && $_GET['especie'] == 'Pássaro' ? 'selected' : ''; ?>>Pássaro</option>
+                        <option value="Roedores" <?php echo isset($_GET['especie']) && $_GET['especie'] == 'Roedores' ? 'selected' : ''; ?>>Roedores</option>
+                        <option value="Cachorro" <?php echo isset($_GET['especie']) && $_GET['especie'] == 'Cachorro' ? 'selected' : ''; ?>>Cachorro</option>
+                    </select> 
     
-                    <select>
-                        <option >Todos os tamanhos</option>
-                        <option >Porte Grande</option>
-                        <option >Porte Médio</option>
-                        <option >Porte Pequeno</option>
+                    <select name="porte">
+                        <option value="">Todos os tamanhos</option>
+                        <option value="Grande" <?php echo isset($_GET['porte']) && $_GET['porte'] == 'Grande' ? 'selected' : ''; ?>>Porte Grande</option>
+                        <option value="Médio" <?php echo isset($_GET['porte']) && $_GET['porte'] == 'Médio' ? 'selected' : ''; ?>>Porte Médio</option>
+                        <option value="Pequeno" <?php echo isset($_GET['porte']) && $_GET['porte'] == 'Pequeno' ? 'selected' : ''; ?>>Porte Pequeno</option>
                     </select>  
 
-                    <select>
-                        <option >Todos os sexo</option>
-                        <option >Macho</option>
-                        <option >Fêmea</option>
+                    <select name="sexo">
+                        <option value="">Todos os sexos</option>
+                        <option value="Macho" <?php echo isset($_GET['sexo']) && $_GET['sexo'] == 'Macho' ? 'selected' : ''; ?>>Macho</option>
+                        <option value="Fêmea" <?php echo isset($_GET['sexo']) && $_GET['sexo'] == 'Fêmea' ? 'selected' : ''; ?>>Fêmea</option>
                     </select>  
 
-                    <select>
-                        <option >Todas as idades </option>
-                        <option >Filhote</option>
-                        <option >Adulto</option>
-                        <option >Senior</option>
+                    <select name="faixaEtaria">
+                        <option value="">Todas as idades</option>
+                        <option value="Filhote" <?php echo isset($_GET['faixaEtaria']) && $_GET['faixaEtaria'] == 'Filhote' ? 'selected' : ''; ?>>Filhote</option>
+                        <option value="Adulto" <?php echo isset($_GET['faixaEtaria']) && $_GET['faixaEtaria'] == 'Adulto' ? 'selected' : ''; ?>>Adulto</option>
+                        <option value="Senior" <?php echo isset($_GET['faixaEtaria']) && $_GET['faixaEtaria'] == 'Senior' ? 'selected' : ''; ?>>Senior</option>
                     </select>  
-            </div>
+
+                    <div class="btn">
+                    <button type="submit">Filtrar</button>
+                  <a href="adote.php">Limpar</a>
+                  </div>
+                </div>
+            </form>
+        </div>
     </section>
 
     <section class="animal-list">
@@ -103,7 +140,6 @@ $result = $conexao->query($sql);
                     <p><strong>Porte:</strong> <?php echo htmlspecialchars($animal['porte_animais']); ?></p>
                     <p><strong>Localização:</strong> <?php echo htmlspecialchars($animal['cidade_animais']); ?></p>
                     <p><strong>Estado:</strong> <?php echo htmlspecialchars($animal['estado_animais']); ?></p>
-                    
                 </div>
             <?php endwhile; ?>
         <?php else: ?>
