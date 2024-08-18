@@ -23,15 +23,15 @@ if (isset($_POST['submit'])) {
     }
 
     // Processa arquivos secundários
-    $arquivos_secundario = '';
+    $arquivos_secundarios = '';
     if (isset($_FILES['arquivos_secundarios']) && $_FILES['arquivos_secundarios']['error'][0] == UPLOAD_ERR_OK) {
-        $arquivos_secundario = 'uploads/';
+        $arquivos_secundarios = 'uploads/';
         foreach ($_FILES['arquivos_secundarios']['name'] as $index => $filename) {
-            $file_path = $arquivos_secundario . basename($filename);
+            $file_path = $arquivos_secundarios . basename($filename);
             move_uploaded_file($_FILES['arquivos_secundarios']['tmp_name'][$index], $file_path);
-            $arquivos_secundario .= $filename . ',';
+            $arquivos_secundarios .= $filename . ',';
         }
-        $arquivos_secundario = rtrim($arquivos_secundario, ',');
+        $arquivos_secundarios = rtrim($arquivos_secundarios, ',');
     }
 
     $stmt = $conexao->prepare("INSERT INTO animal (nome_animais, responsavel_animais, gmail_animais, Whatsapp_animais, arquivo_principais, arquivos_secundarios, especie_animais, sexo_animais, faixaEtaria_animais, porte_animais, descricao_animais, estado_animais, cidade_animais) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
