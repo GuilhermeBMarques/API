@@ -6,3 +6,5 @@ function changeSlide(direction) {
     currentSlide = (currentSlide + direction + slides.length) % slides.length;
     slides[currentSlide].classList.add('active');
 }
+
+
