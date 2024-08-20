@@ -13,22 +13,16 @@ include_once __DIR__ . '/../../php/config.php';
     <link rel="stylesheet" href="/API/assets/css/home.css">
 </head>
 <body>
-<header>
-        <nav class="navbar">
-        <a href="home.php"><h1 class="logo" ><span style="color: #db7434 ">Pet</span>Amigo</h1></a>
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Favoritos</a></li>
-                <li><a href="#">Perfil</a></li>
-            </ul>
-          
-        </nav>
-    </header>
+    <nav class="navbar">
+        <a href="home.php"><h1><span style="color: #db7434">Pet</span>Amigo</h1></a>
+        <ul>
+            <li><a href="/API/assets/html/home.php">Home</a></li>
+            <li><a href="#">Favoritos</a></li>
+            <li><a href="/API/assets/html/perfil.php">Perfil</a></li>
+        </ul>
+    </nav>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Bem-vindo</h1>
-        </div>
+    <section class="AD">
     </section>
 
     <section class="categories">
