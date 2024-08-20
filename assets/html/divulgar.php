@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<form id="registerAnimal" action="/API/php/formulario-animal.php" method="POST" enctype="multipart/form-data">
+<form id="registerAnimal" action="/API/php/animal.php" method="POST" enctype="multipart/form-data">
     <div class="dados">
         <label for="registerNome">Nome do animal:</label>
         <input type="text" id="registerNome" name="nome_animal" required placeholder="Nome do animal">
