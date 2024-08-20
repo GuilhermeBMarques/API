@@ -25,12 +25,12 @@ include_once __DIR__ . '/../../php/config.php';
     <section class="AD">
     </section>
 
-    <section class="categories">
-        <a href="/API/assets/html/adote.php" class="category">
+    <section class="botoes">
+        <a href="/API/assets/html/adote.php" class="btn">
             <span class="icon">👍</span> Quero Adotar um Pet
         </a>
 
-        <a href="/API/assets/html/divulgar.php" class="category">
+        <a href="/API/assets/html/divulgar.php" class="btn">
             <span class="icon">📣</span> Quero Divulgar um Pet
         </a>
     </section>
