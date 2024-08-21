@@ -40,16 +40,26 @@ $result = $conexao->query($sql);
     <link rel="stylesheet" href="/API/assets/css/adotar.css">
 </head>
 <body>
-    <header>
-        <h1 class="logo"><span style="color: #db7434">Pet</span>Amigo</h1>
-        <nav>
-            <ul>
-                <li><a href="/API/assets/html/home.php">Home</a></li>
-                <li><a href="/API/assets/html/buscarPet.html">Pet perdido</a></li>
-                <li><a href="#">Perfil</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Navegação Desktop -->
+    <nav class="navbarDesk">
+        <a href="home.php"><h1><span style="color: #db7434">Pet</span>Amigo</h1></a>
+        <ul>
+            <li><a href="/API/assets/html/home.php">Home</a></li>
+            <li><a href="#">Favoritos</a></li>
+            <li><a href="#">Sobre Nós</a></li>
+            <li><a href="/API/assets/html/perfil.php">Perfil</a></li>
+        </ul>
+    </nav>
+
+     <!-- Navegação Mobile -->
+    <nav class="navbarMoba">
+        <ul>
+            <li><a href="/API/assets/html/home.php"><i class="bi bi-house-fill"></i></a></li>
+            <li><a href="#"><i class="bi bi-heart-fill"></i></a></li>
+            <li><a href="#"><i class="bi bi-info-circle-fill"></i></a></li>
+            <li><a href="/API/assets/html/perfil.php"><i class="bi bi-person-fill"></i></a></li>
+        </ul>
+    </nav>
 
     <section>
         <div>
