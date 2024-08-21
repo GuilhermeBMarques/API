@@ -1,15 +1,121 @@
-.galeria img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    margin: 5px;
-}
-.galeria {
-    display: flex;
-    flex-wrap: wrap;
+/* reset.css - Presumido que você tenha um reset básico */
+
+/* divulga.css */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(/API/assets/img/aa.jpg);
+    margin: 0;
+    padding: 0;
 }
 
-#registerDescricao {
-    width: 80%;
-    height: 200px;
+h1{
+    text-align: center;
+    margin-bottom: 1vh;
+}
+
+#img-pata{
+    width: 120px;
+    height: auto;
+
+}
+
+#coracao{
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 18px;
+    border: 8px solid rgb(238, 150, 18);
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+}
+
+.dados {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="file"],
+textarea,
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="file"] {
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 30px 55px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    justify-content: center;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.galeria,
+.gallery {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.galeria img,
+.gallery img {
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+input[type="file"]#arquivo_principal {
+    margin-bottom: 10px;
+}
+
+input[type="file"]#arquivos_secundario {
+    margin-bottom: 10px;
+}
+
+input[type="file"]:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .dados {
+        margin-bottom: 10px;
+    }
+
+    button {
+        width: 100%;
+    }
 }

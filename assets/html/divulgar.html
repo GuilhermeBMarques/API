@@ -9,7 +9,14 @@
 </head>
 <body>
 
+    
+
 <form id="registerAnimal" action="/API/php/animal.php" method="POST" enctype="multipart/form-data">
+
+    <h1>Formulario para adicionar animal </h1>
+    <div id="coracao">
+    <img id="img-pata"  src="/API/assets/img/pawprint.png" alt="">
+    </div>    
     <div class="dados">
         <label for="registerNome">Nome do animal:</label>
         <input type="text" id="registerNome" name="nome_animal" required placeholder="Nome do animal">
@@ -126,7 +133,9 @@
         <input type="text" id="registerCidade" name="cidade_animal" required placeholder="Cidade do animal">
     </div>
 
-    <button type="submit" name="submit" class="w-full bg-blue-500 text-white py-2 rounded-lg">Enviar</button> 
+    
+    <button type="submit" name="submit">Enviar</button> 
+
 </form>
 
 <script>
