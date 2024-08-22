@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 session_start();
 include_once __DIR__ . '/../../php/config.php';
 
@@ -32,7 +32,7 @@ if (isset($_GET['faixaEtaria']) && $_GET['faixaEtaria'] !== '') {
 
 // Executa a consulta
 $result = $conexao->query($sql);
-?>
+?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -68,7 +68,7 @@ $result = $conexao->query($sql);
 
     <section>
         <div>
-            <h1>Encontre seu novo melhor amigo(a)</h1>
+            <h1 id="titulo" >Encontre seu novo amigo</h1>
             <form method="GET" action="adote.php">
 
             <select name="estado">
@@ -141,8 +141,8 @@ $result = $conexao->query($sql);
         </section>
 
     <div class="animal-list">
-        <?php if ($result->num_rows > 0): ?>
-            <?php while ($animal = $result->fetch_assoc()): ?>
+        <!-- <?php if ($result->num_rows > 0): ?>
+            <?php while ($animal = $result->fetch_assoc()): ?> -->
                 <div class="animal-card">
                     <img src="<?php echo htmlspecialchars($animal['arquivo_principais']); ?>">
                     <h2><?php echo htmlspecialchars($animal['nome_animais']); ?></h2>
@@ -154,7 +154,6 @@ $result = $conexao->query($sql);
                 </div>
             <?php endwhile; ?>
         <?php else: ?>
-            <p>Nenhum animal encontrado.</p>
         <?php endif; ?>
     </div>
 
