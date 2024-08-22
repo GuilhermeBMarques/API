@@ -1,10 +1,14 @@
-let currentSlide = 0;
-const slides = document.querySelectorAll('.carousel-item');
+var cont = 1;
+document.getElementById('radio1').checked = true;
 
-function changeSlide(direction) {
-    slides[currentSlide].classList.remove('active');
-    currentSlide = (currentSlide + direction + slides.length) % slides.length;
-    slides[currentSlide].classList.add('active');
+setInterval(() => {
+    proximaImg();
+}, 5000);
+
+function proximaImg() {
+    cont++;
+    if (cont > 4) { 
+        cont = 1;
+    }
+    document.getElementById('radio' + cont).checked = true;
 }
-
-

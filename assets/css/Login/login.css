@@ -44,6 +44,7 @@ form {
   display: flex;
   flex-direction: column;
   margin-top: 10vh;
+  border: 2px solid #000000;
 }
 
 .dados {
@@ -75,9 +76,9 @@ form {
 button {
   background-color: #ffffff;
   border: none;
-  color: #7f2bed;
+  color: #f8ae4e;
   padding: 10px 20px;
-  border: 2px solid #7f2bed;
+  border: 2px solid #f8ae4e;
   cursor: pointer;
   width: 60%;
   transition: all 0.3s;
@@ -88,13 +89,13 @@ button {
 }
 
 button:hover {
-  background: #7f2bed;
+  background: #f8ae4e;
   color: white;
   transform: scale(1.05);
 }
 
 .link {
-  color: #7f2bed;
+  color: #f8ae4e;
   text-decoration: none;
 }
 
