@@ -99,7 +99,7 @@ $result = $conexao->query($sql);
         <p>Quero Adotar um Pet</p>
     </a>
 
-    <a href="/API/assets/html/divulgar.php" class="btn">
+    <a href="/API/assets/html/divulgar.html" class="btn">
     <h1>🐶</h1>
         <h3>Divulgar Pet</h3>
         <p>Quero Divulgar um Pet</p>
@@ -148,7 +148,7 @@ $result = $conexao->query($sql);
         <?php if ($result->num_rows > 0): ?>
             <?php while ($animal = $result->fetch_assoc()): ?>
                 <div class="animal-card">
-                    <img src="<?php echo htmlspecialchars($animal['arquivo_principais']); ?>">
+                    <img src="<?php echo htmlspecialchars($animal['arquivo_principal_animais']); ?>">
                     <h2><?php echo htmlspecialchars($animal['nome_animais']); ?></h2>
                     <p><strong>Espécie:</strong> <?php echo htmlspecialchars($animal['especie_animais']); ?></p>
                     <p><strong>Sexo:</strong> <?php echo htmlspecialchars($animal['sexo_animais']); ?></p>

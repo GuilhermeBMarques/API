@@ -61,14 +61,14 @@
         <label for="arquivo_principal">Foto Principal:</label>
         <br>
         <input type="file" id="arquivo_principal" name="arquivo_principal">
-        <div class="galeria" id="galeria"></div>
+        <div class="galeria" id="galeria1"></div>
     </div>
 
     <div class="dados">
-        <label for="arquivos_secundario">Fotos secundárias:</label>
+        <label for="arquivo_secundario">Fotos secundárias:</label>
         <br>
-        <input type="file" id="arquivos_secundario" name="arquivos_secundario" multiple>
-        <div class="galeria" id="gallery"></div>
+        <input type="file" id="arquivo_secundario" name="arquivo_secundario" multiple>
+        <div class="galeria" id="galeria2"></div>
     </div>
 
     <div class="dados">
@@ -160,22 +160,22 @@
 
 <script>
     document.getElementById('arquivo_principal').addEventListener('change', function(event) {
-        const gallery = document.getElementById('galeria');
-        gallery.innerHTML = ''; 
+        const galeria = document.getElementById('galeria1');
+        galeria.innerHTML = ''; 
         const file = event.target.files[0];
         const reader = new FileReader();
 
         reader.onload = function(e) {
             const img = document.createElement('img');
             img.src = e.target.result;
-            gallery.appendChild(img);
+            galeria.appendChild(img);
         }
 
         reader.readAsDataURL(file);
     });
 
-    document.getElementById('arquivos_secundario').addEventListener('change', function(event) {
-        const gallery = document.getElementById('gallery');
+    document.getElementById('arquivo_secundario').addEventListener('change', function(event) {
+        const galeria = document.getElementById('galeria2');
         const files = event.target.files;
 
         for (let i = 0; i < files.length; i++) {
@@ -185,7 +185,7 @@
             reader.onload = function(e) {
                 const img = document.createElement('img');
                 img.src = e.target.result;
-                gallery.appendChild(img);
+                galeria.appendChild(img);
             }
 
             reader.readAsDataURL(file);
