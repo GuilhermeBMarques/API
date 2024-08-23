@@ -162,7 +162,7 @@
     transform: translateY(-5px);
 }
 
-@media (max-width: 545px) {
+@media (max-width: 653px) {
     .botoes {
         flex-wrap: wrap;
     }
