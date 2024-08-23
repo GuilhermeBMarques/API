@@ -8,16 +8,19 @@ if (isset($_POST['submit'])) {
     $senha_usuario = password_hash($_POST['senha_usuario'], PASSWORD_DEFAULT); 
     $email_usuario = $_POST['email_usuario'];
 
+    // Prepara a consulta para verificar se o email já está em uso
     $stmt = $conexao->prepare("SELECT * FROM usuarios WHERE email_usuarios=?");
     $stmt->bind_param("s", $email_usuario);
     $stmt->execute();
     $result = $stmt->get_result();
 
-    // Verifica se o email já está em uso ou não
+    // Verifica se o email já está cadastrado
     if ($result->num_rows > 0) {
+        // Se já estiver, da erro
         header("Location: /API/assets/html/Login/loginErro.html");
         exit(); 
     } else {
+         // Se não estiver, prepara a consulta para inserir um novo usuário no banco de dados
         $stmt = $conexao->prepare("INSERT INTO usuarios (nome_usuarios, senha_usuarios, email_usuarios) VALUES (?, ?, ?)");
         $stmt->bind_param("sss", $nome_usuario, $senha_usuario, $email_usuario);
         if ($stmt->execute()) {
