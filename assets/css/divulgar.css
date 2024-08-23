@@ -1,8 +1,8 @@
 body {
     font-family: Arial, sans-serif;
-    background-image: url(/API/assets/img/aa.jpg);
     margin: 0;
     padding: 0;
+    background-image: url("/API/assets/img/body.jpg");
 }
 
 #letreiro {
