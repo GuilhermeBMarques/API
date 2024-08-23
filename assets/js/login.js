@@ -22,6 +22,6 @@ registerContainer.addEventListener("submit", function (event) {
 });
 
 const validateEmail = (email) => {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+    const regex = /^[^\s]+@[^\s]+\.[^\s]+$/; 
     return regex.test(email);
 };
