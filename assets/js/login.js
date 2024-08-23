@@ -18,6 +18,7 @@ registerContainer.addEventListener("submit", function (event) {
 
     if (!isValid) {
         event.preventDefault(); 
+        alert("Por favor, insira um endereço de email válido.");
     }
 });
 

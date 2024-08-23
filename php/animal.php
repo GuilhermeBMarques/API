@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
 
     // Diretórios para salvar os uploads
     $upload_dir = __DIR__ . 'uploads/';  // Caminho do diretório de uploads no servidor
-    $upload_url = '/php/uploads/';       // URL do diretório de uploads
+    $upload_url = '/API/php/uploads/';       // URL do diretório de uploads
 
     // Processa o arquivo principal
     $arquivo_principal_animal = ''; 

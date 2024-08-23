@@ -6,6 +6,7 @@
     <title>Divulgue seu Animal</title>
     <link rel="stylesheet" href="/API/assets/css/reset.css">
     <link rel="stylesheet" href="/API/assets/css/divulgar.css">
+    <script src="/API/assets/js/divulgar.js" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
@@ -30,6 +31,8 @@
             <li><a href="/API/assets/html/perfil.php"><i class="bi bi-person-fill"></i></a></li>
         </ul>
     </nav>
+
+    <div id="registerContainer" class="registerContainer hidden">
 
 <form id="registerAnimal" action="/API/php/animal.php" method="POST" enctype="multipart/form-data">
 
@@ -157,41 +160,7 @@
     <button type="submit" name="submit">Enviar</button> 
 
 </form>
+</div>
 
-<script>
-    document.getElementById('arquivo_principal').addEventListener('change', function(event) {
-        const galeria = document.getElementById('galeria1');
-        galeria.innerHTML = ''; 
-        const file = event.target.files[0];
-        const reader = new FileReader();
-
-        reader.onload = function(e) {
-            const img = document.createElement('img');
-            img.src = e.target.result;
-            galeria.appendChild(img);
-        }
-
-        reader.readAsDataURL(file);
-    });
-
-    document.getElementById('arquivo_secundario').addEventListener('change', function(event) {
-        const galeria = document.getElementById('galeria2');
-        const files = event.target.files;
-
-        for (let i = 0; i < files.length; i++) {
-            const file = files[i];
-            const reader = new FileReader();
-
-            reader.onload = function(e) {
-                const img = document.createElement('img');
-                img.src = e.target.result;
-                galeria.appendChild(img);
-            }
-
-            reader.readAsDataURL(file);
-        }
-    });
-
-</script>
 </body>
 </html>
