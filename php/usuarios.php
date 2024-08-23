@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
         header("Location: /API/assets/html/Login/loginErro.html");
         exit(); 
     } else {
-         // Se não estiver, prepara a consulta para inserir um novo usuário no banco de dados
+         // Se não estiver, insere um novo usuário no banco de dados
         $stmt = $conexao->prepare("INSERT INTO usuarios (nome_usuarios, senha_usuarios, email_usuarios) VALUES (?, ?, ?)");
         $stmt->bind_param("sss", $nome_usuario, $senha_usuario, $email_usuario);
         if ($stmt->execute()) {
