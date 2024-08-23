@@ -2,7 +2,7 @@
 session_start(); 
 include_once __DIR__ . '/config.php';
 
-// Verifica se o formulário de registro foi submetido
+// Verifica se o formulário foi submetido
 if (isset($_POST['submit'])) {
     $nome_usuario = $_POST['nome_usuario'];
     $senha_usuario = password_hash($_POST['senha_usuario'], PASSWORD_DEFAULT); 

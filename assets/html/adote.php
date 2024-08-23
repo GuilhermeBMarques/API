@@ -14,17 +14,14 @@ if (isset($_GET['especie']) && $_GET['especie'] !== '') {
     $especie = $conexao->real_escape_string($_GET['especie']);
     $sql .= " AND especie_animais = '$especie'";
 }
-
 if (isset($_GET['porte']) && $_GET['porte'] !== '') {
     $porte = $conexao->real_escape_string($_GET['porte']);
     $sql .= " AND porte_animais = '$porte'";
 }
-
 if (isset($_GET['sexo']) && $_GET['sexo'] !== '') {
     $sexo = $conexao->real_escape_string($_GET['sexo']);
     $sql .= " AND sexo_animais = '$sexo'";
 }
-
 if (isset($_GET['faixaEtaria']) && $_GET['faixaEtaria'] !== '') {
     $faixaEtaria = $conexao->real_escape_string($_GET['faixaEtaria']);
     $sql .= " AND faixaEtaria_animais = '$faixaEtaria'";
@@ -35,7 +32,7 @@ $result = $conexao->query($sql);
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,7 +53,7 @@ $result = $conexao->query($sql);
         </ul>
     </nav>
 
-     <!-- Navegação Mobile -->
+    <!-- Navegação Mobile -->
     <nav class="navbarMoba">
         <ul>
             <li><a href="/API/assets/html/home.php"><i class="bi bi-house-fill"></i></a></li>
@@ -137,14 +134,14 @@ $result = $conexao->query($sql);
                   </div>
            
             </form>
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <div class="animal-list">
+    <div class="animal-list">
         <?php if ($result && $result->num_rows > 0): ?>
             <?php while ($animal = $result->fetch_assoc()): ?>
                 <div class="animal-card">
-                <img src="<?php echo htmlspecialchars($animal['arquivo_principal_animais']); ?>">
+                <img src="<?php echo $upload_url . htmlspecialchars($animal['arquivo_principal_animais']); ?>" alt="Imagem do animal">
                     <h2><?php echo htmlspecialchars($animal['nome_animais']); ?></h2>
                     <p><strong>Espécie:</strong> <?php echo htmlspecialchars($animal['especie_animais']); ?></p>
                     <p><strong>Sexo:</strong> <?php echo htmlspecialchars($animal['sexo_animais']); ?></p>
@@ -158,6 +155,6 @@ $result = $conexao->query($sql);
         <?php endif; ?>
     </div>
 
-    <script src="script.js"></script>
+    <script src="/API/assets/js/script.js"></script>
 </body>
 </html>
