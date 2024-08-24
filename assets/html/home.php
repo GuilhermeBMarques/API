@@ -144,11 +144,11 @@ $result = $conexao->query($sql);
     </a>
 </section>
 
-    <div class="animal-list">
-        <?php if ($result->num_rows > 0): ?>
+<div class="animal-list">
+        <?php if ($result && $result->num_rows > 0): ?>
             <?php while ($animal = $result->fetch_assoc()): ?>
                 <div class="animal-card">
-                    <img src="<?php echo htmlspecialchars($animal['arquivo_principal_animais']); ?>">
+                <img src="<?php echo htmlspecialchars($animal['arquivo_principal_animais']); ?>" alt="Imagem do animal">
                     <h2><?php echo htmlspecialchars($animal['nome_animais']); ?></h2>
                     <p><strong>Espécie:</strong> <?php echo htmlspecialchars($animal['especie_animais']); ?></p>
                     <p><strong>Sexo:</strong> <?php echo htmlspecialchars($animal['sexo_animais']); ?></p>

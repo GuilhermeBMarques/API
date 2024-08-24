@@ -17,8 +17,8 @@ if (isset($_POST['submit'])) {
     $cidade_animal = $_POST['cidade_animal'];
 
     // Diretórios para salvar os uploads
-    $upload_dir = __DIR__ . 'uploads/';  // Caminho do diretório de uploads no servidor
-    $upload_url = '/API/php/uploads/';       // URL do diretório de uploads
+    $upload_dir = __DIR__ . '/uploads/';  
+    $upload_url = '/API/php/uploads/';       
 
     // Processa o arquivo principal
     $arquivo_principal_animal = ''; 

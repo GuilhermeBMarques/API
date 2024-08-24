@@ -142,7 +142,6 @@ $result = $conexao->query($sql);
             <?php while ($animal = $result->fetch_assoc()): ?>
                 <div class="animal-card">
                 <img src="<?php echo htmlspecialchars($animal['arquivo_principal_animais']); ?>" alt="Imagem do animal">
-                <?php echo '<p>' . htmlspecialchars($animal['arquivo_principal_animais']) . '</p>'; ?>
                     <h2><?php echo htmlspecialchars($animal['nome_animais']); ?></h2>
                     <p><strong>Espécie:</strong> <?php echo htmlspecialchars($animal['especie_animais']); ?></p>
                     <p><strong>Sexo:</strong> <?php echo htmlspecialchars($animal['sexo_animais']); ?></p>

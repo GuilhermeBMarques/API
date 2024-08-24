@@ -63,6 +63,13 @@ select {
     box-sizing: border-box;
 }
 
+input:hover,
+select:hover,
+textarea:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
 input[type="file"] {
     padding: 0;
 }
