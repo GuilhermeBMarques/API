@@ -64,7 +64,7 @@ $result = $conexao->query($sql);
     </nav>
 
     <section>
-        <div>
+        <div id="encontre">
             <h1>Encontre seu novo melhor amigo(a)</h1>
             <form method="GET" action="adote.php">
 
