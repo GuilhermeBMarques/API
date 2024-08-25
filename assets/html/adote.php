@@ -42,12 +42,12 @@ $result = $conexao->query($sql);
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
+    
     <!-- Navegação Desktop -->
     <nav class="navbarDesk">
         <a href="home.php"><h1><span style="color: #db7434">Pet</span>Amigo</h1></a>
         <ul>
             <li><a href="/API/assets/html/home.php">Home</a></li>
-            <li><a href="#">Favoritos</a></li>
             <li><a href="#">Sobre Nós</a></li>
             <li><a href="/API/assets/html/perfil.php">Perfil</a></li>
         </ul>
@@ -57,7 +57,6 @@ $result = $conexao->query($sql);
     <nav class="navbarMoba">
         <ul>
             <li><a href="/API/assets/html/home.php"><i class="bi bi-house-fill"></i></a></li>
-            <li><a href="#"><i class="bi bi-heart-fill"></i></a></li>
             <li><a href="#"><i class="bi bi-info-circle-fill"></i></a></li>
             <li><a href="/API/assets/html/perfil.php"><i class="bi bi-person-fill"></i></a></li>
         </ul>
