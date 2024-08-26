@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Pet </title>
+    <link rel="stylesheet" href="/API/assets/css/reset.css">
+    <link rel="stylesheet" href="/API/assets/css/PerfilPet.css">
+</head>
+<body>
+    <nav class="navbarDesk">
+        <a href="home.php"><h1><span style="color: #db7434">Pet</span>Amigo</h1></a>
+        <ul>
+            <li><a href="/API/assets/html/home.php">Home</a></li>
+            <li><a href="/API/assets/html/sobre.php">Sobre Nós</a></li>
+            <li><a href="/API/assets/html/perfil.php">Perfil</a></li>
+        </ul>
+    </nav>
+
+    <!-- Navegação Mobile -->
+    <nav class="navbarMoba">
+        <ul>
+            <li><a href="/API/assets/html/home.php"><i class="bi bi-house-fill"></i></a></li>
+            <li><a href="#"><i class="bi bi-info-circle-fill"></i></a></li>
+            <li><a href="/API/assets/html/perfil.php"><i class="bi bi-person-fill"></i></a></li>
+        </ul>
+    </nav>
+    
+    <div class="animal-list">
+        <?php if ($result && $result->num_rows > 0): ?>
+            <?php while ($animal = $result->fetch_assoc()): ?>
+                <div class="perfilPet">
+                <img src="<?php echo htmlspecialchars($animal['arquivo_principal_animais']); ?>" alt="Imagem do animal">
+                    <h2><?php echo htmlspecialchars($animal['nome_animais']); ?></h2>
+                    <p><strong>Espécie:</strong> <?php echo htmlspecialchars($animal['especie_animais']); ?></p>
+                    <p><strong>Sexo:</strong> <?php echo htmlspecialchars($animal['sexo_animais']); ?></p>
+                    <p><strong>Faixa Etária:</strong> <?php echo htmlspecialchars($animal['faixaEtaria_animais']); ?></p>
+                    <p><strong>Porte:</strong> <?php echo htmlspecialchars($animal['porte_animais']); ?></p>
+                    <p><strong>Estado:</strong> <?php echo htmlspecialchars($animal['estado_animais']); ?></p>
+                </div>
+            <?php endwhile; ?>
+        <?php else: ?>
+            <p>Nenhum animal encontrado.</p>
+        <?php endif; ?>
+    </div>
+
+</body>
+</html>

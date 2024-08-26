@@ -19,8 +19,11 @@ body {
 
 .crieConta {
   padding: 30px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
   color: white;
+  background-color: rgba(255, 255, 255, 1.0);
+  border-radius: 30px;
+  padding: 15px;
 }
 
 .crieConta h1 {

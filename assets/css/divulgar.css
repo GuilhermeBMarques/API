@@ -124,12 +124,23 @@ input[type="file"]:hover {
     cursor: pointer;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 300px) {
     .dados {
         margin-bottom: 10px;
     }
 
     button {
         width: 100%;
+    }
+
+    #letreiro{
+        font-size: 18px;
+    }
+
+    #img-pata{
+        width: 90px;
+        height: auto;
+        margin-bottom: 20px;
+    
     }
 }
