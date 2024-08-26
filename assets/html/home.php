@@ -32,7 +32,7 @@ $result = $conexao->query($sql);
         <a href="home.php"><h1><span style="color: #db7434">Pet</span>Amigo</h1></a>
         <ul>
             <li><a href="/API/assets/html/home.php">Home</a></li>
-            <li><a href="#">Sobre Nós</a></li>
+            <li><a href="/API/assets/html/sobre.php">Sobre Nós</a></li>
             <li><a href="/API/assets/html/perfil.php">Perfil</a></li>
         </ul>
     </nav>
