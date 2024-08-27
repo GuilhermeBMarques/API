@@ -1,32 +1,39 @@
 <?php
 session_start();
 include_once __DIR__ . '/../../php/config.php';
+include_once __DIR__ . '/../../php/verifique.php';
 
-// Verifica se o usuário está logado
-if (!isset($_SESSION['email_usuario'])) {
-    header("Location: /API/assets/html/Login/loginErro.html");
-    exit();
+if (!empty($_GET['id_usuario'])) {
+    $id_usuario = intval($_GET['id_usuario']); // Converte para inteiro para evitar SQL Injection
+
+    // Prepara a consulta SELECT para verificar se o usuário existe
+    $sqlSelect = "SELECT * FROM usuarios WHERE id_usuarios=?";
+    $stmt = $conexao->prepare($sqlSelect);
+    $stmt->bind_param("i", $id_usuario);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        // Prepara a consulta DELETE para remover o usuário
+        $sqlDelete = "DELETE FROM usuarios WHERE id_usuarios=?";
+        $stmtDelete = $conexao->prepare($sqlDelete);
+        $stmtDelete->bind_param("i", $id_usuario);
+        $stmtDelete->execute();
+
+        if ($stmtDelete->affected_rows > 0) {
+            header("Location: /API/assets/html/Login/login.html");
+            exit(); 
+        } else {
+            echo "Erro ao deletar o usuário.";
+        }
+        $stmtDelete->close();
+    } else {
+        echo "Usuário não encontrado.";
+    }
+    $stmt->close();
 }
+$conexao->close();
 
-// Recupera o email do usuário da sessão
-$email_usuario = $_SESSION['email_usuario'];
-
-// Prepara a consulta para recuperar informações do usuário
-$stmt = $conexao->prepare("SELECT nome_usuarios, email_usuarios FROM usuarios WHERE email_usuarios=?");
-$stmt->bind_param("s", $email_usuario);
-$stmt->execute();
-$result = $stmt->get_result();
-
-// Verifica se o usuário foi encontrado
-if ($result->num_rows > 0) {
-    $user = $result->fetch_assoc();
-    $nome_usuario = htmlspecialchars($user['nome_usuarios']);
-    $email_usuario = htmlspecialchars($user['email_usuarios']);
-} else {
-    header("Location: /API/assets/html/Login/loginErro.html");
-    exit();
-}
-$stmt->close();
 
 ?>
 
@@ -71,6 +78,7 @@ $stmt->close();
         <div class="perfil-list">
             <ul>
                 <li>
+                <p><strong>Nome:</strong> <?php echo $nome_usuario; ?></p>
                     <p><strong>Email:</strong> <?php echo $email_usuario; ?></p>
                 </li>
             </ul>
@@ -79,7 +87,10 @@ $stmt->close();
         <button type="button" id="showForm" class="w-full bg-gray-500 text-white py-2 rounded-lg mt-4">Redefinir Usuario</button>
         <a href="/API/assets/html/Login/login.html" class="btn">Sair</a>
 
-        <button id="deleteUsuario" class="w-full bg-red-500 text-white py-2 rounded-lg"> Deletar Conta </button> <!-- Botão para deletar a conta -->
+        <a class='btn btn-sm btn-danger' href="perfil.php?id_usuario=<?php echo htmlspecialchars($id_usuarios); ?>">
+    <i class="bi bi-trash3-fill"></i>
+</a>
+
     </div>
 
     <div id="updateContainer" class="updateContainer hidden">

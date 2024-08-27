@@ -1,12 +1,7 @@
 <?php
 session_start();
 include_once __DIR__ . '/../../php/config.php'; 
-
-// Verifica se o usuário está logado
-if (!isset($_SESSION['email_usuario'])) {
-    header("Location: /API/assets/html/Login/loginErro.html");
-    exit();
-}
+include_once __DIR__ . '/../../php/verifique.php';
 
 // Consulta para contar os animais por espécie
 $query = "SELECT especie_animais, COUNT(*) as total FROM animal GROUP BY especie_animais";

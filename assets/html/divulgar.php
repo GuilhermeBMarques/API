@@ -1,12 +1,7 @@
 <?php
 session_start();
 include_once __DIR__ . '/../../php/config.php';
-
-// Verifica se o usuário está logado
-if (!isset($_SESSION['email_usuario'])) {
-    header("Location: /API/assets/html/Login/loginErro.html");
-    exit();
-}
+include_once __DIR__ . '/../../php/verifique.php';
 ?>
 
 <!DOCTYPE html>
