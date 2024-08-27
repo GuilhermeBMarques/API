@@ -27,6 +27,16 @@ if (isset($_GET['faixaEtaria']) && $_GET['faixaEtaria'] !== '') {
     $sql .= " AND faixaEtaria_animais = '$faixaEtaria'";
 }
 
+// Verifica se há uma busca e ajusta a SQL
+if (!empty($_GET['search'])) {
+    $data = $conexao->real_escape_string($_GET['search']);
+    $sql = "SELECT * FROM animal WHERE nome_animais LIKE '%$data%' OR especie_animais LIKE '%$data%' OR sexo_animais LIKE '%$data%' OR faixaEtaria_animais LIKE '%$data%' OR porte_animais LIKE '%$data%' OR estado_animais LIKE '%$data%' OR cidade_animais LIKE '%$data%' ORDER BY id_animal DESC";
+}
+else
+{
+
+}
+
 // Executa a consulta
 $result = $conexao->query($sql);
 ?>
@@ -39,6 +49,7 @@ $result = $conexao->query($sql);
     <title>PetAmigo</title>
     <link rel="stylesheet" href="/API/assets/css/reset.css">
     <link rel="stylesheet" href="/API/assets/css/adote.css">
+    <script src="/API/assets/js/adote.js" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
@@ -64,7 +75,7 @@ $result = $conexao->query($sql);
 
     <section>
         <div id="encontre">
-            <h1>Encontre seu novo melhor amigo(a)</h1>
+            <h1 id="titulo">Encontre seu novo melhor amigo(a)</h1>
             <form method="GET" action="adote.php">
 
             <select name="estado">
@@ -131,8 +142,16 @@ $result = $conexao->query($sql);
                     <button type="submit" class="btn">Filtrar</button>
                   <a href="adote.php" class="btn">Limpar</a>
                   </div>
+
+                  <div class="box-search">
+                    <input type="search" class="btn-pesquisa" placeholder="Pesquisar" id="pesquisar">
+                    <button onclick="searchData()" class="btn">
+                    <i class="bi bi-search"></i>
+                    </button>
+                  </div>
            
             </form>
+       
         </div>
     </section>
 

@@ -70,7 +70,8 @@ select:focus {
   outline: none;
 }
 
-.btn {
+.btn,
+.btn-pesquisa {
   padding: 12px 25px;
   border-radius: 8px;
   border: 2px solid rgb(247, 157, 41);
@@ -88,6 +89,12 @@ select:focus {
   background-color: rgb(247, 157, 41);
   color: white;
   transform: scale(1.05);
+}
+
+.box-search {
+  display: flex;
+  justify-content: center;
+  gap: .1%;
 }
 
 @media (max-width: 768px) {
