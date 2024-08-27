@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Adiciona um evento de 'keydown' para o campo de pesquisa
     search.addEventListener("keydown", function(event) {
         if (event.key === "Enter") {
-            event.preventDefault(); // Previne o comportamento padrão de submit
+            event.preventDefault(); 
             searchData();
         }
     });
@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Adiciona evento ao botão de pesquisa
     document.querySelector('.box-search button').addEventListener('click', function() {
+        event.preventDefault(); 
         searchData();
     });
 });

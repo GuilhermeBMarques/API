@@ -2,6 +2,12 @@
 session_start();
 include_once __DIR__ . '/../../php/config.php';
 
+// Verifica se o usuário está logado
+if (!isset($_SESSION['email_usuario'])) {
+    header("Location: /API/assets/html/Login/loginErro.html");
+    exit();
+}
+
 // Inicializa a consulta SQL
 $sql = "SELECT * FROM animal WHERE 1=1";
 
@@ -59,7 +65,7 @@ $result = $conexao->query($sql);
         <a href="home.php"><h1><span style="color: #db7434">Pet</span>Amigo</h1></a>
         <ul>
             <li><a href="/API/assets/html/home.php">Home</a></li>
-            <li><a href="#">Sobre Nós</a></li>
+            <li><a href="/API/assets/html/sobre.php">Sobre Nós</a></li>
             <li><a href="/API/assets/html/perfil.php">Perfil</a></li>
         </ul>
     </nav>
@@ -68,7 +74,7 @@ $result = $conexao->query($sql);
     <nav class="navbarMoba">
         <ul>
             <li><a href="/API/assets/html/home.php"><i class="bi bi-house-fill"></i></a></li>
-            <li><a href="#"><i class="bi bi-info-circle-fill"></i></a></li>
+            <li><a href="/API/assets/html/sobre.php"><i class="bi bi-info-circle-fill"></i></a></li>
             <li><a href="/API/assets/html/perfil.php"><i class="bi bi-person-fill"></i></a></li>
         </ul>
     </nav>
