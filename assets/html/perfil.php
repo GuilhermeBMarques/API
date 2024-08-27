@@ -62,7 +62,7 @@ $stmt->close();
         </ul>
     </nav>
 
-    
+
     <div id="img">
         <i class="bi bi-person-circle"></i>
      <!--   <h1><?php echo $nome_usuario; ?></h1> -->
@@ -111,6 +111,9 @@ $stmt->close();
             </div>
             <button id="deleteUsuario">Deletar Conta</button> 
         </div>
+</div>
+
+<a href="/API/assets/html/Login/login.html" class="btn">Sair</a>
 
         <script>
         // Preenche os campos do formulário com os dados do usuário armazenados na sessão
