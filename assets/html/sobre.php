@@ -27,7 +27,7 @@ $conexao->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animais Disponíveis</title>
+    <title>Sobre Nós</title>
     <link rel="stylesheet" href="/API/assets/css/reset.css">
     <link rel="stylesheet" href="/API/assets/css/sobre.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -60,7 +60,7 @@ $conexao->close();
             recente tragédia das enchentes em nosso estado. Sabemos que muitos animais ainda estão perdidos, longe de seus donos, e queremos 
             ajudar a reunir essas famílias. No futuro, planejamos adicionar mais funcionalidades ao site para ampliar ainda mais nossa missão 
             de proteção e cuidado com esses animais.
-
+    <br>
             Nossa missão é utilizar a tecnologia da Internet e os recursos que ela pode gerar para:
             <ul>
                 <li>

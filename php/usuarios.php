@@ -65,14 +65,14 @@ if (isset($_POST['loginForm'])) {
     $stmt->close();
 }
 
-if ($action == 'update') {
-    $nome_usuario = $input['nome_usuario']; // Obtém o nome de usuário do input JSON
-    $senha_usuario = password_hash($input['senha_usuario'], PASSWORD_DEFAULT); // Cria um novo hash da senha
-    $email_usuario = $input['email_usuario']; // Obtém o email_usuario do input JSON
+if(isset($_POST['updateForm'])) {
+    $username = $input['username']; // Obtém o nome de usuário do input JSON
+    $password = password_hash($input['password'], PASSWORD_DEFAULT); // Cria um novo hash da senha
+    $email = $input['email']; // Obtém o email do input JSON
 
     // Atualiza os dados do usuário no banco de dados
-    $stmt = $conn->prepare("UPDATE usuarios SET senha_usuario=?, email_usuario=? WHERE nome_usuario=?");
-    $stmt->bind_param("sss", $senha_usuario, $email_usuario, $nome_usuario);
+    $stmt = $conn->prepare("UPDATE users SET password=?, email=? WHERE username=?");
+    $stmt->bind_param("sss", $password, $email, $username);
     
     // Verifica se a atualização foi bem-sucedida e retorna mensagem correspondente
     if ($stmt->execute()) {
@@ -80,24 +80,24 @@ if ($action == 'update') {
     } else {
         echo json_encode(['success' => false, 'message' => 'Error: ' . $stmt->error]);
     }
-    $stmt->close(); // Fecha a declaração preparada
+    $stmt->close();
 } 
 
 // Ação para deletar um usuário
-if ($action == 'delete') {
+if(isset($_POST['deleteUsuario'])) {
     $nome_usuario = $input['nome_usuario']; // Obtém o nome de usuário do input JSON
 
     // Deleta o usuário do banco de dados
-    $stmt = $conn->prepare("DELETE FROM usuarios WHERE nome_usuario=?");
+    $stmt = $conn->prepare("DELETE FROM users WHERE nome_usuario $nome_usuarios=?");
     $stmt->bind_param("s", $nome_usuario);
     
     // Verifica se a exclusão foi bem-sucedida e retorna mensagem correspondente
     if ($stmt->execute()) {
-            header("Location: /API/assets/html/Login/loginCerto.html");
-            exit(); 
+        header("Location: /API/assets/html/Login/login.html");
+        exit(); 
     } else {
-        echo json_encode(['success' => false, 'message' => 'Error: ' . $stmt->error]);
+        alert("Não foi possivel excluir");
     }
-    $stmt->close(); // Fecha a declaração preparada
+    $stmt->close();
 }
 ?>
