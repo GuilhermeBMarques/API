@@ -1,6 +1,6 @@
 <?php
-session_start(); 
-include_once __DIR__ . '/config.php'; 
+session_start();
+include_once __DIR__ . '/config.php';
 
 // Verifica se o formulário foi submetido
 if (isset($_POST['submit'])) {
@@ -25,21 +25,21 @@ if (isset($_POST['submit'])) {
     }
 
     // Diretórios para salvar os uploads
-    $upload_dir = __DIR__ . '/uploads/';  
-    $upload_url = '/API/php/uploads/';       
+    $upload_dir = __DIR__ . '/uploads/';
+    $upload_url = '/API/php/uploads/';
 
     // Processa o arquivo principal
-    $arquivo_principal_animal = ''; 
+    $arquivo_principal_animal = '';
     if (isset($_FILES['arquivo_principal']) && $_FILES['arquivo_principal']['error'] == UPLOAD_ERR_OK) {
         $nome_arquivo_principal = uniqid() . '_' . basename($_FILES['arquivo_principal']['name']);
         $arquivo_principal_animal = $upload_dir . $nome_arquivo_principal;
         if (move_uploaded_file($_FILES['arquivo_principal']['tmp_name'], $arquivo_principal_animal)) {
-            $arquivo_principal_animal = $upload_url . $nome_arquivo_principal; 
+            $arquivo_principal_animal = $upload_url . $nome_arquivo_principal;
         }
     }
 
     // Processa arquivos secundários
-    $arquivo_secundario_animal = ''; 
+    $arquivo_secundario_animal = '';
     if (isset($_FILES['arquivo_secundario']) && is_array($_FILES['arquivo_secundario']['name'])) {
         foreach ($_FILES['arquivo_secundario']['name'] as $index => $filename) {
             if ($_FILES['arquivo_secundario']['error'][$index] == UPLOAD_ERR_OK) {
@@ -50,7 +50,7 @@ if (isset($_POST['submit'])) {
                 }
             }
         }
-        $arquivo_secundario_animal = rtrim($arquivo_secundario_animal, ','); 
+        $arquivo_secundario_animal = rtrim($arquivo_secundario_animal, ',');
     }
 
     // Prepara e executa a consulta SQL para inserir os dados no banco
@@ -59,12 +59,12 @@ if (isset($_POST['submit'])) {
 
     if ($stmt->execute()) {
         header("Location: /API/assets/html/home.php");
-        exit(); 
+        exit();
     } else {
         header("Location: /API/assets/html/Login/loginErrado.html");
-        exit(); 
+        exit();
     }
     $stmt->close();
-    $conexao->close(); 
+    $conexao->close();
 }
 ?>

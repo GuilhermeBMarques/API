@@ -18,7 +18,7 @@ $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
     $user = $result->fetch_assoc();
-    $id_usuarios = htmlspecialchars($user['id_usuarios']); 
+    $id_usuarios = htmlspecialchars($user['id_usuarios']);
     $nome_usuario = htmlspecialchars($user['nome_usuarios']);
     $email_usuario = htmlspecialchars($user['email_usuarios']);
 } else {

@@ -22,7 +22,7 @@ if (!empty($_GET['id_usuario'])) {
 
         if ($stmtDelete->affected_rows > 0) {
             header("Location: /API/assets/html/Login/login.html");
-            exit(); 
+            exit();
         } else {
             echo "Erro ao deletar o usuário.";
         }
@@ -39,6 +39,7 @@ $conexao->close();
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,11 +49,14 @@ $conexao->close();
     <script src="/API/assets/js/perfil.js" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
+
 <body>
 
     <!-- Navegação Desktop -->
     <nav class="navbarDesk">
-        <a href="home.php"><h1><span style="color: #db7434">Pet</span>Amigo</h1></a>
+        <a href="home.php">
+            <h1><span style="color: #db7434">Pet</span>Amigo</h1>
+        </a>
         <ul>
             <li><a href="/API/assets/html/home.php">Home</a></li>
             <li><a href="/API/assets/html/sobre.php">Sobre Nós</a></li>
@@ -70,26 +74,26 @@ $conexao->close();
     </nav>
 
     <div id="img">
-            <i class="bi bi-person-circle"></i>
-            <h1><?php echo $nome_usuario; ?></h1>
-        </div>
+        <i class="bi bi-person-circle"></i>
+    </div>
 
     <div id="userContainer" class="userContainer">
         <div class="perfil-list">
             <ul>
                 <li>
-                <p><strong>Nome:</strong> <?php echo $nome_usuario; ?></p>
+                    <p><strong>Nome:</strong> <?php echo $nome_usuario; ?></p>
                     <p><strong>Email:</strong> <?php echo $email_usuario; ?></p>
                 </li>
             </ul>
         </div>
 
-        <button type="button" id="showForm" class="w-full bg-gray-500 text-white py-2 rounded-lg mt-4">Redefinir Usuario</button>
+        <button type="button" id="showForm" class="w-full bg-gray-500 text-white py-2 rounded-lg mt-4">Redefinir
+            Usuario</button>
         <a href="/API/assets/html/Login/login.html" class="btn">Sair</a>
 
         <a class='btn btn-sm btn-danger' href="perfil.php?id_usuario=<?php echo htmlspecialchars($id_usuarios); ?>">
-    <i class="bi bi-trash3-fill"></i>
-</a>
+            <i class="bi bi-trash3-fill"></i>
+        </a>
 
     </div>
 
@@ -113,4 +117,5 @@ $conexao->close();
     </div>
 
 </body>
+
 </html>
