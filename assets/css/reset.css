@@ -1,138 +1,137 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Inter", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
 
 body {
-    background-color: white;
-    color: #333;
+  background-color: white;
+  color: #333;
 }
 
 .animal-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 30px;
-  }
-  
-  .animal-card {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    width: 300px;
-    padding: 15px;
-    transition: transform 0.3s;
-    border: 1px solid rgb(7, 7, 7);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; 
-  }
-  
-  .animal-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  .animal-card h2 {
-    font-size: 1.5rem;
-    margin: 10px 0;
-    color: #333;
-    align-self: flex-start;
-  }
-  
-  .animal-card p {
-    font-size: 1rem;
-    color: #555;
-    margin: 5px 0;
-    align-self: flex-start; 
-  }
-  
-  .animal-card:hover {
-    transform: scale(1.03);
-    cursor: pointer;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.animal-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  padding: 15px;
+  transition: transform 0.3s;
+  border: 1px solid rgb(7, 7, 7);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.animal-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.animal-card h2 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  color: #333;
+  align-self: flex-start;
+}
+
+.animal-card p {
+  font-size: 1rem;
+  color: #555;
+  margin: 5px 0;
+  align-self: flex-start;
+}
+
+.animal-card:hover {
+  transform: scale(1.03);
+  cursor: pointer;
+}
 
 .navbarDesk {
-    position: fixed;
-    top: 22px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%; 
-    background-color: rgba(255, 255, 255, 0.9);
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    z-index: 1000;
-    border-radius: 13px;
+  position: fixed;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  z-index: 1000;
+  border-radius: 13px;
 }
 
 .navbarDesk ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+  list-style: none;
+  display: flex;
+  gap: 20px;
 }
 
 .navbarDesk a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
 }
 
 .navbarDesk a:hover {
-    color: #000000;
+  color: #000000;
 }
 
 .navbarMoba {
-    display: none; 
+  display: none;
 }
 
 @media (max-width: 653px) {
-    .navbarDesk {
-        display: none; 
-    }
-    .navbarMoba {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        position: fixed;
-        top: 616px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 60%; 
-        background-color: rgba(255, 255, 255, 0.2);
-        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
-        padding: 10px 20px;
-        border-radius: 13px;
-        z-index: 1000;
-    }
-    
-    .navbarMoba ul {
-        list-style: none;
-        display: flex;
-        width: 100%; 
-        justify-content: space-around; 
-    }
-    
-    .navbarMoba li {
-        font-size: 30px;
-        text-align: center; 
-    }
-    
-    .navbarMoba a {
-        color: #333;
-        font-weight: bold;
-        font-size: 30px;
-        display: block;
-    }
-    
-    .navbarMoba a:hover {
-        color: #000000;
-    }
-    
+  .navbarDesk {
+    display: none;
+  }
+  .navbarMoba {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 616px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 13px;
+    z-index: 1000;
+  }
+
+  .navbarMoba ul {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .navbarMoba li {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .navbarMoba a {
+    color: #333;
+    font-weight: bold;
+    font-size: 30px;
+    display: block;
+  }
+
+  .navbarMoba a:hover {
+    color: #000000;
+  }
 }

@@ -1,53 +1,52 @@
 body {
-    font-family: Arial, sans-serif;
-    background-image: url(/API/assets/img/body.jpg);
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url(/API/assets/img/body.jpg);
+  margin: 0;
+  padding: 0;
 }
 
 #letreiro {
-    font-size: 35px; 
-    color: #000000;
-    padding: 20px; 
-    text-align: center; 
-    border-radius: 10px; 
-    text-transform: uppercase;
-    margin-bottom: 2vh;
+  font-size: 35px;
+  color: #000000;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  text-transform: uppercase;
+  margin-bottom: 2vh;
 }
 
-#img-pata{
-    width: 120px;
-    height: auto;
-
+#img-pata {
+  width: 120px;
+  height: auto;
 }
 
-#coracao{
-    display: flex;
-    justify-content: center;
+#coracao {
+  display: flex;
+  justify-content: center;
 }
 
 form {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: rgba(255, 255, 255);
-    border-radius: 18px;
-    border: 8px solid rgb(238, 150, 18);
-    color: rgb(0, 0, 0);
-    display: flex;
-    flex-direction: column;
-    margin-top: 12vh;
-    font-size: large;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255);
+  border-radius: 18px;
+  border: 8px solid rgb(238, 150, 18);
+  color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  margin-top: 12vh;
+  font-size: large;
 }
 
 .dados {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
 input[type="text"],
@@ -55,92 +54,91 @@ input[type="email"],
 input[type="file"],
 textarea,
 select {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-sizing: border-box;
-    font-size: 1rem;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 1rem;
 }
 
 input:hover,
 select:hover,
 textarea:hover {
-    border-color: #f8ae4e;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
+  border-color: #f8ae4e;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
 input[type="file"] {
-    padding: 0;
+  padding: 0;
 }
 
 textarea {
-    resize: vertical;
-    min-height: 120px;
+  resize: vertical;
+  min-height: 120px;
 }
 
 button {
-    background-color: #007bff;
-    color: #fff;
-    padding:  12px 55px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    justify-content: center;
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 55px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  justify-content: center;
 }
 
 button:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
 .galeria,
 .gallery {
-    margin-top: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .galeria img,
 .gallery img {
-    max-width: 100px;
-    max-height: 100px;
-    object-fit: cover;
-    border-radius: 4px;
-    border: 1px solid #ddd;
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #ddd;
 }
 
 input[type="file"]#arquivo_principal {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 input[type="file"]#arquivos_secundario {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 input[type="file"]:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 @media (max-width: 300px) {
-    .dados {
-        margin-bottom: 10px;
-    }
+  .dados {
+    margin-bottom: 10px;
+  }
 
-    button {
-        width: 100%;
-    }
+  button {
+    width: 100%;
+  }
 
-    #letreiro{
-        font-size: 18px;
-    }
+  #letreiro {
+    font-size: 18px;
+  }
 
-    #img-pata{
-        width: 90px;
-        height: auto;
-        margin-bottom: 20px;
-    
-    }
+  #img-pata {
+    width: 90px;
+    height: auto;
+    margin-bottom: 20px;
+  }
 }

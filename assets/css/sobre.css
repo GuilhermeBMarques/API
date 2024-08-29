@@ -1,175 +1,168 @@
-/* Estilo geral do corpo */
 body {
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #f06d06, #f79d00);
-    color: #333;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(135deg, #f06d06, #f79d00);
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
-/* Container */
 .container {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .container h2 {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
 .container p {
-    font-size: 18px;
-    margin-bottom: 20px;
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 
 .container ul {
-    margin-top: 20px;
-    padding-left: 20px;
+  margin-top: 20px;
+  padding-left: 20px;
 }
 
 .container ul li {
-    font-size: 16px;
-    margin-bottom: 10px;
-    list-style-type: disc;
+  font-size: 16px;
+  margin-bottom: 10px;
+  list-style-type: disc;
 }
 
 .container ul li:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
-/* Título */
 h2 {
-    font-family: 'Arial', sans-serif;
-    font-size: 28px;
-    font-weight: bold;
-    color: #ec7615;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    padding-bottom: 10px;
+  font-family: "Arial", sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: #ec7615;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding-bottom: 10px;
 }
 
-/* Seção de animais */
 .animals {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .animals h2 {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .animals ul {
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  list-style: none;
 }
 
 .animals li {
-    margin: 10px;
-    list-style: none;
+  margin: 10px;
+  list-style: none;
 }
 
 .animal-box {
-    background-color: #b6b4b4;
-    color: #000000;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    width: 200px;
-    height: 120px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
+  background-color: #b6b4b4;
+  color: #000000;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 200px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Nome da espécie */
 .animal {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #ffffff;
 }
 
-/* Contador de animais */
 .count {
-    font-size: 18px;
-    color: #ffffff;
-    margin-top: 5px;
+  font-size: 18px;
+  color: #ffffff;
+  margin-top: 5px;
 }
-
 
 @media (max-width: 1200px) {
-    .container {
-        max-width: 100%;
-        padding: 15px;
-    }
+  .container {
+    max-width: 100%;
+    padding: 15px;
+  }
 
-    .animal-box {
-        width: calc(33.33% - 20px);
-    }
+  .animal-box {
+    width: calc(33.33% - 20px);
+  }
 }
 
 @media (max-width: 800px) {
-    .container {
-        padding: 10px;
-    }
+  .container {
+    padding: 10px;
+  }
 
-    .animal-box {
-        width: calc(50% - 20px);
-    }
+  .animal-box {
+    width: calc(50% - 20px);
+  }
 }
 
 @media (max-width: 500px) {
-    .container {
-        margin: 10px;
-        padding: 10px;
-    }
+  .container {
+    margin: 10px;
+    padding: 10px;
+  }
 
-    .animals {
-        display:flex ;
-       flex-wrap: wrap;
-    }
+  .animals {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-    .animal-box {
-        width: calc(100% - 20px);
-        height: auto;
-        margin-bottom: 20px;
-        padding: 15px;
-    }
+  .animal-box {
+    width: calc(100% - 20px);
+    height: auto;
+    margin-bottom: 20px;
+    padding: 15px;
+  }
 
-    .container h2 {
-        font-size: 22px;
-    }
+  .container h2 {
+    font-size: 22px;
+  }
 
-    .container p {
-        font-size: 16px;
-    }
+  .container p {
+    font-size: 16px;
+  }
 
-    .animal {
-        font-size: 20px;
-    }
+  .animal {
+    font-size: 20px;
+  }
 
-    .count {
-        font-size: 16px;
-    }
+  .count {
+    font-size: 16px;
+  }
 }
