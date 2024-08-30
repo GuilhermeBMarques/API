@@ -97,6 +97,21 @@ select:focus {
   gap: 0.1%;
 }
 
+dialog::backdrop {
+  background-color: rgb(0, 0, 0 / 0.5);
+}
+
+dialog {
+  width: 80%;
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background-color: #fff;
+}
+
 @media (max-width: 768px) {
   section {
     padding: 30px 15px;

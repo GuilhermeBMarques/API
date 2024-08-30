@@ -18,6 +18,9 @@ body {
   margin-top: 30px;
 }
 
+.animal-card a {
+  text-decoration: none;
+}
 .animal-card {
   background-color: #ffffff;
   border-radius: 10px;

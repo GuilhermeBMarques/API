@@ -142,17 +142,20 @@ $result = $conexao->query($sql);
         </a>
     </section>
 
-    <div class="animal-list">
+    <div class="animal-list" id="animal-list">
         <?php if ($result && $result->num_rows > 0): ?>
             <?php while ($animal = $result->fetch_assoc()): ?>
                 <div class="animal-card">
-                    <img src="<?php echo htmlspecialchars($animal['arquivo_principal_animais']); ?>" alt="Imagem do animal">
-                    <h2><?php echo htmlspecialchars($animal['nome_animais']); ?></h2>
-                    <p><strong>Espécie:</strong> <?php echo htmlspecialchars($animal['especie_animais']); ?></p>
-                    <p><strong>Sexo:</strong> <?php echo htmlspecialchars($animal['sexo_animais']); ?></p>
-                    <p><strong>Faixa Etária:</strong> <?php echo htmlspecialchars($animal['faixaEtaria_animais']); ?></p>
-                    <p><strong>Porte:</strong> <?php echo htmlspecialchars($animal['porte_animais']); ?></p>
-                    <p><strong>Estado:</strong> <?php echo htmlspecialchars($animal['estado_animais']); ?></p>
+                    <a href="perfilPet.php?id=<?php echo htmlspecialchars(ucfirst($animal['id_animal'])); ?>">
+                        <img src="<?php echo htmlspecialchars(ucfirst($animal['arquivo_principal_animais'])); ?>" alt="Imagem do animal">
+                        <h2><?php echo htmlspecialchars(ucfirst($animal['nome_animais'])); ?></h2>
+                        <p><strong>Espécie:</strong> 
+                        <?php echo htmlspecialchars(ucfirst($animal['especie_animais'])); ?></p>
+                        <p><strong>Sexo:</strong> <?php echo htmlspecialchars(ucfirst($animal['sexo_animais'])); ?></p>
+                        <p><strong>Faixa Etária:</strong> <?php echo htmlspecialchars(ucfirst($animal['faixaEtaria_animais'])); ?></p>
+                        <p><strong>Porte:</strong> <?php echo htmlspecialchars(ucfirst($animal['porte_animais'])); ?></p>
+                        <p><strong>Estado:</strong> <?php echo htmlspecialchars(ucfirst($animal['estado_animais'])); ?></p>
+                    </a>
                 </div>
             <?php endwhile; ?>
         <?php else: ?>
