@@ -1,12 +1,7 @@
 <?php
 session_start();
-include_once __DIR__ . '/../../php/config.php'; 
-
-// Verifica se o usuário está logado
-if (!isset($_SESSION['email_usuario'])) {
-    header("Location: /API/assets/html/Login/loginErro.html");
-    exit();
-}
+include_once __DIR__ . '/../../php/config.php';
+include_once __DIR__ . '/../../php/verifique.php';
 
 // Consulta para contar os animais por espécie
 $query = "SELECT especie_animais, COUNT(*) as total FROM animal GROUP BY especie_animais";
@@ -20,7 +15,7 @@ while ($row = $result->fetch_assoc()) {
 
 // Fecha a conexão com o banco de dados
 $conexao->close();
-?> 
+?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -83,12 +78,12 @@ $conexao->close();
         <h2>Animais Disponíveis para Adoção</h2>
         <section class="animals">
             <ul>
-                 <?php foreach ($animal_counts as $especie => $total): ?>
+                <?php foreach ($animal_counts as $especie => $total): ?>
                     <li class="animal-box">
                         <p class="animal"><?php echo htmlspecialchars($especie); ?></p>
                         <p class="count"><?php echo htmlspecialchars($total); ?></p>
                     </li>
-                 <?php endforeach; ?>
+                <?php endforeach; ?>
             </ul>
         </section>
     </div>

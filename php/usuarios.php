@@ -1,11 +1,11 @@
 <?php
-session_start(); 
+session_start();
 include_once __DIR__ . '/config.php';
 
 // Verifica se o formulário foi submetido
 if (isset($_POST['registerForm'])) {
     $nome_usuario = $_POST['nome_usuario'];
-    $senha_usuario = password_hash($_POST['senha_usuario'], PASSWORD_DEFAULT); 
+    $senha_usuario = password_hash($_POST['senha_usuario'], PASSWORD_DEFAULT);
     $email_usuario = $_POST['email_usuario'];
 
     // Prepara a consulta para verificar se o email já está em uso
@@ -18,18 +18,18 @@ if (isset($_POST['registerForm'])) {
     if ($result->num_rows > 0) {
         // Se já estiver, da erro
         header("Location: /API/assets/html/Login/loginErro.html");
-        exit(); 
+        exit();
     } else {
-         // Se não estiver, insere um novo usuário no banco de dados
+        // Se não estiver, insere um novo usuário no banco de dados
         $stmt = $conexao->prepare("INSERT INTO usuarios (nome_usuarios, senha_usuarios, email_usuarios) VALUES (?, ?, ?)");
         $stmt->bind_param("sss", $nome_usuario, $senha_usuario, $email_usuario);
         if ($stmt->execute()) {
             $_SESSION['email_usuario'] = $email_usuario;
             header("Location: /API/assets/html/Login/loginCerto.html");
-            exit(); 
+            exit();
         } else {
             header("Location: /API/assets/html/Login/loginErrado.html");
-            exit(); 
+            exit();
         }
     }
     $stmt->close();
@@ -53,19 +53,19 @@ if (isset($_POST['loginForm'])) {
         if (password_verify($senha_usuario, $row['senha_usuarios'])) {
             $_SESSION['email_usuario'] = $row['email_usuarios'];
             header("Location: /API/assets/html/home.php");
-            exit(); 
+            exit();
         } else {
             header("Location: /API/assets/html/Login/loginErro.html");
-            exit(); 
+            exit();
         }
     } else {
         header("Location: /API/assets/html/Login/loginErro.html");
-        exit(); 
+        exit();
     }
     $stmt->close();
 }
 
-if(isset($_POST['updateForm'])) {
+if (isset($_POST['updateForm'])) {
     $username = $input['username']; // Obtém o nome de usuário do input JSON
     $password = password_hash($input['password'], PASSWORD_DEFAULT); // Cria um novo hash da senha
     $email = $input['email']; // Obtém o email do input JSON
@@ -73,7 +73,7 @@ if(isset($_POST['updateForm'])) {
     // Atualiza os dados do usuário no banco de dados
     $stmt = $conn->prepare("UPDATE users SET password=?, email=? WHERE username=?");
     $stmt->bind_param("sss", $password, $email, $username);
-    
+
     // Verifica se a atualização foi bem-sucedida e retorna mensagem correspondente
     if ($stmt->execute()) {
         echo json_encode(['success' => true, 'message' => 'Update successful']);
@@ -81,20 +81,20 @@ if(isset($_POST['updateForm'])) {
         echo json_encode(['success' => false, 'message' => 'Error: ' . $stmt->error]);
     }
     $stmt->close();
-} 
+}
 
 // Ação para deletar um usuário
-if(isset($_POST['deleteUsuario'])) {
+if (isset($_POST['deleteUsuario'])) {
     $nome_usuario = $input['nome_usuario']; // Obtém o nome de usuário do input JSON
 
     // Deleta o usuário do banco de dados
     $stmt = $conn->prepare("DELETE FROM users WHERE nome_usuario $nome_usuarios=?");
     $stmt->bind_param("s", $nome_usuario);
-    
+
     // Verifica se a exclusão foi bem-sucedida e retorna mensagem correspondente
     if ($stmt->execute()) {
         header("Location: /API/assets/html/Login/login.html");
-        exit(); 
+        exit();
     } else {
         alert("Não foi possivel excluir");
     }

@@ -1,5 +1,5 @@
 #img {
-    padding: 40px ;
+    padding: 40px;
     background-image: url(/API/assets/img/bodyForm.jpg);
     color: rgb(247, 157, 41);
     display: flex;
@@ -9,14 +9,107 @@
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     width: 100%;
     height: 250px;
-}
-
-#img i {
+  }
+  
+  #img i {
     font-size: 125px;
     text-align: center;
     color: #555;
-}
-
-.hidden {
+  }
+  
+  .hidden {
     display: none;
-}
+  }
+  
+  /*
+  .loginContainer,
+  .registerContainer {
+    overflow-y: auto;
+    width: 100%;
+    max-width: 700px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .crieConta {
+    padding: 30px;
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
+    color: white;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 30px;
+    padding: 15px;
+  }
+  
+  .crieConta h1 {
+    font-size: 50px;
+  }
+  
+  .crieConta h2 {
+    font-size: 20px;
+  }
+  
+  #loginForm,
+  #registerForm {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50px 50px 0px 0px;
+  }
+  
+  form {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10vh;
+    border: 2px solid #000000;
+  }
+  
+  .dados {
+    align-items: center;
+    width: 95%;
+    display: flex;
+    margin: 10px auto;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid #fbfbfb;
+  }
+  
+  .dados i {
+    margin-right: 10px;
+    color: #666;
+  }
+  
+  .dados input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    background: none;
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+  
+  button {
+    background-color: #ffffff;
+    border: none;
+    color: #f8ae4e;
+    padding: 10px 20px;
+    border: 2px solid #f8ae4e;
+    cursor: pointer;
+    width: 60%;
+    transition: all 0.3s;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    margin: 15px auto;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background: #f8ae4e;
+    color: white;
+    transform: scale(1.05);
+  }

@@ -1,12 +1,7 @@
 <?php
 session_start();
 include_once __DIR__ . '/../../php/config.php';
-
-// Verifica se o usuário está logado
-if (!isset($_SESSION['email_usuario'])) {
-    header("Location: /API/assets/html/Login/loginErro.html");
-    exit();
-}
+include_once __DIR__ . '/../../php/verifique.php';
 
 // Inicializa a consulta SQL
 $sql = "SELECT * FROM animal WHERE 1=1";
@@ -37,10 +32,6 @@ if (isset($_GET['faixaEtaria']) && $_GET['faixaEtaria'] !== '') {
 if (!empty($_GET['search'])) {
     $data = $conexao->real_escape_string($_GET['search']);
     $sql = "SELECT * FROM animal WHERE nome_animais LIKE '%$data%' OR especie_animais LIKE '%$data%' OR sexo_animais LIKE '%$data%' OR faixaEtaria_animais LIKE '%$data%' OR porte_animais LIKE '%$data%' OR estado_animais LIKE '%$data%' OR cidade_animais LIKE '%$data%' ORDER BY id_animal DESC";
-}
-else
-{
-
 }
 
 // Executa a consulta
@@ -161,17 +152,19 @@ $result = $conexao->query($sql);
         </div>
     </section>
 
-    <div class="animal-list">
+    <div class="animal-list" id="animal-list">
         <?php if ($result && $result->num_rows > 0): ?>
             <?php while ($animal = $result->fetch_assoc()): ?>
                 <div class="animal-card">
-                <img src="<?php echo htmlspecialchars($animal['arquivo_principal_animais']); ?>" alt="Imagem do animal">
-                    <h2><?php echo htmlspecialchars($animal['nome_animais']); ?></h2>
-                    <p><strong>Espécie:</strong> <?php echo htmlspecialchars($animal['especie_animais']); ?></p>
-                    <p><strong>Sexo:</strong> <?php echo htmlspecialchars($animal['sexo_animais']); ?></p>
-                    <p><strong>Faixa Etária:</strong> <?php echo htmlspecialchars($animal['faixaEtaria_animais']); ?></p>
-                    <p><strong>Porte:</strong> <?php echo htmlspecialchars($animal['porte_animais']); ?></p>
-                    <p><strong>Estado:</strong> <?php echo htmlspecialchars($animal['estado_animais']); ?></p>
+                    <a href="perfilPet.php?id=<?php echo htmlspecialchars(ucfirst($animal['id_animal'])); ?>">
+                        <img src="<?php echo htmlspecialchars(ucfirst($animal['arquivo_principal_animais'])); ?>" alt="Imagem do animal">
+                        <h2><?php echo htmlspecialchars(ucfirst($animal['nome_animais'])); ?></h2>
+                        <p><strong>Espécie:</strong> <?php echo htmlspecialchars(ucfirst($animal['especie_animais'])); ?></p>
+                        <p><strong>Sexo:</strong> <?php echo htmlspecialchars(ucfirst($animal['sexo_animais'])); ?></p>
+                        <p><strong>Faixa Etária:</strong> <?php echo htmlspecialchars(ucfirst($animal['faixaEtaria_animais'])); ?></p>
+                        <p><strong>Porte:</strong> <?php echo htmlspecialchars(ucfirst($animal['porte_animais'])); ?></p>
+                        <p><strong>Estado:</strong> <?php echo htmlspecialchars(ucfirst($animal['estado_animais'])); ?></p>
+                    </a>
                 </div>
             <?php endwhile; ?>
         <?php else: ?>

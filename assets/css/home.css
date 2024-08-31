@@ -3,90 +3,94 @@
     height: 60vh;
     overflow: hidden;
     position: relative;
-}
-
-.slider-content {
+  }
+  
+  .slider-content {
     display: flex;
     width: 400%;
     height: 100%;
     transition: margin-left 1s ease;
-}
-
-.slider-content input, .img-mobile {
+  }
+  
+  .slider-content input,
+  .img-mobile {
     display: none;
-}
-
-.slide-box {
+  }
+  
+  .slide-box {
     width: 25%;
     height: 100%;
     flex-shrink: 0;
     position: relative;
     overflow: hidden;
-}
-
-.slide-box img {
+  }
+  
+  .slide-box img {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover;
     display: block;
-}
-
-.nav-manual, .nav-auto {
+  }
+  
+  .nav-manual,
+  .nav-auto {
     position: absolute;
     bottom: 10px;
     width: 100%;
     display: flex;
     justify-content: center;
-}
-
-.nav-manual .manual-btn, .nav-auto div {
+  }
+  
+  .nav-manual .manual-btn,
+  .nav-auto div {
     border: 1px solid #333;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
     padding: 10px;
     border-radius: 50%;
     cursor: pointer;
     transition: 0.2s;
-}
-
-.nav-manual .manual-btn:not(:last-child), .nav-auto div:not(:last-child) {
+  }
+  
+  .nav-manual .manual-btn:not(:last-child),
+  .nav-auto div:not(:last-child) {
     margin-right: 10px;
-}
-
-.nav-manual .manual-btn:hover {
+  }
+  
+  .nav-manual .manual-btn:hover {
     background-color: #ffffff;
-}
-
-#radio1:checked ~ .nav-auto .auto-btn1,
-#radio2:checked ~ .nav-auto .auto-btn2,
-#radio3:checked ~ .nav-auto .auto-btn3, 
-#radio4:checked ~ .nav-auto .auto-btn4 {
+  }
+  
+  #radio1:checked ~ .nav-auto .auto-btn1,
+  #radio2:checked ~ .nav-auto .auto-btn2,
+  #radio3:checked ~ .nav-auto .auto-btn3,
+  #radio4:checked ~ .nav-auto .auto-btn4 {
     background-color: #333;
-}
-
-#radio1:checked ~ .primeiro {
+  }
+  
+  #radio1:checked ~ .primeiro {
     margin-left: 0%;
-}
-
-#radio2:checked ~ .primeiro {
+  }
+  
+  #radio2:checked ~ .primeiro {
     margin-left: -25%;
-}
-
-#radio3:checked ~ .primeiro {
+  }
+  
+  #radio3:checked ~ .primeiro {
     margin-left: -50%;
-}
-
-#radio4:checked ~ .primeiro {
+  }
+  
+  #radio4:checked ~ .primeiro {
     margin-left: -75%;
-}
-
-.botoes {
+  }
+  
+  .botoes {
     display: flex;
     justify-content: center;
     gap: 20px;
     padding: 50px 70px;
-}
-
-.btn {
+  }
+  
+  .btn {
     width: 100%;
     padding: 20px;
     background-color: #fff;
@@ -96,48 +100,48 @@
     font-size: 18px;
     transition: background-color 0.3s, transform 0.3s;
     display: flex;
-    flex-direction: column; 
-    align-items: flex-start; 
+    flex-direction: column;
+    align-items: flex-start;
     text-decoration: none;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
-    position: relative; 
+    position: relative;
     padding-left: 40px;
-}
-
-.btn h1 {
-    position: absolute; 
-    left: 10px; 
-}
-
-.btn h3 {
-    font-size: 18px; 
-    margin: 0px 0 5px 0; 
-}
-
-.btn p {
+  }
+  
+  .btn h1 {
+    position: absolute;
+    left: 10px;
+  }
+  
+  .btn h3 {
+    font-size: 18px;
+    margin: 0px 0 5px 0;
+  }
+  
+  .btn p {
     font-size: 14px;
     color: #777;
-}
-
-.btn h3,
-.btn p {
+  }
+  
+  .btn h3,
+  .btn p {
     margin-left: 20px;
-}
-
-.btn:hover {
+  }
+  
+  .btn:hover {
     background-color: #f1f1f1;
     transform: translateY(-5px);
-}
-
-.botoes-animal {
+  }
+  
+  .botoes-animal {
     display: flex;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
     padding: 50px 70px;
-}
-
-.btn-animal {
+  }
+  
+  .btn-animal {
     width: 130px;
     padding: 20px;
     background-color: #fff;
@@ -147,27 +151,28 @@
     font-size: 18px;
     transition: background-color 0.3s, transform 0.3s;
     display: flex;
-    flex-direction: column; 
-    align-items: center; 
+    flex-direction: column;
+    align-items: center;
     text-decoration: none;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
-    position: relative; 
-    text-align: center; 
+    position: relative;
+    text-align: center;
     top: 20px;
     font-weight: bold;
-}
-
-.btn-animal:hover {
+  }
+  
+  .btn-animal:hover {
     background-color: #f1f1f1;
     transform: translateY(-5px);
-}
-
-@media (max-width: 653px) {
+  }
+  
+  @media (max-width: 653px) {
     .botoes {
-        flex-wrap: wrap;
+      flex-wrap: wrap;
     }
-
+  
     .btn {
-        width: 100%;
+      width: 100%;
     }
-}
+  }
+  
