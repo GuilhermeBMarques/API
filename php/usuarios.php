@@ -67,7 +67,6 @@ if (isset($_POST['loginForm'])) {
     $stmt->close();
 }
 
-
 if (isset($_POST['updateForm'])) {
     $username = $input['username']; // Obtém o nome de usuário do input JSON
     $password = password_hash($input['password'], PASSWORD_DEFAULT); // Cria um novo hash da senha
@@ -86,21 +85,4 @@ if (isset($_POST['updateForm'])) {
     $stmt->close();
 }
 
-// Ação para deletar um usuário
-if (isset($_POST['deleteUsuario'])) {
-    $nome_usuario = $input['nome_usuario']; // Obtém o nome de usuário do input JSON
-
-    // Deleta o usuário do banco de dados
-    $stmt = $conn->prepare("DELETE FROM users WHERE nome_usuario $nome_usuarios=?");
-    $stmt->bind_param("s", $nome_usuario);
-
-    // Verifica se a exclusão foi bem-sucedida e retorna mensagem correspondente
-    if ($stmt->execute()) {
-        header("Location: /API/assets/html/Login/login.html");
-        exit();
-    } else {
-        alert("Não foi possivel excluir");
-    }
-    $stmt->close();
-}
 ?>

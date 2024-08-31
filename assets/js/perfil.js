@@ -41,22 +41,3 @@ document.getElementById('showUser').addEventListener('click', function() {
             document.getElementById('userInfoEmail').innerText = email; // Atualiza o email exibido
         }
     });
-
-    // Deletar a conta do usuário
-    document.getElementById('deleteUsuario').addEventListener('click', async function() {
-        const nome_usuario = sessionStorage.getItem('nome_usuario');
-
-        // Envia a solicitação de deleção para o servidor
-        const response = await fetch('server.php?action=delete', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ nome_usuario })
-        });
-
-        const result = await response.json(); 
-        alert(result.message); 
-        if (result.success) {
-            sessionStorage.clear();
-            window.location.href = 'index.html'; 
-        }
-    });

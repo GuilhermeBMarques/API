@@ -19,6 +19,7 @@ $conexao->close();
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,11 +28,14 @@ $conexao->close();
     <link rel="stylesheet" href="/API/assets/css/sobre.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
+
 <body>
 
     <!-- Navegação Desktop -->
     <nav class="navbarDesk">
-        <a href="home.php"><h1><span style="color: #db7434">Pet</span>Amigo</h1></a>
+        <a href="home.php">
+            <h1><span style="color: #db7434">Pet</span>Amigo</h1>
+        </a>
         <ul>
             <li><a href="/API/assets/html/home.php">Home</a></li>
             <li><a href="/API/assets/html/sobre.php">Sobre Nós</a></li>
@@ -48,29 +52,35 @@ $conexao->close();
         </ul>
     </nav>
 
-    <div class="container" >
+    <div class="container">
         <h2>Sobre nós</h2>
         <P>
-            Criamos este site com o objetivo de facilitar a adoção de animais que, infelizmente, foram separados de seus lares devido à 
-            recente tragédia das enchentes em nosso estado. Sabemos que muitos animais ainda estão perdidos, longe de seus donos, e queremos 
-            ajudar a reunir essas famílias. No futuro, planejamos adicionar mais funcionalidades ao site para ampliar ainda mais nossa missão 
+            Criamos este site com o objetivo de facilitar a adoção de animais que, infelizmente, foram separados de seus
+            lares devido à
+            recente tragédia das enchentes em nosso estado. Sabemos que muitos animais ainda estão perdidos, longe de
+            seus donos, e queremos
+            ajudar a reunir essas famílias. No futuro, planejamos adicionar mais funcionalidades ao site para ampliar
+            ainda mais nossa missão
             de proteção e cuidado com esses animais.
-    <br>
+            <br>
             Nossa missão é utilizar a tecnologia da Internet e os recursos que ela pode gerar para:
-            <ul>
-                <li>
-                    Aumentar a conscientização pública sobre a disponibilidade de animais de estimação adotáveis.
-                </li>
-                <li>
-                    Aumentar a eficácia geral dos programas de adoção de animais de estimação em todo o Brasil.
-                </li>
-                <li>
-                    Somos inovadores digitais, sempre à procura de formas de aproveitar os últimos avanços no mundo da tecnologia para resolver os grandes problemas e desafios que os animais de estimação de resgate enfrentam no Brasil.
-                </li>
-                <li>
-                    Promover a defesa através de todas as campanhas, programas e serviços inovadores que criamos e fornecemos, defendemos ativamente o salvamento de animais de estimação.
-                </li>    
-            </ul>
+        <ul>
+            <li>
+                Aumentar a conscientização pública sobre a disponibilidade de animais de estimação adotáveis.
+            </li>
+            <li>
+                Aumentar a eficácia geral dos programas de adoção de animais de estimação em todo o Brasil.
+            </li>
+            <li>
+                Somos inovadores digitais, sempre à procura de formas de aproveitar os últimos avanços no mundo da
+                tecnologia para resolver os grandes problemas e desafios que os animais de estimação de resgate
+                enfrentam no Brasil.
+            </li>
+            <li>
+                Promover a defesa através de todas as campanhas, programas e serviços inovadores que criamos e
+                fornecemos, defendemos ativamente o salvamento de animais de estimação.
+            </li>
+        </ul>
         </P>
     </div>
 
@@ -88,4 +98,5 @@ $conexao->close();
         </section>
     </div>
 </body>
+
 </html>

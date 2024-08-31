@@ -27,6 +27,29 @@ $result_others = $conexao->query($sql_others);
 
 // Obtém o ID do usuário da sessão
 $id_usuario_atual = isset($_SESSION['id_usuario']) ? $_SESSION['id_usuario'] : null;
+
+// Verifica se a solicitação de exclusão foi feita
+if (isset($_GET['delete']) && $_GET['delete'] == 'true') {
+    if ($id_usuario_atual == $responsavel_id) {
+        // Prepara a consulta DELETE para remover o animal
+        $sqlDelete = "DELETE FROM animal WHERE id_animal = ?";
+        $stmtDelete = $conexao->prepare($sqlDelete);
+        $stmtDelete->bind_param("i", $id);
+        $stmtDelete->execute();
+
+        if ($stmtDelete->affected_rows > 0) {
+            header("Location: /API/assets/html/adote.php");
+            exit();
+        } else {
+            echo "Erro ao deletar o animal.";
+        }
+        $stmtDelete->close();
+    } else {
+        echo "Você não tem permissão para deletar este animal.";
+    }
+}
+
+$conexao->close();
 ?>
 
 <!DOCTYPE html>
@@ -70,14 +93,12 @@ $id_usuario_atual = isset($_SESSION['id_usuario']) ? $_SESSION['id_usuario'] : n
         <header class="container1">
             <div class="animal-detalhes">
                 <h1><?php echo htmlspecialchars($animal['nome_animais']); ?></h1>
-                <br>
                 <ul>
                     <li><p><?php echo htmlspecialchars(ucfirst($animal['especie_animais'])); ?></p></li>
                     <li><p><?php echo htmlspecialchars(ucfirst($animal['sexo_animais'])); ?></p></li>
                     <li><p><?php echo htmlspecialchars(ucfirst($animal['faixaEtaria_animais'])); ?></p></li>
                     <li><p><?php echo htmlspecialchars(ucfirst($animal['porte_animais'])); ?></p></li>
                 </ul>
-                <br>
                 <p><strong>Sobre o <?php echo htmlspecialchars($animal['nome_animais']); ?> </strong></p>
                 <p><?php echo htmlspecialchars(ucfirst($animal['descricao_animais'])); ?></p>
             </div>
@@ -175,24 +196,24 @@ $id_usuario_atual = isset($_SESSION['id_usuario']) ? $_SESSION['id_usuario'] : n
                 </ul>
             </div>
         </header>
+
+ 
     </div>
 
     <div class="btns">
         <?php if ($id_usuario_atual == $responsavel_id): ?>
-            <form action="deletarAnimal.php" method="POST" style="display: inline;">
-                <input type="hidden" name="id_animal" value="<?php echo htmlspecialchars($id); ?>">
-                <button type="submit" name="delete" class="btn">Deletar</button>
-            </form>
-            <form action="adotarAnimal.php" method="POST" style="display: inline;">
-                <input type="hidden" name="id_animal" value="<?php echo htmlspecialchars($id); ?>">
-                <button type="submit" name="adotar" class="btn">Para adoção</button>
-            </form>
+            <a class='btn btn-danger' href="perfilPet.php?id=<?php echo htmlspecialchars($id); ?>&delete=true">
+                <i class="bi bi-trash3-fill"></i> Deletar Animal
+            </a>
+
+            <a class='btn btn-danger' href="perfilPet.php?id=<?php echo htmlspecialchars($id); ?>&delete=true">
+            Para adoção
+            </a>
         <?php endif; ?>
     </div>
 
     <div class="pets">
         <h1> Outros Pets </h1>
-        <br>
         <div class="animal-list" id="animal-list">
             <?php if ($result_others && $result_others->num_rows > 0): ?>
                 <?php while ($other_animal = $result_others->fetch_assoc()): ?>
@@ -213,8 +234,5 @@ $id_usuario_atual = isset($_SESSION['id_usuario']) ? $_SESSION['id_usuario'] : n
             <?php endif; ?>
         </div>
     </div>
-
 </body>
-
-
 </html>

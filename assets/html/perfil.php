@@ -33,8 +33,6 @@ if (!empty($_GET['id_usuario'])) {
     $stmt->close();
 }
 $conexao->close();
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -91,7 +89,7 @@ $conexao->close();
         <a href="/API/assets/html/Login/login.html" class="btn">Sair</a>
 
         <a class='btn btn-sm btn-danger' href="perfil.php?id_usuario=<?php echo htmlspecialchars($id_usuarios); ?>">
-            <i class="bi bi-trash3-fill"></i>
+            <i class="bi bi-trash3-fill"></i> Deletar Perfil
         </a>
 
     </div>
