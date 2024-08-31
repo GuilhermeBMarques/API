@@ -45,7 +45,7 @@
 }
 
 .animal-detalhes ul {
-  list-style: none; 
+  list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
@@ -132,13 +132,13 @@
 }
 
 .perguntas ul {
-  list-style: none; 
+  list-style: none;
 }
 
 .btns {
   display: flex;
   justify-content: center;
-  gap: 50px; 
+  gap: 50px;
   margin: 80px 0;
   flex-wrap: wrap;
 }
@@ -155,7 +155,7 @@
   text-decoration: none;
   font-size: 1rem;
   font-weight: 600;
-  display: inline-block; 
+  display: inline-block;
 }
 
 .btn:hover {

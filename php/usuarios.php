@@ -84,5 +84,3 @@ if (isset($_POST['updateForm'])) {
     }
     $stmt->close();
 }
-
-?>

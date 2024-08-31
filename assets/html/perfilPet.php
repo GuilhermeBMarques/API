@@ -54,6 +54,7 @@ $conexao->close();
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -63,6 +64,7 @@ $conexao->close();
     <script src="/API/assets/js/perfilPet.js" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
+
 <body>
     <!-- Navegação Desktop -->
     <nav class="navbarDesk">
@@ -94,10 +96,18 @@ $conexao->close();
             <div class="animal-detalhes">
                 <h1><?php echo htmlspecialchars($animal['nome_animais']); ?></h1>
                 <ul>
-                    <li><p><?php echo htmlspecialchars(ucfirst($animal['especie_animais'])); ?></p></li>
-                    <li><p><?php echo htmlspecialchars(ucfirst($animal['sexo_animais'])); ?></p></li>
-                    <li><p><?php echo htmlspecialchars(ucfirst($animal['faixaEtaria_animais'])); ?></p></li>
-                    <li><p><?php echo htmlspecialchars(ucfirst($animal['porte_animais'])); ?></p></li>
+                    <li>
+                        <p><?php echo htmlspecialchars(ucfirst($animal['especie_animais'])); ?></p>
+                    </li>
+                    <li>
+                        <p><?php echo htmlspecialchars(ucfirst($animal['sexo_animais'])); ?></p>
+                    </li>
+                    <li>
+                        <p><?php echo htmlspecialchars(ucfirst($animal['faixaEtaria_animais'])); ?></p>
+                    </li>
+                    <li>
+                        <p><?php echo htmlspecialchars(ucfirst($animal['porte_animais'])); ?></p>
+                    </li>
                 </ul>
                 <p><strong>Sobre o <?php echo htmlspecialchars($animal['nome_animais']); ?> </strong></p>
                 <p><?php echo htmlspecialchars(ucfirst($animal['descricao_animais'])); ?></p>
@@ -197,7 +207,7 @@ $conexao->close();
             </div>
         </header>
 
- 
+
     </div>
 
     <div class="btns">
@@ -207,7 +217,7 @@ $conexao->close();
             </a>
 
             <a class='btn btn-danger' href="perfilPet.php?id=<?php echo htmlspecialchars($id); ?>&delete=true">
-            Para adoção
+                Para adoção
             </a>
         <?php endif; ?>
     </div>
@@ -235,4 +245,5 @@ $conexao->close();
         </div>
     </div>
 </body>
+
 </html>
