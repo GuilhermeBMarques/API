@@ -41,7 +41,7 @@ if (isset($_POST['loginForm'])) {
     $senha_usuario = $_POST['senha_usuario'];
 
     // Verifica se o email está cadastrado
-    $stmt = $conexao->prepare("SELECT * FROM usuarios WHERE email_usuarios=?");
+    $stmt = $conexao->prepare("SELECT id_usuarios, senha_usuarios FROM usuarios WHERE email_usuarios=?");
     $stmt->bind_param("s", $email_usuario);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -51,7 +51,9 @@ if (isset($_POST['loginForm'])) {
 
         // Verifica se a senha fornecida corresponde ao hash armazenado
         if (password_verify($senha_usuario, $row['senha_usuarios'])) {
-            $_SESSION['email_usuario'] = $row['email_usuarios'];
+            // Defina o ID do usuário na sessão
+            $_SESSION['id_usuario'] = $row['id_usuarios'];
+            $_SESSION['email_usuario'] = $email_usuario;
             header("Location: /API/assets/html/home.php");
             exit();
         } else {
@@ -64,6 +66,7 @@ if (isset($_POST['loginForm'])) {
     }
     $stmt->close();
 }
+
 
 if (isset($_POST['updateForm'])) {
     $username = $input['username']; // Obtém o nome de usuário do input JSON

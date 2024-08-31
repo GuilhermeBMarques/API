@@ -2,8 +2,40 @@
 session_start();
 include_once __DIR__ . '/../../php/config.php';
 include_once __DIR__ . '/../../php/verifique.php';
-?>
 
+if (!empty($_GET['id_usuario'])) {
+    $id_usuario = intval($_GET['id_usuario']); // Converte para inteiro para evitar SQL Injection
+
+    // Prepara a consulta SELECT para verificar se o usuário existe
+    $sqlSelect = "SELECT * FROM usuarios WHERE id_usuarios=?";
+    $stmt = $conexao->prepare($sqlSelect);
+    $stmt->bind_param("i", $id_usuario);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        // Prepara a consulta DELETE para remover o usuário
+        $sqlDelete = "DELETE FROM usuarios WHERE id_usuarios=?";
+        $stmtDelete = $conexao->prepare($sqlDelete);
+        $stmtDelete->bind_param("i", $id_usuario);
+        $stmtDelete->execute();
+
+        if ($stmtDelete->affected_rows > 0) {
+            header("Location: /API/assets/html/Login/login.html");
+            exit();
+        } else {
+            echo "Erro ao deletar o usuário.";
+        }
+        $stmtDelete->close();
+    } else {
+        echo "Usuário não encontrado.";
+    }
+    $stmt->close();
+}
+$conexao->close();
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
