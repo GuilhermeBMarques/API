@@ -109,7 +109,8 @@ $conexao->close();
                         <p><?php echo htmlspecialchars(ucfirst($animal['porte_animais'])); ?></p>
                     </li>
                 </ul>
-                <p><strong>Sobre o <?php echo htmlspecialchars($animal['nome_animais']); ?> </strong></p>
+                
+                <p id="sobre"><strong>Sobre o <?php echo htmlspecialchars($animal['nome_animais']); ?> </strong></p>
                 <p><?php echo htmlspecialchars(ucfirst($animal['descricao_animais'])); ?></p>
             </div>
 

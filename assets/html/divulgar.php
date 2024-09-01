@@ -74,15 +74,7 @@ include_once __DIR__ . '/../../php/verifique.php';
                 <label for="arquivo_principal">Foto Principal:</label>
                 <br>
                 <input type="file" id="arquivo_principal" name="arquivo_principal">
-
                 <div class="galeria" id="galeria1"></div>
-            </div>
-
-            <div class="dados">
-                <label for="arquivo_secundario">Fotos secundárias:</label>
-                <br>
-                <input type="file" id="arquivo_secundario" name="arquivo_secundario[]" multiple>
-                <div class="galeria" id="galeria2"></div>
             </div>
 
             <div class="dados">
