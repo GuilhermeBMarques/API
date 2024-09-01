@@ -115,15 +115,11 @@ input[type="file"]#arquivo_principal {
   margin-bottom: 10px;
 }
 
-input[type="file"]#arquivos_secundario {
-  margin-bottom: 10px;
-}
-
 input[type="file"]:hover {
   cursor: pointer;
 }
 
-@media (max-width: 300px) {
+@media (max-width: 768px) {
   .dados {
     margin-bottom: 10px;
   }

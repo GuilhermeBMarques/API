@@ -107,7 +107,7 @@ button:hover {
   display: none;
 }
 
-@media (max-width: 385px) {
+@media (max-width: 768px) {
   button {
     width: 80%;
   }
