@@ -24,6 +24,7 @@ if (isset($_POST['registerForm'])) {
         $stmt = $conexao->prepare("INSERT INTO usuarios (nome_usuarios, senha_usuarios, email_usuarios) VALUES (?, ?, ?)");
         $stmt->bind_param("sss", $nome_usuario, $senha_usuario, $email_usuario);
         if ($stmt->execute()) {
+            $_SESSION['id_usuario'] = $row['id_usuarios'];
             $_SESSION['email_usuario'] = $email_usuario;
             header("Location: /API/assets/html/Login/loginCerto.html");
             exit();
