@@ -7,6 +7,13 @@ if (!isset($_SESSION['email_usuario'])) {
     exit();
 }
 
+if (!isset($_SESSION['id_usuario'])) {
+    header("Location: /API/assets/html/Login/loginErro.html");
+    exit();
+}
+
+$id_usuario = $_SESSION['id_usuario'];
+
 // Recupera o email do usuário da sessão
 $email_usuario = $_SESSION['email_usuario'];
 

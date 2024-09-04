@@ -2,40 +2,6 @@
 session_start();
 include_once __DIR__ . '/config.php';
 
-// Verifica se o formulário foi submetido
-if (isset($_POST['registerForm'])) {
-    $nome_usuario = $_POST['nome_usuario'];
-    $senha_usuario = password_hash($_POST['senha_usuario'], PASSWORD_DEFAULT);
-    $email_usuario = $_POST['email_usuario'];
-
-    // Prepara a consulta para verificar se o email já está em uso
-    $stmt = $conexao->prepare("SELECT * FROM usuarios WHERE email_usuarios=?");
-    $stmt->bind_param("s", $email_usuario);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    // Verifica se o email já está cadastrado
-    if ($result->num_rows > 0) {
-        // Se já estiver, da erro
-        header("Location: /API/assets/html/Login/loginErro.html");
-        exit();
-    } else {
-        // Se não estiver, insere um novo usuário no banco de dados
-        $stmt = $conexao->prepare("INSERT INTO usuarios (nome_usuarios, senha_usuarios, email_usuarios) VALUES (?, ?, ?)");
-        $stmt->bind_param("sss", $nome_usuario, $senha_usuario, $email_usuario);
-        if ($stmt->execute()) {
-            $_SESSION['id_usuario'] = $row['id_usuarios'];
-            $_SESSION['email_usuario'] = $email_usuario;
-            header("Location: /API/assets/html/Login/loginCerto.html");
-            exit();
-        } else {
-            header("Location: /API/assets/html/Login/loginErrado.html");
-            exit();
-        }
-    }
-    $stmt->close();
-}
-
 // Verifica se o formulário de login foi submetido
 if (isset($_POST['loginForm'])) {
     $email_usuario = $_POST['email_usuario'];
@@ -68,20 +34,63 @@ if (isset($_POST['loginForm'])) {
     $stmt->close();
 }
 
-if (isset($_POST['updateForm'])) {
-    $username = $input['username']; // Obtém o nome de usuário do input JSON
-    $password = password_hash($input['password'], PASSWORD_DEFAULT); // Cria um novo hash da senha
-    $email = $input['email']; // Obtém o email do input JSON
+// Verifica se o formulário foi submetido
+if (isset($_POST['registerForm'])) {
+    $nome_usuario = $_POST['nome_usuario'];
+    $senha_usuario = password_hash($_POST['senha_usuario'], PASSWORD_DEFAULT);
+    $email_usuario = $_POST['email_usuario'];
 
-    // Atualiza os dados do usuário no banco de dados
-    $stmt = $conn->prepare("UPDATE users SET password=?, email=? WHERE username=?");
-    $stmt->bind_param("sss", $password, $email, $username);
+    // Prepara a consulta para verificar se o email já está em uso
+    $stmt = $conexao->prepare("SELECT * FROM usuarios WHERE email_usuarios=?");
+    $stmt->bind_param("s", $email_usuario);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-    // Verifica se a atualização foi bem-sucedida e retorna mensagem correspondente
-    if ($stmt->execute()) {
-        echo json_encode(['success' => true, 'message' => 'Update successful']);
+    // Verifica se o email já está cadastrado
+    if ($result->num_rows > 0) {
+        header("Location: /API/assets/html/Login/loginErro.html");
+        exit();
     } else {
-        echo json_encode(['success' => false, 'message' => 'Error: ' . $stmt->error]);
+        // Se não estiver, insere um novo usuário no banco de dados
+        $stmt = $conexao->prepare("INSERT INTO usuarios (nome_usuarios, senha_usuarios, email_usuarios) VALUES (?, ?, ?)");
+        $stmt->bind_param("sss", $nome_usuario, $senha_usuario, $email_usuario);
+        if ($stmt->execute()) {
+            // Recupera o ID do novo usuário
+            $id_usuario = $conexao->insert_id;
+            $_SESSION['id_usuario'] = $id_usuario;
+            $_SESSION['email_usuario'] = $email_usuario;
+            header("Location: /API/assets/html/Login/loginCerto.html");
+            exit();
+        } else {
+            header("Location: /API/assets/html/Login/loginErrado.html");
+            exit();
+        }
     }
+    $stmt->close();
+}
+
+if (isset($_POST["update"])) {
+    $id_usuario = $_POST["id_usuario"];
+    $nome_usuario = $_POST["nome_usuario"];
+    $email_usuario = $_POST["email_usuario"];
+    $senha_usuario = $_POST["senha_usuario"];
+
+    $senha_hash = password_hash($senha_usuario, PASSWORD_DEFAULT); // Criptografa a nova senha
+
+    $sqlUpdate = "UPDATE usuarios SET nome_usuarios=?, email_usuarios=?, senha_usuarios=? WHERE id_usuarios=?";
+    $stmt = $conexao->prepare($sqlUpdate);
+    $stmt->bind_param("sssi", $nome_usuario, $email_usuario, $senha_hash, $id_usuario);
+
+// Correção no bloco de inserção
+if ($stmt->execute()) {
+    $_SESSION['id_usuario'] = $id_usuario;
+    $_SESSION['email_usuario'] = $email_usuario;
+    header("Location: /API/assets/html/Login/loginCerto.html");
+    exit();
+} else {
+    header("Location: /API/assets/html/Login/loginErrado.html");
+    exit();
+}
+
     $stmt->close();
 }

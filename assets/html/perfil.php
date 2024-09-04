@@ -32,6 +32,8 @@ if (!empty($_GET['id_usuario'])) {
     }
     $stmt->close();
 }
+
+
 $conexao->close();
 ?>
 <!DOCTYPE html>
@@ -74,7 +76,6 @@ $conexao->close();
         <i class="bi bi-person-circle"></i>
     </div>
 
-    <div id="userContainer" class="userContainer">
         <div class="perfil-list">
             <ul>
                 <li>
@@ -84,34 +85,17 @@ $conexao->close();
             </ul>
         </div>
 
-        <button type="button" id="showForm" class="w-full bg-gray-500 text-white py-2 rounded-lg mt-4">Redefinir
-            Usuario</button>
         <a href="/API/assets/html/Login/login.html" class="btn">Sair</a>
 
+        <form action="">
+        </form>
         <a class='btn btn-sm btn-danger' href="perfil.php?id_usuario=<?php echo htmlspecialchars($id_usuarios); ?>">
             <i class="bi bi-trash3-fill"></i> Deletar Perfil
         </a>
 
-    </div>
-
-    <div id="updateContainer" class="updateContainer hidden">
-        <form id="updateForm">
-            <div class="dados">
-                <label>Usuário:</label>
-                <input type="text" id="updateNome_usuario">
-            </div>
-            <div class="dados">
-                <label>Gmail:</label>
-                <input type="text" id="updategmail_usuario">
-            </div>
-            <div class="dados">
-                <label>Senha:</label>
-                <input type="text" id="updatesenha_usuario">
-            </div>
-            <button type="submit">Atualizar</button>
-        </form>
-        <button type="button" id="showUser" class="w-full bg-gray-500 text-white py-2 rounded-lg mt-4">Voltar</button>
-    </div>
+        <a class="btn btn-sm btn-primary" href="edit.php?id_usuario=<?php echo htmlspecialchars($id_usuarios); ?>">
+        <i class="bi bi-pencil-fill"></i> Editar Perfil
+        </a>
 
 </body>
 
