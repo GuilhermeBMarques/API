@@ -64,7 +64,7 @@ include_once __DIR__ . '/../../php/verifique.php';
         </button>
     </form>
 
-    <a href="/API/assets/html/Login/login.html" class="btn">Sair</a>
+    <a href="/API/assets/html/Login/login.html" class="btn">Sair da Conta</a>
 
 </body>
 

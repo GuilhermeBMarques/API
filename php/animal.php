@@ -14,6 +14,7 @@ if (isset($_POST['registerAnimal'])) {
     $faixaEtaria_animal = $_POST['faixaEtaria_animal'];
     $porte_animal = $_POST['porte_animal'];
     $descricao_animal = $_POST['descricao_animal'];
+    $perdido_animal = $_POST['perdido_animal'];
     $estado_animal = $_POST['estado_animal'];
     $cidade_animal = $_POST['cidade_animal'];
 
@@ -42,8 +43,8 @@ if (isset($_POST['registerAnimal'])) {
     }
 
     // Prepara e executa a consulta SQL para inserir os dados no banco
-    $stmt = $conexao->prepare("INSERT INTO animal (nome_animais, responsavel_animais, gmail_animais, Whatsapp_animais, arquivo_principal_animais, especie_animais, sexo_animais, faixaEtaria_animais, porte_animais, descricao_animais, estado_animais, cidade_animais, id_usuarios) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssssssssssss", $nome_animal, $responsavel_animal, $gmail_animal, $Whatsapp_animal, $arquivo_principal_animal, $especie_animal, $sexo_animal, $faixaEtaria_animal, $porte_animal, $descricao_animal, $estado_animal, $cidade_animal, $id_usuario);
+    $stmt = $conexao->prepare("INSERT INTO animal (nome_animais, responsavel_animais, gmail_animais, Whatsapp_animais, arquivo_principal_animais, especie_animais, sexo_animais, faixaEtaria_animais, porte_animais, descricao_animais, perdido_animais, estado_animais, cidade_animais, id_usuarios) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssssssssssss", $nome_animal, $responsavel_animal, $gmail_animal, $Whatsapp_animal, $arquivo_principal_animal, $especie_animal, $sexo_animal, $faixaEtaria_animal, $porte_animal, $descricao_animal, $perdido_animal, $estado_animal, $cidade_animal, $id_usuario);
 
     if ($stmt->execute()) {
         header("Location: /API/assets/html/home.php");

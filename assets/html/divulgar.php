@@ -125,6 +125,15 @@ include_once __DIR__ . '/../../php/verifique.php';
             </div>
 
             <div class="dados">
+                <label for="registerPerdido">Animal Perdido?</label>
+                <select id="registerPerdido" name="perdido_animal" required>
+                <option value=""> Você encontrou esse animal?</option>
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>option>
+                </select>
+            </div>
+
+            <div class="dados">
                 <label for="registerEstado">Estado:</label>
                 <select id="registerEstado" name="estado_animal" required>
                     <option value="">Todos os Estados</option>

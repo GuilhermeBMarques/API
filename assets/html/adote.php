@@ -19,6 +19,10 @@ if (isset($_GET['porte']) && $_GET['porte'] !== '') {
     $porte = $conexao->real_escape_string($_GET['porte']);
     $sql .= " AND porte_animais = '$porte'";
 }
+if (isset($_GET['perdido']) && $_GET['perdido'] !== '') {
+    $perdido = $conexao->real_escape_string($_GET['perdido']);
+    $sql .= " AND perdido_animais = '$perdido'";
+}
 if (isset($_GET['sexo']) && $_GET['sexo'] !== '') {
     $sexo = $conexao->real_escape_string($_GET['sexo']);
     $sql .= " AND sexo_animais = '$sexo'";
@@ -124,6 +128,12 @@ $result = $conexao->query($sql);
                     <option value="Pequeno" <?php echo isset($_GET['porte']) && $_GET['porte'] == 'Pequeno' ? 'selected' : ''; ?>>Porte Pequeno</option>
                     <option value="Médio" <?php echo isset($_GET['porte']) && $_GET['porte'] == 'Médio' ? 'selected' : ''; ?>>Porte Médio</option>
                     <option value="Grande" <?php echo isset($_GET['porte']) && $_GET['porte'] == 'Grande' ? 'selected' : ''; ?>>Porte Grande</option>
+                </select>
+
+                <select name="perdido">
+                    <option value="">Animal perdido</option>
+                    <option value="nao" <?php echo isset($_GET['perdido']) && $_GET['perdido'] == 'nao' ? 'selected' : ''; ?>>Não</option>
+                    <option value="sim" <?php echo isset($_GET['perdido']) && $_GET['perdido'] == 'sim' ? 'selected' : ''; ?>>Sim</option>
                 </select>
 
                 <select name="sexo">

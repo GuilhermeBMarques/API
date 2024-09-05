@@ -4,6 +4,7 @@ body {
   align-items: center;
   justify-content: center;
   padding-top: 200px;
+  background: linear-gradient(to right, #ff9966, #ff5e62); 
 }
 
 .container {
