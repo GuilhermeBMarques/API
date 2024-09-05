@@ -84,7 +84,7 @@ $conexao->close();
         </P>
     </div>
 
-    <div class="container">
+    <div class="animaisContainer">
         <h2>Animais Disponíveis para Adoção</h2>
         <section class="animals">
             <ul>

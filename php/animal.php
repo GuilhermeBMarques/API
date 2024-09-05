@@ -4,8 +4,7 @@ include_once __DIR__ . '/config.php';
 include_once __DIR__ . '/verifique.php';
 
 // Verifica se o formulário foi submetido
-if (isset($_POST['submit'])) {
-    // Obtém os dados do formulário
+if (isset($_POST['registerAnimal'])) {
     $nome_animal = $_POST['nome_animal'];
     $responsavel_animal = $_POST['responsavel_animal'];
     $gmail_animal = $_POST['gmail_animal'];
@@ -18,18 +17,19 @@ if (isset($_POST['submit'])) {
     $estado_animal = $_POST['estado_animal'];
     $cidade_animal = $_POST['cidade_animal'];
 
-    // Obtém o ID do usuário da sessão
+    // Obtém o ID do usuário logado
     if (isset($_SESSION['id_usuario'])) {
         $id_usuario = $_SESSION['id_usuario'];
     } else {
+        // Encerra o script se o usuário não estiver autenticado
         die('Usuário não autenticado.');
     }
 
-    // Diretórios para salvar os uploads
+    // Diretórios para salvar as fotos dos pets
     $upload_dir = __DIR__ . '/uploads/';
     $upload_url = '/API/php/uploads/';
 
-    // Processa o arquivo principal
+    // Processa o arquivo principal, ele gera um nome unico pro arquivo, leva até o caminho completo e atualiza a URl
     $arquivo_principal_animal = '';
     if (isset($_FILES['arquivo_principal']) && $_FILES['arquivo_principal']['error'] == UPLOAD_ERR_OK) {
         $nome_arquivo_principal = uniqid() . '_' . basename($_FILES['arquivo_principal']['name']);
@@ -56,4 +56,3 @@ if (isset($_POST['submit'])) {
     $stmt->close();
     $conexao->close();
 }
-?>

@@ -163,7 +163,7 @@ include_once __DIR__ . '/../../php/verifique.php';
             </div>
 
 
-            <button type="submit" name="submit">Enviar</button>
+            <button type="registerAnimal" name="registerAnimal">Enviar</button>
 
         </form>
     </div>

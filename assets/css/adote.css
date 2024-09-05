@@ -26,9 +26,6 @@ section {
   border: 3px solid;
 }
 
-#encontre {
-  margin-top: 8vh;
-}
 .search-container {
   text-align: center;
   max-width: 900px;
@@ -112,7 +109,7 @@ dialog {
   background-color: #fff;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 468px) {
   section {
     padding: 30px 15px;
   }

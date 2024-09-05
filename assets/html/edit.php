@@ -26,16 +26,20 @@ if (!empty($_GET['id_usuario'])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Perfil</title>
+    <link rel="stylesheet" href="/API/assets/css/reset.css">
+    <link rel="stylesheet" href="/API/assets/css/edit.css">
 </head>
+
 <body>
     <!-- Container de Update -->
     <div id="updateContainer" class="updateContainer">
         <header class="crieConta">
-            <h2>Crie sua conta</h2>
+            <h2><span style="color: #f8ae4e;">Redefine</span> sua conta</h2>
             <h1><span style="color: #f8ae4e;">Pet</span>Amigo</h1>
         </header>
         <form id="salvarUpdate" action="/API/php/usuarios.php" method="POST">
@@ -51,11 +55,12 @@ if (!empty($_GET['id_usuario'])) {
                 <label for="registerSenha"><i class="bi bi-lock-fill"></i></label>
                 <input type="text" id="registerSenha" name="senha_usuario" required placeholder="Senha">
             </div>
-            <input type="hidden" name="id_usuario" value="<?php echo $id_usuario?>">
+            <input type="hidden" name="id_usuario" value="<?php echo $id_usuario ?>">
             <button type="submit" name="update">Atualizar</button>
             <br>
-            <a href="/API/assets/html/perfil.php">Voltar</a>
+            <a href="/API/assets/html/perfil.php" class="link">Voltar</a>
         </form>
     </div>
 </body>
+
 </html>

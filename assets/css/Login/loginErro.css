@@ -1,19 +1,19 @@
 body {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  height: 100vh;
   background: linear-gradient(135deg, #e84545, #430f0f);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  text-align: center;
 }
 
 .container {
+  animation: fadeIn 1s ease-in-out;
   background-color: #ffffff;
-  padding: 40px 30px;
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  padding: 40px 30px;
   width: 300px;
-  animation: fadeIn 1s ease-in-out;
 }
 
 @keyframes fadeIn {
@@ -28,14 +28,14 @@ body {
 }
 
 .logo img {
-  width: 100px;
   margin-bottom: 15px;
+  width: 100px;
 }
 
 .mensagem {
-  margin-top: 20px;
-  font-weight: bold;
   font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
 }
 
 .mensagem p {
@@ -43,24 +43,24 @@ body {
 }
 
 nav {
-  padding: 3px;
   margin-top: 35px;
+  padding: 3px;
 }
 
 .btn {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border-radius: 5px;
+  border: 2px solid #e84545;
   border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: #e84545;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 auto;
   padding: 12px 20px;
   text-decoration: none;
-  cursor: pointer;
-  margin: 0 auto;
   transition: all 0.3s ease;
-  border: 2px solid #e84545;
-  background-color: #ffffff;
-  color: #e84545;
-  border-radius: 5px;
   width: 70%;
-  font-size: 16px;
 }
 
 .btn:hover {

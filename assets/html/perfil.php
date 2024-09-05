@@ -2,40 +2,8 @@
 session_start();
 include_once __DIR__ . '/../../php/config.php';
 include_once __DIR__ . '/../../php/verifique.php';
-
-if (!empty($_GET['id_usuario'])) {
-    $id_usuario = intval($_GET['id_usuario']); // Converte para inteiro para evitar SQL Injection
-
-    // Prepara a consulta SELECT para verificar se o usuário existe
-    $sqlSelect = "SELECT * FROM usuarios WHERE id_usuarios=?";
-    $stmt = $conexao->prepare($sqlSelect);
-    $stmt->bind_param("i", $id_usuario);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows > 0) {
-        // Prepara a consulta DELETE para remover o usuário
-        $sqlDelete = "DELETE FROM usuarios WHERE id_usuarios=?";
-        $stmtDelete = $conexao->prepare($sqlDelete);
-        $stmtDelete->bind_param("i", $id_usuario);
-        $stmtDelete->execute();
-
-        if ($stmtDelete->affected_rows > 0) {
-            header("Location: /API/assets/html/Login/login.html");
-            exit();
-        } else {
-            echo "Erro ao deletar o usuário.";
-        }
-        $stmtDelete->close();
-    } else {
-        echo "Usuário não encontrado.";
-    }
-    $stmt->close();
-}
-
-
-$conexao->close();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -76,26 +44,27 @@ $conexao->close();
         <i class="bi bi-person-circle"></i>
     </div>
 
-        <div class="perfil-list">
-            <ul>
-                <li>
-                    <p><strong>Nome:</strong> <?php echo $nome_usuario; ?></p>
-                    <p><strong>Email:</strong> <?php echo $email_usuario; ?></p>
-                </li>
-            </ul>
-        </div>
+    <div class="perfil">
+        <ul>
+            <li>
+                <p><strong>Nome:</strong> <?php echo $nome_usuario; ?></p>
+                <p><strong>Email:</strong> <?php echo $email_usuario; ?></p>
+            </li>
+        </ul>
+    </div>
 
-        <a href="/API/assets/html/Login/login.html" class="btn">Sair</a>
-
-        <form action="">
-        </form>
-        <a class='btn btn-sm btn-danger' href="perfil.php?id_usuario=<?php echo htmlspecialchars($id_usuarios); ?>">
-            <i class="bi bi-trash3-fill"></i> Deletar Perfil
-        </a>
-
-        <a class="btn btn-sm btn-primary" href="edit.php?id_usuario=<?php echo htmlspecialchars($id_usuarios); ?>">
+    <a class="btn btn-sm btn-primary" href="edit.php?id_usuario=<?php echo htmlspecialchars($id_usuarios); ?>">
         <i class="bi bi-pencil-fill"></i> Editar Perfil
-        </a>
+    </a>
+
+    <form action="/API/php/usuarios.php" method="POST">
+        <input type="hidden" name="id_usuario" value="<?php echo htmlspecialchars($id_usuario); ?>">
+        <button type="submit" name="delete" class='btn'>
+            <i class="bi bi-trash3-fill"></i> Deletar Perfil
+        </button>
+    </form>
+
+    <a href="/API/assets/html/Login/login.html" class="btn">Sair</a>
 
 </body>
 
