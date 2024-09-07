@@ -13,8 +13,14 @@ include_once __DIR__ . '/../../php/verifique.php';
     <title>Perfil do Usuário</title>
     <link rel="stylesheet" href="/API/assets/css/reset.css">
     <link rel="stylesheet" href="/API/assets/css/perfil.css">
-    <script src="/API/assets/js/perfil.js" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script>
+        function confirmDeletion(event) {
+            if (!confirm("Tem certeza de que deseja deletar sua conta? Esta ação não pode ser desfeita.")) {
+                event.preventDefault(); // Impede o envio do formulário se o usuário cancelar
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -57,7 +63,7 @@ include_once __DIR__ . '/../../php/verifique.php';
         <i class="bi bi-pencil-fill"></i> Editar Perfil
     </a>
 
-    <form action="/API/php/usuarios.php" method="POST">
+    <form action="/API/php/usuarios.php" method="POST" onsubmit="confirmDeletion(event)">
         <input type="hidden" name="id_usuario" value="<?php echo htmlspecialchars($id_usuario); ?>">
         <button type="submit" name="delete" class='btn'>
             <i class="bi bi-trash3-fill"></i> Deletar Perfil

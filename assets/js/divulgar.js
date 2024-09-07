@@ -1,16 +1,37 @@
-document.getElementById('arquivo_principal').addEventListener('change', function(event) {
-    const galeria = document.getElementById('galeria1');
-    galeria.innerHTML = ''; 
-    const file = event.target.files[0];
-    const reader = new FileReader();
+const inputFile = document.querySelector('#arquivo_principal');
+const pictureImage = document.querySelector('.picture_image');
+const pictureImageTxt = "Seu pet";
 
-    reader.onload = function(e) {
-        const img = document.createElement('img');
-        img.src = e.target.result;
-        galeria.appendChild(img);
+// Inicialmente mostra o texto padrão
+pictureImage.innerHTML = pictureImageTxt;
+
+// Verifica o tipo de arquivo e exibe a imagem
+inputFile.addEventListener('change', function(e) {
+    const file = e.target.files[0];
+
+    if (file) {
+        // Verifica o tipo de arquivo
+        const validTypes = ['image/jpeg', 'image/png', 'image/jpg'];
+        if (validTypes.includes(file.type)) {
+            const reader = new FileReader();
+
+            reader.addEventListener('load', function(e) {
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                img.classList.add('picture_img');
+                pictureImage.innerHTML = ''; // Limpa o conteúdo existente
+                pictureImage.appendChild(img);
+            });
+
+            reader.readAsDataURL(file);
+        } else {
+            alert('Por favor, envie apenas arquivos de imagem (JPG, PNG).');
+            inputFile.value = ''; // Limpa o campo de entrada
+            pictureImage.innerHTML = pictureImageTxt; // Restaura o texto padrão
+        }
+    } else {
+        pictureImage.innerHTML = pictureImageTxt;
     }
-
-    reader.readAsDataURL(file);
 });
 
 const registerContainer = document.querySelector("#registerContainer");
