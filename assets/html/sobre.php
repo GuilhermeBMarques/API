@@ -7,7 +7,6 @@ include_once __DIR__ . '/../../php/verifique.php';
 $query = "SELECT especie_animais, COUNT(*) as total FROM animal GROUP BY especie_animais";
 $result = $conexao->query($query);
 
-// Organiza os resultados em um array associativo
 $animal_counts = [];
 while ($row = $result->fetch_assoc()) {
     $animal_counts[$row['especie_animais']] = $row['total'];

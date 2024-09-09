@@ -102,25 +102,36 @@ if (isset($_POST["update"])) {
     $id_usuario = $_POST["id_usuario"];
     $nome_usuario = $_POST["nome_usuario"];
     $email_usuario = $_POST["email_usuario"];
-    $senha_usuario = $_POST["senha_usuario"];
+    $senha_usuario = password_hash($_POST['senha_usuario'], PASSWORD_DEFAULT); // Criptografa a nova senha
 
-    $senha_hash = password_hash($senha_usuario, PASSWORD_DEFAULT); // Criptografa a nova senha
+    // Prepara uma consulta SQL para verificar se o email já está em uso
+    $stmt = $conexao->prepare("SELECT * FROM usuarios WHERE email_usuarios=?");
+    $stmt->bind_param("s", $email_usuario);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-    // Prepara uma consulta SQL para atualizar os dados do usuário
-    $sqlUpdate = "UPDATE usuarios SET nome_usuarios=?, email_usuarios=?, senha_usuarios=? WHERE id_usuarios=?";
-    $stmt = $conexao->prepare($sqlUpdate);
-    $stmt->bind_param("sssi", $nome_usuario, $email_usuario, $senha_hash, $id_usuario);
-
-    // Define o ID e o email do usuário na sessão
-    if ($stmt->execute()) {
-        $_SESSION['id_usuario'] = $id_usuario;
-        $_SESSION['email_usuario'] = $email_usuario;
-        header("Location: /API/assets/html/Login/loginCerto.html");
+    // Verifica se o email já está cadastrado
+    if ($result->num_rows > 0) {
+        header("Location: /API/assets/html/Login/loginErro.html");
         exit();
     } else {
-        header("Location: /API/assets/html/Login/loginErrado.html");
-        exit();
-    }
 
-    $stmt->close();
+        // Prepara uma consulta SQL para atualizar os dados do usuário
+        $sqlUpdate = "UPDATE usuarios SET nome_usuarios=?, email_usuarios=?, senha_usuarios=? WHERE id_usuarios=?";
+        $stmt = $conexao->prepare($sqlUpdate);
+        $stmt->bind_param("sssi", $nome_usuario, $email_usuario, $senha_usuario, $id_usuario);
+
+        // Define o ID e o email do usuário na sessão
+        if ($stmt->execute()) {
+            $_SESSION['id_usuario'] = $id_usuario;
+            $_SESSION['email_usuario'] = $email_usuario;
+            header("Location: /API/assets/html/Login/loginCerto.html");
+            exit();
+        } else {
+            header("Location: /API/assets/html/Login/loginErrado.html");
+            exit();
+        }
+
+        $stmt->close();
+    }
 }
