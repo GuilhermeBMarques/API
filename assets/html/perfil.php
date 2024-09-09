@@ -13,14 +13,8 @@ include_once __DIR__ . '/../../php/verifique.php';
     <title>Perfil do Usuário</title>
     <link rel="stylesheet" href="/API/assets/css/reset.css">
     <link rel="stylesheet" href="/API/assets/css/perfil.css">
+    <script src="/API/assets/js/perfil.js" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <script>
-        function confirmDeletion(event) {
-            if (!confirm("Tem certeza de que deseja deletar sua conta? Esta ação não pode ser desfeita.")) {
-                event.preventDefault(); // Impede o envio do formulário se o usuário cancelar
-            }
-        }
-    </script>
 </head>
 
 <body>

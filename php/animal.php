@@ -18,13 +18,6 @@ if (isset($_POST['registerAnimal'])) {
     $estado_animal = $_POST['estado_animal'];
     $cidade_animal = $_POST['cidade_animal'];
 
-    // Obtém o ID do usuário logado
-    if (isset($_SESSION['id_usuario'])) {
-        $id_usuario = $_SESSION['id_usuario'];
-    } else {
-        // Encerra o script se o usuário não estiver autenticado
-        die('Usuário não autenticado.');
-    }
 
     // Diretórios para salvar as fotos dos pets
     $upload_dir = __DIR__ . '/uploads/';

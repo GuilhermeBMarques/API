@@ -32,7 +32,6 @@ if (isset($_GET['faixaEtaria']) && $_GET['faixaEtaria'] !== '') {
     $sql .= " AND faixaEtaria_animais = '$faixaEtaria'";
 }
 
-// Verifica se há uma busca e ajusta a SQL
 if (!empty($_GET['search'])) {
     $data = $conexao->real_escape_string($_GET['search']);
     $sql = "SELECT * FROM animal WHERE nome_animais LIKE '%$data%' OR especie_animais LIKE '%$data%' OR sexo_animais LIKE '%$data%' OR faixaEtaria_animais LIKE '%$data%' OR porte_animais LIKE '%$data%' OR estado_animais LIKE '%$data%' OR cidade_animais LIKE '%$data%' ORDER BY id_animal DESC";

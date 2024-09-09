@@ -4,7 +4,7 @@ body {
 
 .slider {
   width: 100%;
-  height: 60vh;
+  height: 55vh;
   overflow: hidden;
   position: relative;
 }
@@ -32,7 +32,6 @@ body {
 .slide-box img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
   display: block;
 }
 

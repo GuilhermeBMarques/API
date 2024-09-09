@@ -4,7 +4,7 @@ body {
   align-items: center;
   justify-content: center;
   padding-top: 200px;
-  background: linear-gradient(to right, #ff9966, #ff5e62); 
+  background: linear-gradient(to right, #ff9966, #ff5e62);
 }
 
 .container {
@@ -41,25 +41,25 @@ body {
 }
 
 .animaisContainer {
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 15px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
-    margin-top: 80px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+  margin-top: 80px;
 }
 
 .animals {
   display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center; 
-    flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  flex-direction: row;
 }
 
 .animals h2 {
   width: 100%;
   text-align: center;
-   gap: 20px;
+  gap: 20px;
 }
 
 .animals ul {
@@ -77,16 +77,16 @@ body {
 
 .animal-box {
   background-color: #333;
-    color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    width: 200px;
-    height: 120px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 200px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.5);
 }
 
 .animal {

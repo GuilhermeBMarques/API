@@ -38,7 +38,7 @@ if (isset($_POST['loginForm'])) {
 // Verifica se o formulário foi submetido
 if (isset($_POST['registerForm'])) {
     $nome_usuario = $_POST['nome_usuario'];
-    $senha_usuario = password_hash($_POST['senha_usuario'], PASSWORD_DEFAULT);
+    $senha_usuario = password_hash($_POST['senha_usuario'], PASSWORD_DEFAULT); // Criptografa a nova senha
     $email_usuario = $_POST['email_usuario'];
 
     // Prepara uma consulta SQL para verificar se o email já está em uso

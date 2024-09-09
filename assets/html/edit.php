@@ -1,27 +1,7 @@
 <?php
+session_start();
 include_once __DIR__ . '/../../php/config.php';
-
-if (!empty($_GET['id_usuario'])) {
-    $id_usuario = intval($_GET['id_usuario']); // Converte para inteiro para evitar SQL Injection
-
-    $sqlSelect = "SELECT * FROM usuarios WHERE id_usuarios=?";
-    $stmt = $conexao->prepare($sqlSelect);
-    $stmt->bind_param("i", $id_usuario);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows > 0) {
-        $user_data = $result->fetch_assoc();
-        $nome_usuario = htmlspecialchars($user_data['nome_usuarios']);
-        $email_usuario = htmlspecialchars($user_data['email_usuarios']);
-        $senha_usuario = isset($user_data['senha_usuarios']) ? $user_data['senha_usuarios'] : ''; // Verifique se existe
-    } else {
-        header("Location: /API/assets/html/perfil.php?id_usuario=$id_usuario");
-        exit();
-    }
-
-    $stmt->close();
-}
+include_once __DIR__ . '/../../php/verifique.php';
 ?>
 
 <!DOCTYPE html>

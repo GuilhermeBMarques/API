@@ -3,6 +3,8 @@ body {
   text-align: center;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #89cff0 0%, #b19cd9 50%, #ffffff 100%);
 }
 
 .loginContainer,
@@ -55,7 +57,7 @@ form {
   background-color: #f0f0f0;
   border-radius: 10px;
   padding: 10px;
-   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   border: 2px solid #fbfbfb;
 }
 
@@ -73,7 +75,7 @@ form {
   font-size: 0.9rem;
 }
 
-button {
+.btn {
   background-color: #ffffff;
   border: none;
   color: #f8ae4e;
@@ -88,7 +90,7 @@ button {
   border-radius: 5px;
 }
 
-button:hover {
+.btn:hover {
   background: #f8ae4e;
   color: white;
   transform: scale(1.05);
@@ -104,7 +106,7 @@ button:hover {
 }
 
 @media (max-width: 768px) {
-  button {
+  .btn {
     width: 80%;
   }
 }

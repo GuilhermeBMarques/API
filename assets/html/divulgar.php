@@ -71,7 +71,7 @@ include_once __DIR__ . '/../../php/verifique.php';
             </div>
 
             <div class="dados">
-            <label >Foto do seu Pet:</label>
+                <label>Foto do seu Pet:</label>
                 <label class="picture" for="arquivo_principal" tabindex="0">
                     <span class="picture_image">Escolha sua imagem</span>
                     <br>

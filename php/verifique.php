@@ -2,20 +2,13 @@
 include_once __DIR__ . '/config.php';
 
 // Verifica se o usuário está logado
-if (!isset($_SESSION['email_usuario'])) {
+if (!isset($_SESSION['id_usuario']) || !isset($_SESSION['email_usuario'])) {
     header("Location: /API/assets/html/Login/loginErro.html");
     exit();
 }
 
-if (!isset($_SESSION['id_usuario'])) {
-    header("Location: /API/assets/html/Login/loginErro.html");
-    exit();
-}
-
-$id_usuario = $_SESSION['id_usuario'];
-
-// Recupera o email do usuário da sessão
 $email_usuario = $_SESSION['email_usuario'];
+$id_usuario = $_SESSION['id_usuario'];
 
 // Adiciona a recuperação do ID do usuário
 $stmt = $conexao->prepare("SELECT id_usuarios, nome_usuarios, email_usuarios FROM usuarios WHERE email_usuarios=?");
