@@ -2,6 +2,7 @@ body {
   display: flex;
   text-align: center;
   justify-content: center;
+  background: linear-gradient(135deg, #31a5db, #fff);
 }
 
 .updateContainer {

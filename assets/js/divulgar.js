@@ -19,15 +19,15 @@ inputFile.addEventListener("change", function (e) {
         const img = document.createElement("img");
         img.src = e.target.result;
         img.classList.add("picture_img");
-        pictureImage.innerHTML = ""; // Limpa o conteúdo existente
+        pictureImage.innerHTML = ""; 
         pictureImage.appendChild(img);
       });
 
       reader.readAsDataURL(file);
     } else {
       alert("Por favor, envie apenas arquivos de imagem (JPG, PNG).");
-      inputFile.value = ""; // Limpa o campo de entrada
-      pictureImage.innerHTML = pictureImageTxt; // Restaura o texto padrão
+      inputFile.value = "";
+      pictureImage.innerHTML = pictureImageTxt; 
     }
   } else {
     pictureImage.innerHTML = pictureImageTxt;
