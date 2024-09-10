@@ -16,7 +16,7 @@ $result_animal = $conexao->query($sql_animal);
 
 if ($result_animal && $result_animal->num_rows > 0) {
     $animal = $result_animal->fetch_assoc();
-    $responsavel_id = $animal['id_usuarios']; // ID do usuário responsável pelo animal
+    $responsavel_id = $animal['id_usuarios'];
 } else {
     die('Animal não encontrado.');
 }
@@ -31,7 +31,6 @@ $id_usuario_atual = isset($_SESSION['id_usuario']) ? $_SESSION['id_usuario'] : n
 // Verifica se a solicitação de exclusão foi feita
 if (isset($_GET['delete']) && $_GET['delete'] == 'true') {
     if ($id_usuario_atual == $responsavel_id) {
-        // Prepara a consulta DELETE para remover o animal
         $sqlDelete = "DELETE FROM animal WHERE id_animal = ?";
         $stmtDelete = $conexao->prepare($sqlDelete);
         $stmtDelete->bind_param("i", $id);

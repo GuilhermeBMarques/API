@@ -17,28 +17,37 @@ if (isset($_POST['registerAnimal'])) {
     $perdido_animal = $_POST['perdido_animal'];
     $estado_animal = $_POST['estado_animal'];
     $cidade_animal = $_POST['cidade_animal'];
+    $id_usuario = $_SESSION['id_usuario']; 
 
-
-    // Diretórios para salvar as fotos dos pets
+    // Diretório de uploads
     $upload_dir = __DIR__ . '/uploads/';
     $upload_url = '/API/php/uploads/';
 
-    // Processa o arquivo principal, ele gera um nome unico pro arquivo, leva até o caminho completo e atualiza a URl
+    // Upload do arquivo principal
     $arquivo_principal_animal = '';
     if (isset($_FILES['arquivo_principal']) && $_FILES['arquivo_principal']['error'] == UPLOAD_ERR_OK) {
+        $allowed_types = ['image/jpeg', 'image/png', 'image/gif'];
+        if (!in_array($_FILES['arquivo_principal']['type'], $allowed_types)) {
+            echo "Tipo de arquivo não permitido.";
+            exit();
+        }
+
         $nome_arquivo_principal = uniqid() . '_' . basename($_FILES['arquivo_principal']['name']);
         $arquivo_principal_animal = $upload_dir . $nome_arquivo_principal;
+
         if (move_uploaded_file($_FILES['arquivo_principal']['tmp_name'], $arquivo_principal_animal)) {
             $arquivo_principal_animal = $upload_url . $nome_arquivo_principal;
         } else {
             echo "Erro ao mover o arquivo principal: " . $_FILES['arquivo_principal']['tmp_name'] . "<br>";
+            exit();
         }
     }
 
-    // Prepara e executa a consulta SQL para inserir os dados no banco
+    // Prepara a consulta SQL para inserir os dados
     $stmt = $conexao->prepare("INSERT INTO animal (nome_animais, responsavel_animais, gmail_animais, Whatsapp_animais, arquivo_principal_animais, especie_animais, sexo_animais, faixaEtaria_animais, porte_animais, descricao_animais, perdido_animais, estado_animais, cidade_animais, id_usuarios) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("ssssssssssssss", $nome_animal, $responsavel_animal, $gmail_animal, $Whatsapp_animal, $arquivo_principal_animal, $especie_animal, $sexo_animal, $faixaEtaria_animal, $porte_animal, $descricao_animal, $perdido_animal, $estado_animal, $cidade_animal, $id_usuario);
 
+    // Executa a consulta e redireciona ou exibe erros
     if ($stmt->execute()) {
         header("Location: /API/assets/html/home.php");
         exit();
@@ -50,3 +59,4 @@ if (isset($_POST['registerAnimal'])) {
     $stmt->close();
     $conexao->close();
 }
+?>

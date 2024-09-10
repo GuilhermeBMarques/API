@@ -53,17 +53,6 @@ include_once __DIR__ . '/../../php/verifique.php';
         </ul>
     </div>
 
-    <a class="btn btn-sm btn-primary" href="edit.php?id_usuario=<?php echo htmlspecialchars($id_usuarios); ?>">
-        <i class="bi bi-pencil-fill"></i> Editar Perfil
-    </a>
-
-    <form action="/API/php/usuarios.php" method="POST" onsubmit="confirmDeletion(event)">
-        <input type="hidden" name="id_usuario" value="<?php echo htmlspecialchars($id_usuario); ?>">
-        <button type="submit" name="delete" class='btn'>
-            <i class="bi bi-trash3-fill"></i> Deletar Perfil
-        </button>
-    </form>
-
     <a href="/API/assets/html/Login/login.html" class="btn">Sair da Conta</a>
 
 </body>
