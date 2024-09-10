@@ -1,5 +1,5 @@
 # AmigoPet 
-**Nomes:** Guilherme e Bruno Henrique.
+**Participantes:** Guilherme e Bruno Henrique.
 
 **Turma:** TDS23-T1
 
