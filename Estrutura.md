@@ -20,7 +20,7 @@ Uma seção dedicada às doações será fundamental para apoiar a manutenção 
 
 ### Funcionalidades
 * Cadastro e Login de usuários
-* Cadastro do Animal
+* Cadastro do Animal do usuários
 * Divulgação do pet
 
 ### Tecnologias Utilizadas
