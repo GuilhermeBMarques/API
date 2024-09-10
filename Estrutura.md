@@ -19,11 +19,9 @@ Os proprietários preocupados com seus animais perdidos poderão cadastrar infor
 Uma seção dedicada às doações será fundamental para apoiar a manutenção e operação dos abrigos e canis locais. Aceitaremos doações em dinheiro, bem como itens essenciais para o cuidado dos animais, como alimentos, produtos de higiene e cobertores.
 
 ### Funcionalidades
-Cadastro e Login de usuários
-
-Cadastro do Animal
-
-Divulgação do pet
+* Cadastro e Login de usuários
+* Cadastro do Animal
+* Divulgação do pet
 
 ### Tecnologias Utilizadas
 * **JavaScript:** Interatividade do site
