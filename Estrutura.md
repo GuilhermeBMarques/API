@@ -31,7 +31,25 @@ Uma seção dedicada às doações será fundamental para apoiar a manutenção 
 * **PHP:** Estrutura do site
 * **Banco de Dados:** SQL Workbench
 
-### Banco de Dados
+### Requisitos
+* XAMPP
+* SQL Workbench
+
+### Configuração do XAMPP
+* Baixe o XAMPP
+* Força a parada do MySQL80 e deixa manual.
+* Dentro do XAMPP, aperte Start no Apache e MySQL
+* Vai na pasta htdocs dentro do XAMPP, deixa vazia, abre o cmd e de um git clone
+```
+glit clone https://github.com/GuilhermeBMarques/API
+```
+### Configuração do SQL
+* Crie um server chamado
+``` db_dados ```
+* Charset: utf8mb4
+* Collation: utf8mb4_unicode_ci
+
+### Dentro do db_dados
 usuarios
 ```
 CREATE TABLE usuarios (
