@@ -1,5 +1,5 @@
 # API 
-**Nomes:** Guilherme, Bruno Henrique e Arthur.
+**Nomes:** Guilherme e Bruno Henrique.
 
 **Turma:** TDS23-T1
 
@@ -24,21 +24,47 @@ Uma seção dedicada às doações será fundamental para apoiar a manutenção 
 * Sistema de match(**quando o lojista cadastra um produto e o nosso sistema identifica na base de dados um cadastro com o mesmo código EAN**) entre animais e possíveis adotantes.
 * Cadastro de adotantes.
 
-### Tecnologias
-* Linguagem de Programação: **JavaScript**
-* Linguagem de estilo: **CSS**
-* Linguagem de marcação: **HTML**
-* Frameworks e Bibliotecas: **Não decidido**
-* Banco de Dados: **SQL**
+### Tecnologias Utilizadas
+* **JavaScript:** Interatividade do site
+* **CSS:** Estilização do site
+* **HTML:** Estrutura do site
+* **PHP:** Estrutura do site
+* **Banco de Dados:** SQL Workbench
 
-### Modelagem do Banco de Dados
-Ira ser feito em **tabelas** 
+### Banco de Dados
+usuarios
+```
+CREATE TABLE usuarios (
+  id_usuarios INT(11) AUTO_INCREMENT PRIMARY KEY,
+  nome_usuarios VARCHAR(120) NOT NULL,
+  senha_usuarios VARCHAR(255) NOT NULL,
+  email_usuarios VARCHAR(120) NOT NULL
+);
+```
 
-|Animais para Doação| Animais Perdidos| Adotantes              |
-|-------------------|-----------------|------------------------|
-| Espécie           | Espécie         | Contato                |
-| Localização       | Localização     | Preferências de Adoção |
-| Idade             |                 |                        |
+animal
+```
+CREATE TABLE animal (
+  id_animal INT(11) AUTO_INCREMENT PRIMARY KEY,
+  nome_animais VARCHAR(120) NOT NULL,
+  responsavel_animais VARCHAR(120) NOT NULL,
+  gmail_animais VARCHAR(120) NOT NULL,
+  Whatsapp_animais VARCHAR(50) NOT NULL,
+  arquivo_principal_animais VARCHAR(255) NOT NULL,
+  especie_animais VARCHAR(16) NOT NULL,
+  sexo_animais VARCHAR(16) NOT NULL,
+  faixaEtaria_animais VARCHAR(16) NOT NULL,
+  porte_animais VARCHAR(16) NOT NULL,
+  descricao_animais VARCHAR(500) NOT NULL,
+  perdido_animais VARCHAR(16) NOT NULL,
+  estado_animais VARCHAR(16) NOT NULL,
+  cidade_animais VARCHAR(120) NOT NULL,
+  id_usuarios INT(11), 
+  CONSTRAINT fk_id_usuario FOREIGN KEY (id_usuarios) 
+  REFERENCES usuarios(id_usuarios) 
+  ON DELETE SET NULL
+);
+```
 
 ### Plano de Ação
 **Desenvolvimento das Funcionalidades em JavaScript:**
