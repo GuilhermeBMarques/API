@@ -23,12 +23,6 @@ Cadastro e Login de usuários
 Cadastro do Animal
 Divulgação do pet
 
-
-* Cadastro de animais disponíveis para adoção.
-* Pesquisa de animais por espécie, idade, localização, etc.
-* Sistema de match(**quando o lojista cadastra um produto e o nosso sistema identifica na base de dados um cadastro com o mesmo código EAN**) entre animais e possíveis adotantes.
-* Cadastro de adotantes.
-
 ### Tecnologias Utilizadas
 * **JavaScript:** Interatividade do site
 * **CSS:** Estilização do site
