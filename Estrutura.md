@@ -14,7 +14,7 @@ Os usuários encontrarão informações detalhadas sobre animais disponíveis pa
 
 ### Funcionalidades
 * Cadastro e Login de usuários
-* Cadastro do Animal do usuários
+* Cadastro do Animal do usuário
 * Divulgação do pet
 
 ### Tecnologias Utilizadas
