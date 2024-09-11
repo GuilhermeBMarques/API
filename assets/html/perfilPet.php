@@ -3,11 +3,12 @@ session_start();
 include_once __DIR__ . '/../../php/config.php';
 include_once __DIR__ . '/../../php/verifique.php';
 
-// Verifica se o id do animal foi passado na URL
+// Verifica se o parâmetro id foi passado na URL e se é um número
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     die('Animal não encontrado.');
 }
 
+// Preveni SQL Injection
 $id = $conexao->real_escape_string($_GET['id']);
 
 // Consulta SQL para obter os detalhes do animal específico

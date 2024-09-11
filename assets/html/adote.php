@@ -6,7 +6,7 @@ include_once __DIR__ . '/../../php/verifique.php';
 // Inicializa a consulta SQL
 $sql = "SELECT * FROM animal WHERE 1=1";
 
-// Verifica se os filtros foram aplicados e adiciona
+// Verifica se o parâmetro do filtro foi passado e não está vazio
 if (isset($_GET['estado']) && $_GET['estado'] !== '') {
     $estado = $conexao->real_escape_string($_GET['estado']);
     $sql .= " AND estado_animais = '$estado'";
@@ -32,6 +32,7 @@ if (isset($_GET['faixaEtaria']) && $_GET['faixaEtaria'] !== '') {
     $sql .= " AND faixaEtaria_animais = '$faixaEtaria'";
 }
 
+// Se o campo de busca não estiver vazio, ajusta a consulta SQL para realizar uma busca pelo data(texto Armazenado) em vários tipos de campos
 if (!empty($_GET['search'])) {
     $data = $conexao->real_escape_string($_GET['search']);
     $sql = "SELECT * FROM animal WHERE nome_animais LIKE '%$data%' OR especie_animais LIKE '%$data%' OR sexo_animais LIKE '%$data%' OR faixaEtaria_animais LIKE '%$data%' OR porte_animais LIKE '%$data%' OR estado_animais LIKE '%$data%' OR cidade_animais LIKE '%$data%' ORDER BY id_animal DESC";

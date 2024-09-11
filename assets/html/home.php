@@ -6,7 +6,7 @@ include_once __DIR__ . '/../../php/verifique.php';
 // Inicializa a consulta SQL
 $sql = "SELECT * FROM animal WHERE 1=1";
 
-// Verifica se os filtros foram aplicados e adiciona
+// Verifica se o parâmetro do filtro foi passado e não está vazio
 if (isset($_GET['especie']) && $_GET['especie'] !== '') {
     $especie = $conexao->real_escape_string($_GET['especie']);
     $sql .= " AND especie_animais = '$especie'";

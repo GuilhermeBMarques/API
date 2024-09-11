@@ -17,7 +17,7 @@ if (isset($_POST['registerAnimal'])) {
     $perdido_animal = $_POST['perdido_animal'];
     $estado_animal = $_POST['estado_animal'];
     $cidade_animal = $_POST['cidade_animal'];
-    $id_usuario = $_SESSION['id_usuario']; 
+    $id_usuario = $_SESSION['id_usuario'];
 
     // Diretório de uploads
     $upload_dir = __DIR__ . '/uploads/';
@@ -25,13 +25,17 @@ if (isset($_POST['registerAnimal'])) {
 
     // Upload do arquivo principal
     $arquivo_principal_animal = '';
+    // Verifica se o arquivo enviado houve erro no upload
     if (isset($_FILES['arquivo_principal']) && $_FILES['arquivo_principal']['error'] == UPLOAD_ERR_OK) {
-        $allowed_types = ['image/jpeg', 'image/png', 'image/gif'];
+        // Tipos de arquivos permitidos
+        $allowed_types = ['image/jpeg', 'image/png'];
+        // Verificação se o arquivo é permitido
         if (!in_array($_FILES['arquivo_principal']['type'], $allowed_types)) {
             echo "Tipo de arquivo não permitido.";
             exit();
         }
 
+        // Gera uma string propria pro arquivo com o nome, depois move o arquivo para o diretorio de uploads
         $nome_arquivo_principal = uniqid() . '_' . basename($_FILES['arquivo_principal']['name']);
         $arquivo_principal_animal = $upload_dir . $nome_arquivo_principal;
 
@@ -59,4 +63,3 @@ if (isset($_POST['registerAnimal'])) {
     $stmt->close();
     $conexao->close();
 }
-?>
