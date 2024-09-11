@@ -37,6 +37,7 @@ Os usuários encontrarão informações detalhadas sobre animais disponíveis pa
 glit clone https://github.com/GuilhermeBMarques/API
 ```
 ### Configuração do SQL
+* Baixe o SQL Workbench 
 * Crie um server chamado
 ``` db_dados ```
 * Charset: utf8mb4
