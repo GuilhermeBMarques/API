@@ -78,6 +78,11 @@ CREATE TABLE animal (
 );
 ```
 
+### Localhost
+```
+http://localhost/API/assets/html/Login/login.html
+```
+
 ### Conclusão
 Em resumo, nosso projeto não apenas simplificará o processo de adoção de animais, mas também promoverá uma cultura de responsabilidade e respeito pelos animais em nossa comunidade. Através desta plataforma online, aspiramos a transformar vidas, oferecendo um lar amoroso e seguro para animais desabrigados e perdidos, enquanto conscientizamos a população sobre a importância do bem-estar animal.
 
