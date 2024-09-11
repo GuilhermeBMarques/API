@@ -13,7 +13,7 @@ Nosso objetivo principal é promover a adoção responsável, garantindo que os 
 Os usuários encontrarão informações detalhadas sobre animais disponíveis para adoção, incluindo fotos e descrições abrangentes, como raça, cor, idade e sexo. Esta seção será projetada para facilitar a conexão entre animais em busca de um lar e pessoas dispostas a adotar.
 
 ### Funcionalidades
-* Cadastro e Login de usuários
+* Cadastro e Login do usuários
 * Cadastro do Animal do usuário
 * Divulgação do pet
 
