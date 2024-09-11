@@ -27,13 +27,6 @@ if (isset($_POST['registerAnimal'])) {
     $arquivo_principal_animal = '';
     // Verifica se o arquivo enviado houve erro no upload
     if (isset($_FILES['arquivo_principal']) && $_FILES['arquivo_principal']['error'] == UPLOAD_ERR_OK) {
-        // Tipos de arquivos permitidos
-        $allowed_types = ['image/jpeg', 'image/png'];
-        // Verificação se o arquivo é permitido
-        if (!in_array($_FILES['arquivo_principal']['type'], $allowed_types)) {
-            echo "Tipo de arquivo não permitido.";
-            exit();
-        }
 
         // Gera uma string propria pro arquivo com o nome, depois move o arquivo para o diretorio de uploads
         $nome_arquivo_principal = uniqid() . '_' . basename($_FILES['arquivo_principal']['name']);
