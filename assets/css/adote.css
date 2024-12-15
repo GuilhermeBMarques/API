@@ -1,186 +1,126 @@
-body {
-  text-align: center;
-}
-
-.header {
+section {
+  padding: 40px;
+  background-image: url(/API/assets/img/bodyForm.jpg);
+  color: rgb(247, 157, 41);
   display: flex;
+  justify-content: center;
   align-items: center;
-  padding: 0 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.header i {
-  font-size: 32px;
-  margin-right: 10px;
+#titulo {
+  text-align: center;
+  margin-bottom: 20px;
+  background-color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  border-radius: 20px;
+  border: 2px solid #ffffff;
+  padding: 20px;
+  color: rgb(247, 157, 41);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8vh;
+  margin-bottom: 6vh;
+  border: 3px solid;
+}
+
+.search-container {
+  text-align: center;
+  max-width: 900px;
+  width: 100%;
+}
+
+.search-container h1 {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+select {
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid rgb(247, 157, 41);
+  background-color: #fff;
+  color: #333;
+  font-size: 1rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+select:hover,
+select:focus {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
 
-.header h2 {
-  font-size: 22px;
-}
-
-.localizacao {
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
-  margin-top: 10px;
-}
-
-.localizacao i {
-  font-size: 16px;
-  margin-right: 10px;
-}
-
-.localizacao span {
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.localizacao p {
-  margin: 0;
-  margin-left: 5px;
-  font-size: 12px;
-  color: grey;
-}
-
-.animais {
-  width: 100%;
-  justify-content: space-around;
-  display: flex;
-  flex-wrap: wrap;
-  background-color: rgb(255, 255, 255);
-}
-
-.animal {
-  width: 350px;
-  height: 450px;
-  margin-left: 50px;
-  border-radius: 11px;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  overflow: hidden;
-  position: relative;
-  margin-bottom: 75px;
-  transition: transform 0.3s;
-}
-
-.animal span {
-  position: absolute;
-  bottom: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: rgb(255, 255, 255);
-  padding: 5px 10px;
-  border-radius: 10px;
-  text-align: center;
-  font-size: 18px;
-}
-
-.animal:hover {
-  transform: scale(1.05);
-}
-
-.cachorros,
-.gatos,
-.coelhos,
-.roedores,
-.passaros,
-.repteis,
-.peixes,
-.exoticos,
-.anfibios {
-  background-size: cover;
-  background-position: center;
-}
-
-.cachorros {
-  background-color: #f5c6c6;
-  background-image: url("/assets/img/cachorro.png");
-}
-
-.gatos {
-  background-color: #e8f4f8;
-  background-image: url("/assets/img/gato.png");
-}
-
-.coelhos {
-  background-color: #f5f5f5;
-  background-image: url("/assets/img/coelho1.png");
-}
-
-.roedores {
-  background-color: #e0e0e0;
-  background-image: url("/assets/img/roedores.png");
-}
-
-.passaros {
-  background-color: #d1e7f0;
-  background-image: url("/assets/img/passaro.png");
-}
-
-.repteis {
-  background-color: #d8e2dc;
-  background-image: url("/assets/img/repteis.png");
-}
-
-.peixes {
-  background-color: #b2dfdb;
-  background-image: url("/assets/img/peixe.png");
-}
-
-.exoticos {
-  background-color: #e8d5c4;
-  background-image: url("/assets/img/exoticos.png");
-}
-
-.anfibios {
-  background-color: #d4e157;
-  background-image: url("/assets/img/sapo.png");
-}
-
-
-nav ul li {
-  list-style: none;
-  padding: 3px;
-  margin-top: 35px;
+select:focus {
+  outline: none;
 }
 
 .btn,
-.btnVoltar {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border: none;
-  padding: 10px 20px;
-  text-decoration: none;
-  cursor: pointer;
-  display: block;
-  margin: 15px auto;
-  transition: all 0.3s;
-  border: 2px solid #f6d365;
+.btn-pesquisa {
+  padding: 12px 25px;
+  border-radius: 8px;
+  border: 2px solid rgb(247, 157, 41);
   background-color: #ffffff;
-  color: #f6d365;
-  border-radius: 5px;
+  color: rgb(247, 157, 41);
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
-.btn {
-  width: 80%;
-}
-
-.btnVoltar {
-  width: 60%;
-}
-
-.btn:hover,
-.btnVoltar:hover {
-  background-color: #f6d365;
+.btn:hover {
+  background-color: rgb(247, 157, 41);
   color: white;
   transform: scale(1.05);
 }
 
+.box-search {
+  display: flex;
+  justify-content: center;
+  gap: 0.1%;
+}
 
-@media (max-width: 720px) {
-  .animal {
-    width: 39%;
-    height: 260px;
-    margin: 15px 15px; 
+dialog::backdrop {
+  background-color: rgb(0, 0, 0 / 0.5);
+}
+
+dialog {
+  width: 80%;
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background-color: #fff;
+}
+
+@media (max-width: 468px) {
+  section {
+    padding: 30px 15px;
+  }
+
+  form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  select {
+    width: 100%;
+    margin-bottom: 10px;
   }
 }
